@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid slice"><defs></defs><rect x="0" y="0" width="1000" height="580" rx="0" fill="#c3cdde" /><rect x="180" y="56" width="640" height="462" rx="0" fill="#577cc0" /><rect x="212" y="86" width="576" height="397" rx="0" fill="none" stroke="#f6f3dc" stroke-width="7"/><path d="M500 88L500 485" fill="none" stroke="#f6f3dc" stroke-width="6" stroke-linecap="round"/><path d="M212 287L788 287" fill="none" stroke="#f6f3dc" stroke-width="5" stroke-linecap="round"/><path d="M353 88L353 483" fill="none" stroke="#f6f3dc" stroke-width="5" stroke-linecap="round"/><path d="M649 88L649 483" fill="none" stroke="#f6f3dc" stroke-width="5" stroke-linecap="round"/><ellipse cx="366" cy="265" rx="15" ry="15" fill="#cbed39" /><ellipse cx="576" cy="330" rx="16" ry="16" fill="#df5b3d" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid slice"><defs/><rect x="0" y="0" width="1000" height="580" rx="0" fill="#c3cdde"/><rect x="180" y="56" width="640" height="462" rx="0" fill="#577cc0"/><rect x="212" y="86" width="576" height="397" rx="0" fill="none" stroke="#f6f3dc" stroke-width="7"/><path d="M500 88L500 485" fill="none" stroke="#f6f3dc" stroke-width="6" stroke-linecap="round"/><path d="M212 287L788 287" fill="none" stroke="#f6f3dc" stroke-width="5" stroke-linecap="round"/><path d="M353 88L353 483" fill="none" stroke="#f6f3dc" stroke-width="5" stroke-linecap="round"/><path d="M649 88L649 483" fill="none" stroke="#f6f3dc" stroke-width="5" stroke-linecap="round"/><g class="art-bounce"><ellipse cx="366" cy="265" rx="15" ry="15" fill="#cbed39"/></g><ellipse cx="576" cy="330" rx="16" ry="16" fill="#df5b3d" class="art-twinkle"/><style>
+@media (prefers-reduced-motion: no-preference) {
+  .art-bounce { transform-box: fill-box; transform-origin: center bottom; animation: art-bounce 2.4s linear -0.8s 3 normal none; }
+  .art-twinkle { transform-box: fill-box; transform-origin: center; animation: art-twinkle 2.4s ease-in-out 0s 3 alternate forwards; }
+  @keyframes art-bounce {
+  0%, 100% { animation-timing-function: cubic-bezier(0.2, 0.6, 0.35, 1); translate: 0px; scale: 1.14 0.84; }
+  6% { translate: 0px -6px; scale: 0.94 1.06; }
+  50% { animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.4); translate: 0px -58px; scale: 1; }
+  94% { translate: 0px -4px; scale: 0.96 1.04; }
+}
+  @keyframes art-twinkle {
+  0% { opacity: 0.2; scale: 0.6; }
+  100% { opacity: 1; scale: 1; }
+}
+}
+</style></svg>

@@ -1,5 +1,8 @@
 [data-design="neutral"] .darkhero,
 [data-design="karst"] main,
+[data-design="prisma"] main,
+[data-design="versal"] main,
+[data-design="nordlicht"] main,
 [data-design="lehm"] .region,
 [data-design="phase"] .region { overflow-x: clip; }
 
@@ -28,7 +31,7 @@
     [data-design] [data-scroll-motion~="picture"] {
       --template-entry: frame-opening;
       --template-range: entry 5% cover 38%;
-      animation-name: frame-opening, illustration-settle;
+      animation-name: frame-opening, var(--art-settle, illustration-settle);
       animation-timeline: view(block), view(block);
       animation-range: entry 5% cover 38%, entry 0% cover 55%;
     }
@@ -164,6 +167,96 @@
     @keyframes collage-glide { from { translate: -5% 0; } to { translate: 5% 0; } }
     @keyframes horizontal-opening { from { clip-path: inset(0 12% round 2cqw); } to { clip-path: inset(0 round 2cqw); } }
     @keyframes text-light { from { opacity: .16; } }
+  }
+}
+
+@property --tile-edge {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+/* Keep the frame fixed while the artwork inside it settles. Each named
+   animation below retains its own view timeline and progress range. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @supports (object-view-box: inset(5%)) {
+      [data-design] :is(img, canvas)[data-scroll-motion~="picture"] { --art-settle: crop-settle; }
+      @keyframes crop-settle {
+        from { object-view-box: inset(7.627%); }
+        to { object-view-box: inset(0%); }
+      }
+    }
+
+    [data-design] [data-scroll-motion~="picture"][data-scroll-motion~="pop"] {
+      animation-name: frame-opening, var(--art-settle, illustration-settle), inset-arrival;
+      animation-timeline: view(block), view(block), view(block);
+      animation-range: entry 5% cover 38%, entry 0% cover 55%, entry 30% cover 45%;
+    }
+    [data-design] [data-scroll-motion~="glide"][data-scroll-motion~="picture"] {
+      animation-name: frame-opening, var(--art-settle, illustration-settle), collage-glide;
+      animation-timeline: view(block), view(block), view(block);
+      animation-range: entry 5% cover 38%, entry 0% cover 55%, cover 0% cover 100%;
+    }
+    [data-design] [data-scroll-motion~="glide"][data-scroll-motion~="pop"] {
+      animation-name: frame-opening, var(--art-settle, illustration-settle), inset-arrival, collage-glide;
+      animation-timeline: view(block), view(block), view(block), view(block);
+      animation-range: entry 5% cover 38%, entry 0% cover 55%, entry 30% cover 45%, cover 0% cover 100%;
+      animation-composition: replace, replace, replace, add;
+    }
+
+    /* These windows have a dedicated media container in the template. */
+    [data-design] .media:has(> [data-scroll-motion~="window"]) {
+      animation: frame-opening linear both;
+      animation-timeline: view(block);
+      animation-range: entry 5% cover 38%;
+    }
+    [data-design] [data-scroll-motion~="picture"][data-scroll-motion~="window"] {
+      animation-name: horizontal-opening, var(--art-settle, illustration-settle);
+      animation-timeline: view(block), view(block);
+      animation-range: entry 0% cover 40%, entry 0% cover 55%;
+    }
+    [data-design] [data-scroll-motion~="picture"][data-scroll-motion~="tile"] {
+      mask-image: linear-gradient(to bottom, transparent var(--tile-edge), black var(--tile-edge));
+      animation-name: frame-opening, tile-edge, var(--art-settle, illustration-settle);
+      animation-timeline: view(block), view(block), view(block);
+      animation-range: entry 5% cover 38%, entry 4% cover 30%, entry 0% cover 55%;
+    }
+    @keyframes tile-edge { from { --tile-edge: 24%; opacity: 0; } }
+    [data-design="prisma"] .sample[data-scroll-motion~="picture"] {
+      animation-name: frame-opening, tile-edge;
+    }
+    [data-design="prisma"] .sample[data-scroll-motion~="picture"]::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      pointer-events: none;
+      animation: illustration-settle linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% cover 55%;
+    }
+    [data-design] [data-scroll-motion~="card"][data-scroll-motion~="tile"] {
+      animation-name: tile-opening, card-arrival;
+      animation-timeline: view(block), view(block);
+      animation-range: entry 4% cover 30%, entry 0% entry 60%;
+    }
+    [data-design] [data-scroll-motion~="card"][data-scroll-motion~="row"] {
+      animation-name: card-arrival, row-offset;
+      animation-timeline: view(block), view(block);
+      animation-range: entry 0% entry 60%, entry 0% entry 80%;
+    }
+    @keyframes row-offset { from { transform: translateX(-4cqw); } }
+    [data-design] [data-scroll-motion~="heading"][data-scroll-motion~="light"] {
+      animation-name: heading-arrival, text-light;
+      animation-timeline: view(block), view(block);
+      animation-range: entry 8% cover 26%, cover 14% cover 22%;
+    }
+    [data-design] :focus-visible[data-scroll-motion],
+    [data-design] [data-scroll-motion]:has(:focus-visible) {
+      clip-path: none !important;
+      opacity: 1 !important;
+    }
   }
 }
 

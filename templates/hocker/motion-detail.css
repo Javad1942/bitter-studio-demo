@@ -1,0 +1,12 @@
+.workshop .daylight { position: absolute; inset: 14% auto auto 15%; width: 23%; height: 36%; pointer-events: none; background: linear-gradient(112deg, transparent 12%, #fff8df99 48%, transparent 56%); }
+.workshop .dust { position: absolute; width: 3px; height: 3px; background: #fff9e0; border-radius: 50%; box-shadow: 13px 8px 0 #fff8d7, 28px -6px 0 #fff9d9; }
+.workshop .dust:first-of-type { top: 33%; left: 26%; }
+.workshop .dust:last-of-type { top: 40%; left: 22%; }
+
+@media (prefers-reduced-motion: no-preference) {
+.workshop .daylight { animation: workshop-glow 5s ease-in-out 3 alternate forwards; }
+  .workshop .dust { animation: suspended-dust 2.4s ease-in-out 3 alternate forwards; }
+  .workshop .dust:last-of-type { animation-delay: -1.4s; }
+  @keyframes workshop-glow { from { opacity: .25; } }
+  @keyframes suspended-dust { from { opacity: .2; scale: .6; } }
+}

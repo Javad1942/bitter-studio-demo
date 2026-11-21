@@ -1,1 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid slice"><defs></defs><rect x="0" y="0" width="1000" height="580" rx="0" fill="#b9c8bd" /><path d="M0 309Q471 150 1000 318V580H0Z" fill="#728965" /><g transform="translate(156 156) scale(1.65)"><rect x="-11" y="0" width="22" height="140" rx="0" fill="#5c4327" /><ellipse cx="0" cy="-3" rx="52" ry="52" fill="#43562e" /><ellipse cx="-30" cy="18" rx="39" ry="39" fill="#556b37" /><ellipse cx="27" cy="18" rx="44" ry="44" fill="#4b6330" /><ellipse cx="-7" cy="-34" rx="37" ry="37" fill="#536b35" /><ellipse cx="23" cy="-23" rx="28" ry="28" fill="#627b42" /></g><g transform="translate(245 210) scale(1.6)"><rect x="0" y="0" width="300" height="162" rx="42" fill="#d6c8a5" /><rect x="18" y="17" width="264" height="133" rx="31" fill="#282c27" /><rect x="36" y="29" width="219" height="108" rx="23" fill="#485050" /><rect x="47" y="84" width="196" height="47" rx="12" fill="#b6afa2" /><rect x="47" y="113" width="196" height="18" rx="5" fill="#999387" /><path d="M127 25L127 137" fill="none" stroke="#888578" stroke-width="4" stroke-linecap="round"/></g><rect x="0" y="479" width="1000" height="101" rx="0" fill="#8a9c6a" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid slice"><defs/><rect x="0" y="0" width="1000" height="580" rx="0" fill="#b9c8bd"/><path d="M0 309Q471 150 1000 318V580H0Z" fill="#728965"/><g transform="translate(156 156) scale(1.65)"><rect x="-11" y="0" width="22" height="140" rx="0" fill="#5c4327"/><g class="art-sway"><ellipse cx="0" cy="-3" rx="52" ry="52" fill="#43562e"/><ellipse cx="-30" cy="18" rx="39" ry="39" fill="#556b37"/><ellipse cx="27" cy="18" rx="44" ry="44" fill="#4b6330"/><ellipse cx="-7" cy="-34" rx="37" ry="37" fill="#536b35"/><ellipse cx="23" cy="-23" rx="28" ry="28" fill="#627b42"/></g></g><g transform="translate(245 210) scale(1.6)"><rect x="0" y="0" width="300" height="162" rx="42" fill="#d6c8a5"/><rect x="18" y="17" width="264" height="133" rx="31" fill="#282c27"/><rect x="36" y="29" width="219" height="108" rx="23" fill="#485050" class="art-glow"/><rect x="47" y="84" width="196" height="47" rx="12" fill="#b6afa2"/><rect x="47" y="113" width="196" height="18" rx="5" fill="#999387"/><path d="M127 25L127 137" fill="none" stroke="#888578" stroke-width="4" stroke-linecap="round"/><circle cx="51.0" cy="47.0" r="2.1" fill="#ffdf99" class="art-twinkle"/><path d="M225 3q-9 -9 -2 -16t0 -18" fill="none" stroke="#e8e1d5" stroke-width="2.8" opacity=".15" class="art-rise"/></g><rect x="0" y="479" width="1000" height="101" rx="0" fill="#8a9c6a"/><style>
+@media (prefers-reduced-motion: no-preference) {
+  .art-glow { transform-box: fill-box; transform-origin: center; animation: art-glow 5s ease-in-out 0s 3 alternate forwards; }
+  .art-rise { transform-box: fill-box; transform-origin: center; animation: art-rise 5s ease-out 0s 3 normal forwards; }
+  .art-twinkle { transform-box: fill-box; transform-origin: center; animation: art-twinkle 2.4s ease-in-out 0s 3 alternate forwards; }
+  .art-sway { transform-box: fill-box; transform-origin: center bottom; animation: art-sway 5.4s ease-in-out -1.7s 4 alternate forwards; }
+  @keyframes art-glow {
+  0% { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+  @keyframes art-rise {
+  0% { opacity: 0; translate: 0px 6px; scale: 0.8; }
+  30% { opacity: 0.8; }
+  100% { opacity: 0; translate: 6px -46px; scale: 1.5; }
+}
+  @keyframes art-twinkle {
+  0% { opacity: 0.2; scale: 0.6; }
+  100% { opacity: 1; scale: 1; }
+}
+  @keyframes art-sway {
+  0% { rotate: -3.5deg; }
+  100% { rotate: 3.5deg; }
+}
+}
+</style></svg>

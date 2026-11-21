@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 390" fill="none"><rect x="0" y="0" width="700" height="390" rx="0" fill="#9ec7df"/><path d="M0 212 Q240 93 398 160 T720 131 L720 390 H0Z" fill="#6f8d6b" /><path d="M0 244 Q141 180 317 230 T710 182 V390 H0Z" fill="#478849" /><path d="M77 390 Q443 306 261 251 T460 199 Q757 273 434 390Z" fill="#a7c677" /><ellipse cx="225" cy="278" rx="65" ry="17" fill="#d7c99c"/><path d="M491 215v-65l42 15-42 11" fill="none" stroke="#fff" stroke-width="4"/><path d="M491 150l41 14-41 11Z" fill="#f9814f" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 390" fill="none"><rect x="0" y="0" width="700" height="390" rx="0" fill="#9ec7df"/><g fill="#fff" opacity=".4"><g class="art-drift"><ellipse cx="-80" cy="57" rx="35" ry="9"/><ellipse cx="-57" cy="51" rx="20" ry="12"/><ellipse cx="-35" cy="57" rx="28" ry="8"/></g><g class="art-drift-phase-2"><ellipse cx="279" cy="31" rx="35" ry="9"/><ellipse cx="302" cy="25" rx="20" ry="12"/><ellipse cx="324" cy="31" rx="28" ry="8"/></g><g class="art-drift-phase-3"><ellipse cx="480" cy="88" rx="35" ry="9"/><ellipse cx="503" cy="82" rx="20" ry="12"/><ellipse cx="525" cy="88" rx="28" ry="8"/></g></g><path d="M0 212 Q240 93 398 160 T720 131 L720 390 H0Z" fill="#6f8d6b"/><path d="M0 244 Q141 180 317 230 T710 182 V390 H0Z" fill="#478849"/><path d="M77 390 Q443 306 261 251 T460 199 Q757 273 434 390Z" fill="#a7c677"/><ellipse cx="225" cy="278" rx="65" ry="17" fill="#d7c99c"/><path d="M491 215v-65l42 15-42 11" fill="none" stroke="#fff" stroke-width="4"/><path d="M491 150l41 14-41 11Z" fill="#f9814f" class="art-sway"/><g><circle cx="430" cy="316" r="7" fill="#fbf9e8" class="art-glow"/><g class="art-spin"><circle cx="427" cy="314" r=".85" fill="#b4b79e"/><circle cx="431" cy="312" r=".85" fill="#b4b79e"/><circle cx="432" cy="318" r=".85" fill="#b4b79e"/></g></g><style>
+@media (prefers-reduced-motion: no-preference) {
+  .art-drift { transform-box: fill-box; transform-origin: center; animation: art-drift 17s linear 0s 1.13559 normal none; --distance: 320px; }
+  .art-drift-phase-2 { transform-box: fill-box; transform-origin: center; animation: art-drift 22.2s linear -8.6s 1.42373 normal none; --distance: 320px; }
+  .art-drift-phase-3 { transform-box: fill-box; transform-origin: center; animation: art-drift 27.4s linear -17.2s 1.64407 normal none; --distance: 320px; }
+  .art-sway { transform-box: fill-box; transform-origin: left center; animation: art-sway 4.5s ease-in-out 0s 4 alternate forwards; }
+  .art-spin { transform-box: fill-box; transform-origin: center; animation: art-spin 14s linear 0s 2 normal none; }
+  .art-glow { transform-box: fill-box; transform-origin: center; animation: art-glow 5s ease-in-out 0s 3 alternate forwards; }
+  @keyframes art-drift { from { translate: 0; } to { translate: var(--distance, 45px); } }
+  @keyframes art-sway {
+  0% { rotate: -3.5deg; }
+  100% { rotate: 3.5deg; }
+}
+  @keyframes art-spin {
+  100% { rotate: 360deg; }
+}
+  @keyframes art-glow {
+  0% { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+}
+</style></svg>

@@ -1,0 +1,15 @@
+#s4 dl > div { position: relative; }
+#s4 dl > div::after { content: ""; position: absolute; inset-inline-start: 0; inset-block-end: 0; width: 73%; height: 2px; background: var(--accent, #8069ac); transform-origin: right; }
+#s4 dl > div:nth-child(2)::after { width: 91%; }
+#s4 dl > div:nth-child(3)::after { width: 58%; }
+
+@media (prefers-reduced-motion: no-preference) {
+
+  @supports (animation-timeline: view()) {
+.consultancy { view-timeline-name: --consultancy; }
+    [data-design="kapitel"] .consultancy .cover { animation: desk-drift linear both; animation-timeline: --consultancy; animation-range: exit 0% exit 100%; }
+    #s4 dl > div::after { animation: metric-bar linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    @keyframes desk-drift { from { transform: scale(1.06); } to { transform: translateY(1.2cqw) scale(1.06); } }
+    @keyframes metric-bar { from { transform: scaleX(0); } }
+  }
+}

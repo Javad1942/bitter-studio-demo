@@ -12,3 +12,7 @@
 
 @media(min-width:768px){.flussbett .story-copy{transform:translateY(20px)}.flussbett .gallery{padding-bottom:1.1vw}.flussbett .tiles{min-height:clamp(245px,19.6vw,375px)}.flussbett .gallery-tile:nth-child(2n){margin-top:3.5%}}
 @media(max-width:767px){.flussbett .service{min-height:157px}.flussbett .story{padding-block-end:18px}.flussbett .facts{margin-top:7px}.flussbett .story-copy{gap:9px}.flussbett .notes article{min-height:144px}.flussbett .bench{padding-block-end:63px}}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}

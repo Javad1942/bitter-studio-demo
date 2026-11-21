@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 350">
+  <defs>
+    <linearGradient id="wall" x2="1" y2="1"><stop stop-color="#c3cac5"/><stop offset=".72" stop-color="#e4dace"/><stop offset="1" stop-color="#ccc2ad"/></linearGradient>
+    <linearGradient id="metal" x2=".3" y2="1"><stop stop-color="#faf4e5"/><stop offset=".45" stop-color="#d9d7ca"/><stop offset="1" stop-color="#acb4aa"/></linearGradient>
+    <pattern id="paper" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M1 1h1" stroke="#283331" opacity=".09"/></pattern>
+  </defs>
+  <rect width="620" height="350" fill="url(#wall)"/><g opacity=".12" stroke="#5e675e" stroke-width=".6"><path d="M0 0v350M0 0h620"/><path d="M25 0v350M0 25h620"/><path d="M50 0v350M0 50h620"/><path d="M75 0v350M0 75h620"/><path d="M100 0v350M0 100h620"/><path d="M125 0v350M0 125h620"/><path d="M150 0v350M0 150h620"/><path d="M175 0v350M0 175h620"/><path d="M200 0v350M0 200h620"/><path d="M225 0v350M0 225h620"/><path d="M250 0v350M0 250h620"/><path d="M275 0v350M0 275h620"/><path d="M300 0v350M0 300h620"/><path d="M325 0v350M0 325h620"/><path d="M350 0v350M0 350h620"/><path d="M375 0v350M0 375h620"/><path d="M400 0v350M0 400h620"/><path d="M425 0v350M0 425h620"/><path d="M450 0v350M0 450h620"/><path d="M475 0v350M0 475h620"/><path d="M500 0v350M0 500h620"/><path d="M525 0v350M0 525h620"/><path d="M550 0v350M0 550h620"/><path d="M575 0v350M0 575h620"/><path d="M600 0v350M0 600h620"/><path d="M625 0v350M0 625h620"/></g>
+  <path d="M0 267l620-39v122H0" fill="#979d92"/><path d="m0 267 620-39" stroke="#738477" fill="none"/>
+  <ellipse class="sun-patch" cx="433" cy="75" rx="134" ry="47" fill="#f7da9f" opacity=".4"/>
+  <g stroke-linecap="round" stroke-linejoin="round"><path d="M160 122l50-32 256 19-36 29" fill="#ede8d8"/><path d="m431 138 36-28v130l-38 23" fill="#7c8b7d"/>
+ <rect class="panel" x="161" y="122" width="269" height="141" rx="11" fill="url(#metal)" stroke="#52635b" stroke-width="2"/>
+ <rect x="189" y="145" width="137" height="85" rx="4" fill="#61766c"/><rect x="198" y="154" width="118" height="67" rx="2" fill="#c7cfab"/>
+ <path class="ink" pathLength="1" d="m209 203 17-12 16 7 21-26 23 8 18-13" fill="none" stroke="#566f5c" stroke-width="3"/>
+ <circle cx="375" cy="184" r="31" fill="#7e8f7f" stroke="#576a5e"/><circle cx="375" cy="184" r="23" fill="#d6d8c3"/><path d="m376 184 10-15" stroke="#7e694b" stroke-width="3"/></g><rect width="620" height="350" fill="url(#paper)" pointer-events="none"/>
+  <style>@media(prefers-reduced-motion:no-preference){
+   .sun-patch {animation: warmth 5s ease-in-out 3 alternate forwards, drift 17s ease-in-out 1 alternate}
+   .ink {stroke-dasharray:1;animation: draw 1.8s .2s cubic-bezier(.6,0,.4,1) both}
+   .panel {animation: enamel 1.4s 1.6s ease both}
+   @keyframes draw{from{stroke-dashoffset:1}}
+   @keyframes enamel{from{opacity:0}}
+   @keyframes warmth{to{opacity:.7}} @keyframes drift{to{translate:18px -4px}}
+  }</style>
+</svg>

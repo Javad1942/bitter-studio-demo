@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" preserveAspectRatio="xMidYMid meet"><rect width="840" height="480" fill="#d2c9b9"/><circle cx="310" cy="240" r="136" fill="#3f4fdb"/><circle cx="359" cy="240" r="125" fill="#6d85f5"/><circle cx="408" cy="240" r="114" fill="#97b7fb"/><circle cx="457" cy="240" r="103" fill="#c1dbfc"/><circle cx="506" cy="240" r="92" fill="#f1edfc"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" preserveAspectRatio="xMidYMid meet"><rect width="840" height="480" fill="#d2c9b9"/><circle cx="310" cy="240" r="136" fill="#3f4fdb"/><circle cx="359" cy="240" r="125" fill="#6d85f5" class="art-glow"/><circle cx="408" cy="240" r="114" fill="#97b7fb" class="art-glow-phase-2"/><circle cx="457" cy="240" r="103" fill="#c1dbfc" class="art-glow-phase-3"/><circle cx="506" cy="240" r="92" fill="#f1edfc"/><g fill="#fff6e9" class="art-turn"><circle cx="408" cy="157" r="3" class="art-twinkle"/><circle cx="465" cy="214" r="3" class="art-twinkle-phase-2"/><circle cx="390" cy="248" r="2" class="art-twinkle-phase-3"/><circle cx="466" cy="308" r="4" class="art-twinkle-phase-4"/><circle cx="333" cy="198" r="3" class="art-twinkle-phase-5"/><circle cx="379" cy="287" r="3" class="art-twinkle-phase-6"/><circle cx="427" cy="246" r="2" class="art-twinkle-phase-7"/></g><style>
+@media (prefers-reduced-motion: no-preference) {
+  .art-glow { transform-box: fill-box; transform-origin: center; animation: art-glow 5s ease-in-out -2.6s 3 alternate forwards; }
+  .art-glow-phase-2 { transform-box: fill-box; transform-origin: center; animation: art-glow 5s ease-in-out 0s 3 alternate forwards; }
+  .art-glow-phase-3 { transform-box: fill-box; transform-origin: center; animation: art-glow 5s ease-in-out -1.3s 3 alternate forwards; }
+  .art-twinkle { transform-box: fill-box; transform-origin: center; animation: art-twinkle 2.4s ease-in-out 0s 3 alternate forwards; }
+  .art-twinkle-phase-2 { transform-box: fill-box; transform-origin: center; animation: art-twinkle 2.9s ease-in-out -0.8s 3 alternate forwards; }
+  .art-twinkle-phase-3 { transform-box: fill-box; transform-origin: center; animation: art-twinkle 3.4s ease-in-out -1.6s 3 alternate forwards; }
+  .art-twinkle-phase-4 { transform-box: fill-box; transform-origin: center; animation: art-twinkle 3.9s ease-in-out -2.4s 3 alternate forwards; }
+  .art-twinkle-phase-5 { transform-box: fill-box; transform-origin: center; animation: art-twinkle 4.4s ease-in-out -3.2s 3 alternate forwards; }
+  .art-twinkle-phase-6 { transform-box: fill-box; transform-origin: center; animation: art-twinkle 4.9s ease-in-out -4s 3 alternate forwards; }
+  .art-twinkle-phase-7 { transform-box: fill-box; transform-origin: center; animation: art-twinkle 5.4s ease-in-out -4.8s 3 alternate forwards; }
+  .art-turn { transform-box: fill-box; transform-origin: center; animation: art-turn 7.1s ease-in-out -1.9s 4 alternate forwards; }
+  @keyframes art-glow {
+  0% { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+  @keyframes art-twinkle {
+  0% { opacity: 0.2; scale: 0.6; }
+  100% { opacity: 1; scale: 1; }
+}
+  @keyframes art-turn {
+  0% { rotate: -7deg; }
+  100% { rotate: 7deg; }
+}
+}
+</style></svg>

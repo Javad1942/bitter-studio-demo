@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Mona Sans";
+  src: url("mona-sans-variable.woff2") format("woff2");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+@property --exit-width { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --exit-weight { syntax: "<number>"; inherits: true; initial-value: 0; }
+.typeface {
+  font-family: "Mona Sans", Arial, sans-serif;
+  font-size: 27vw;
+  letter-spacing: .018em;
+}
+.typeface .glyph {
+  font-variation-settings:
+    "wdth" clamp(75, calc(var(--width-axis) + var(--width-offset, 0) + var(--exit-width)), 125),
+    "wght" clamp(200, calc(var(--weight-axis) + var(--weight-offset, 0) + var(--exit-weight)), 900);
+  -webkit-text-stroke-width: 0;
+}
+@media (max-width: 650px) { .typeface { font-size: 26.4vw; } }
+.typeface .glyph { display: inline-block; }
+.type-band { direction: ltr; }
+.marquee-track { display: flex; width: max-content; direction: ltr; }
+.marquee-track > div { direction: rtl; flex: none; }
+.type-band .marquee-track { color: inherit; }
+
+@media (prefers-reduced-motion: no-preference) {
+[data-design="grotesk"] .typeface { animation: none; }
+  .typeface .glyph { animation: letter-arrive 1.2s cubic-bezier(.2,.7,.2,1) calc(.12s + var(--order)*.07s) backwards; }
+  .marquee-track { animation: band-travel 38s linear infinite; }
+  @keyframes letter-arrive { from { font-variation-settings: "wdth" 75, "wght" 200; } }
+  @keyframes band-travel { to { translate: -50% 0; } }
+  @supports (animation-timeline: view()) {
+[data-design="grotesk"] .typeface { animation: type-exit linear both; animation-timeline: view(); animation-range: exit 0% exit 100%; }
+    @keyframes type-exit { to { --exit-width: -36; --exit-weight: 260; } }
+    .editorial-quote blockquote { view-timeline-name: --statement; }
+    .editorial-quote blockquote span { display: inline-block; animation: statement-weight linear both; animation-timeline: --statement; animation-range: entry 12% cover 42%; }
+    @keyframes statement-weight { from { font-weight: 200; scale: .75 1; } }
+
+    .word-light { view-timeline-name: --paragraph; }
+    .word-light > span {
+      animation: light-up linear both;
+      animation-timeline: --paragraph;
+      animation-range: cover calc(14% + var(--order) * 1%) cover calc(20% + var(--order) * 1%);
+    }
+    @keyframes light-up { from { opacity: .16; } }
+  }
+}
+
+.glyph { position: relative; }
+.glyph::after {
+  content: attr(data-axes);
+  position: absolute; inset-inline: 0; top: 94%;
+  border-block-start: 1px solid #a9a79c80;
+  padding-block-start: .45em; font: 400 clamp(7px, .62vw, 10px)/1.4 monospace;
+  letter-spacing: 0; text-align: start; color: #605e58; pointer-events: none;
+}

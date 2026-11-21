@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" preserveAspectRatio="xMidYMid meet"><rect width="840" height="480" fill="#ded8cf"/><rect transform="rotate(-13 420 240)" x="241" y="83" rx="23" width="195" height="300" fill="#312d52"/><rect transform="rotate(0 420 240)" x="334" y="83" rx="23" width="195" height="300" fill="#f16544"/><rect transform="rotate(13 420 240)" x="427" y="83" rx="23" width="195" height="300" fill="#c9dc98"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" preserveAspectRatio="xMidYMid meet"><rect width="840" height="480" fill="#ded8cf"/><rect transform="rotate(-13 420 240)" x="241" y="83" rx="23" width="195" height="300" fill="#312d52" class="spark"/><rect transform="rotate(0 420 240)" x="334" y="83" rx="23" width="195" height="300" fill="#f16544" class="spark" style="animation-delay:-0.8s"/><rect transform="rotate(13 420 240)" x="427" y="83" rx="23" width="195" height="300" fill="#c9dc98" class="spark" style="animation-delay:-1.6s"/><style>
+@media (prefers-reduced-motion: no-preference) {
+.spark { transform-box: fill-box; transform-origin: center; animation: art-spark 2.4s ease-in-out 3 alternate forwards; }
+@keyframes art-spark { from { opacity: .2; scale: .6 } to { opacity: 1; scale: 1 } }
+}
+</style></svg>

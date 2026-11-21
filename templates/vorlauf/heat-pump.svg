@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 350">
+  <defs>
+    <linearGradient id="wall" x2="1" y2="1"><stop stop-color="#c3cac5"/><stop offset=".72" stop-color="#e4dace"/><stop offset="1" stop-color="#ccc2ad"/></linearGradient>
+    <linearGradient id="metal" x2=".3" y2="1"><stop stop-color="#faf4e5"/><stop offset=".45" stop-color="#d9d7ca"/><stop offset="1" stop-color="#acb4aa"/></linearGradient>
+    <pattern id="paper" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M1 1h1" stroke="#283331" opacity=".09"/></pattern>
+  </defs>
+  <rect width="620" height="350" fill="url(#wall)"/><g opacity=".12" stroke="#5e675e" stroke-width=".6"><path d="M0 0v350M0 0h620"/><path d="M25 0v350M0 25h620"/><path d="M50 0v350M0 50h620"/><path d="M75 0v350M0 75h620"/><path d="M100 0v350M0 100h620"/><path d="M125 0v350M0 125h620"/><path d="M150 0v350M0 150h620"/><path d="M175 0v350M0 175h620"/><path d="M200 0v350M0 200h620"/><path d="M225 0v350M0 225h620"/><path d="M250 0v350M0 250h620"/><path d="M275 0v350M0 275h620"/><path d="M300 0v350M0 300h620"/><path d="M325 0v350M0 325h620"/><path d="M350 0v350M0 350h620"/><path d="M375 0v350M0 375h620"/><path d="M400 0v350M0 400h620"/><path d="M425 0v350M0 425h620"/><path d="M450 0v350M0 450h620"/><path d="M475 0v350M0 475h620"/><path d="M500 0v350M0 500h620"/><path d="M525 0v350M0 525h620"/><path d="M550 0v350M0 550h620"/><path d="M575 0v350M0 575h620"/><path d="M600 0v350M0 600h620"/><path d="M625 0v350M0 625h620"/></g>
+  <path d="M0 267l620-39v122H0" fill="#979d92"/><path d="m0 267 620-39" stroke="#738477" fill="none"/>
+  <ellipse class="sun-patch" cx="433" cy="75" rx="134" ry="47" fill="#f7da9f" opacity=".4"/>
+  <g stroke-linecap="round" stroke-linejoin="round"><ellipse cx="326" cy="276" rx="171" ry="17" fill="#47554e" opacity=".24"/>
+ <path d="M151 112l39-24h270l-32 23" fill="#f3ecdc" stroke="#53655d"/><path d="m427 111 33-21v146l-33 24" fill="#849286" stroke="#53655d"/>
+ <rect class="panel" x="151" y="111" width="276" height="151" rx="5" fill="url(#metal)" stroke="#53655d"/>
+ <path class="ink" pathLength="1" d="M151 118q0-7 7-7h264q5 0 5 6v137q0 7-7 7H156q-5 0-5-6z" fill="none" stroke="#53655d" stroke-width="2"/>
+ <g transform="translate(246 185)"><circle r="66" fill="#43534d"/><path d="M0 0Q18-60 53-49Q50-24 9-4Z" fill="#566d67" transform="rotate(0.00)"/><path d="M0 0Q18-60 53-49Q50-24 9-4Z" fill="#566d67" transform="rotate(51.43)"/><path d="M0 0Q18-60 53-49Q50-24 9-4Z" fill="#566d67" transform="rotate(102.86)"/><path d="M0 0Q18-60 53-49Q50-24 9-4Z" fill="#566d67" transform="rotate(154.29)"/><path d="M0 0Q18-60 53-49Q50-24 9-4Z" fill="#566d67" transform="rotate(205.71)"/><path d="M0 0Q18-60 53-49Q50-24 9-4Z" fill="#566d67" transform="rotate(257.14)"/><path d="M0 0Q18-60 53-49Q50-24 9-4Z" fill="#566d67" transform="rotate(308.57)"/><circle r="19" stroke="#c2c6b6" stroke-width="1.5" fill="none"/><circle r="29" stroke="#c2c6b6" stroke-width="1.5" fill="none"/><circle r="39" stroke="#c2c6b6" stroke-width="1.5" fill="none"/><circle r="49" stroke="#c2c6b6" stroke-width="1.5" fill="none"/><circle r="59" stroke="#c2c6b6" stroke-width="1.5" fill="none"/><circle r="11" fill="#b1b7a9"/></g><path d="M342 126h58" stroke="#647369" stroke-width="2"/><path d="M342 132h58" stroke="#647369" stroke-width="2"/><path d="M342 138h58" stroke="#647369" stroke-width="2"/><path d="M342 144h58" stroke="#647369" stroke-width="2"/><path d="M342 150h58" stroke="#647369" stroke-width="2"/><path d="M342 156h58" stroke="#647369" stroke-width="2"/><path d="M342 162h58" stroke="#647369" stroke-width="2"/><path d="M342 168h58" stroke="#647369" stroke-width="2"/><path d="M342 174h58" stroke="#647369" stroke-width="2"/><path d="M342 180h58" stroke="#647369" stroke-width="2"/><path d="M342 186h58" stroke="#647369" stroke-width="2"/><path d="M342 192h58" stroke="#647369" stroke-width="2"/><path d="M342 198h58" stroke="#647369" stroke-width="2"/>
+ <path d="M339 220h42" stroke="#d08046" stroke-width="5"/><path d="M182 262v13h26v-13m175 0v13h26v-13" fill="#54635a"/></g><rect width="620" height="350" fill="url(#paper)" pointer-events="none"/>
+  <style>@media(prefers-reduced-motion:no-preference){
+   .sun-patch {animation: warmth 5s ease-in-out 3 alternate forwards, drift 17s ease-in-out 1 alternate}
+   .ink {stroke-dasharray:1;animation: draw 1.8s .2s cubic-bezier(.6,0,.4,1) both}
+   .panel {animation: enamel 1.4s 1.6s ease both}
+   @keyframes draw{from{stroke-dashoffset:1}}
+   @keyframes enamel{from{opacity:0}}
+   @keyframes warmth{to{opacity:.7}} @keyframes drift{to{translate:18px -4px}}
+  }</style>
+</svg>

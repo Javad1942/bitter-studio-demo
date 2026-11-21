@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" preserveAspectRatio="xMidYMid meet"><rect width="840" height="480" fill="#e1ecee"/><rect transform="rotate(-13 420 240)" x="241" y="83" rx="23" width="195" height="300" fill="#51a0ab"/><rect transform="rotate(0 420 240)" x="334" y="83" rx="23" width="195" height="300" fill="#e3d3b6"/><rect transform="rotate(13 420 240)" x="427" y="83" rx="23" width="195" height="300" fill="#fcf8e6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" preserveAspectRatio="xMidYMid meet"><rect width="840" height="480" fill="#e1ecee"/><rect transform="rotate(-13 420 240)" x="241" y="83" rx="23" width="195" height="300" fill="#51a0ab"/><rect transform="rotate(0 420 240)" x="334" y="83" rx="23" width="195" height="300" fill="#e3d3b6"/><rect transform="rotate(13 420 240)" x="427" y="83" rx="23" width="195" height="300" fill="#fcf8e6" class="sample-card"/><style>
+@media (prefers-reduced-motion: no-preference) {
+.sample-card { transform-box: fill-box; transform-origin: center bottom; animation: card-sway 4.5s ease-in-out 4 alternate forwards; }
+@keyframes card-sway { from { rotate: -2deg; } to { rotate: 2deg; } }
+}
+</style></svg>

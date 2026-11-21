@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" preserveAspectRatio="xMidYMid meet"><rect width="840" height="480" fill="#e3ddd0"/><rect x="256" y="34" width="325" height="411" fill="#ee5ca4"/><text x="280" y="237" font-size="108" font-weight="bold" font-family="Arial">Aa</text><text x="282" y="285" font-size="28" font-family="Arial">Form</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" preserveAspectRatio="xMidYMid meet"><rect width="840" height="480" fill="#e3ddd0"/><rect x="256" y="34" width="325" height="411" fill="#ee5ca4" class="art-glow"/><text x="280" y="237" font-size="108" font-weight="bold" font-family="Arial" class="art-float">Aa</text><text x="282" y="285" font-size="28" font-family="Arial" class="art-float-phase-2">Form</text><style>
+@media (prefers-reduced-motion: no-preference) {
+  .art-float { transform-box: fill-box; transform-origin: center; animation: art-float 4.8s ease-in-out 0s 4 alternate none; }
+  .art-float-phase-2 { transform-box: fill-box; transform-origin: center; animation: art-float 5.7s ease-in-out -1.6s 4 alternate none; }
+  .art-glow { transform-box: fill-box; transform-origin: center; animation: art-glow 5s ease-in-out 0s 3 alternate forwards; }
+  @keyframes art-float {
+  0% { translate: 0px; }
+  100% { translate: 0px -7px; }
+}
+  @keyframes art-glow {
+  0% { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+}
+</style></svg>

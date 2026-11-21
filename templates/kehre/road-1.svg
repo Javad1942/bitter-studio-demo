@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 390"><rect x="0" y="0" width="650" height="390" rx="0" fill="#593b3f"/><circle cx="445.00" cy="121.00" r="63.00" fill="#f8c98f"/><path d="M0 264L88 194L161 233L281 115L341 169L382 137L518 261L618 188L650 211V391H0Z" fill="#233145" /><path d="M0 303Q177 244 292 282T650 279V390H0Z" fill="#142135" /><path d="M194 390Q442 304 384 272Q478 308 333 390Z" fill="#f8c98f" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 390"><rect x="0" y="0" width="650" height="390" rx="0" fill="#593b3f"/><circle cx="445.00" cy="121.00" r="63.00" fill="#f8c98f" class="art-glow"/><path d="M0 264L88 194L161 233L281 115L341 169L382 137L518 261L618 188L650 211V391H0Z" fill="#233145"/><path d="M0 303Q177 244 292 282T650 279V390H0Z" fill="#142135"/><path d="M194 390Q442 304 384 272Q478 308 333 390Z" fill="#f8c98f"/><style>
+@media (prefers-reduced-motion: no-preference) {
+  .art-glow { transform-box: fill-box; transform-origin: center; animation: art-glow 5s ease-in-out 0s 3 alternate forwards; }
+  @keyframes art-glow {
+  0% { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+}
+</style></svg>

@@ -17,3 +17,7 @@ body{font-weight:440}.kalma-hero{background:linear-gradient(#fff,var(--bg));padd
 
 @media(min-width:768px){.kalma .story{padding-bottom:2vw}.kalma .statement{padding-bottom:2.3vw}.kalma .faq{padding-bottom:3.2vw}.kalma .gallery-tile img{aspect-ratio:.88}.kalma .gallery{padding-bottom:2vw}.kalma .notes{padding-bottom:2.7vw}.kalma .products{padding-top:clamp(75px,7.6vw,125px)}}
 @media(max-width:767px){.kalma .products{padding-top:69px}.kalma .story{padding-bottom:10px}.kalma .story-copy{gap:7px}.kalma .facts{margin-top:0}.kalma .facts span{padding:9px}.kalma .team{margin-top:0}.kalma .statement{padding-block:30px}.kalma .faq{padding-block:32px 24px}.kalma .faq details{padding:12px 15px}.kalma .gallery-tile img{aspect-ratio:.82}.kalma .gallery{padding-bottom:25px}.kalma .notes{padding-block-end:24px}}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
