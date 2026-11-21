@@ -42,3 +42,19 @@
  .vorlauf .hero{min-height:max(670px,100svh);align-items:flex-end;padding:0 18px 30px}.vorlauf .hero .thermal-scene{bottom:auto;height:60%;min-height:355px}.vorlauf .hero .thermal-scene img{object-position:77% center}.heat-copy{width:100%;margin:0}.heat-copy h1{font-size:clamp(44px,11vw,72px);max-width:13ch}.heat-copy p{font-size:14px;max-width:40ch;margin:12px 0}.heat-copy .btn{font-size:14px}.heat-readout{padding:6px 9px;font-size:10px}.heat-readout b{font-size:19px}.heat-scale{font-size:10px}.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.steps article{padding:15px}.thermal-scene.inline{width:100%;min-height:0;aspect-ratio:1.5}
 }
 @media(max-height:670px) and (min-width:751px){.nordlicht .hero{padding-top:86px}.golf{min-height:575px}.heat-copy h1{font-size:6vw}}
+
+@media (max-width: 700px) {
+  .nordlicht .hero {padding-top:clamp(80px,10.5svh,110px)}
+  .nord-copy .mobile-break {display:block}
+  .nord-copy .mobile-break + br {display:none}
+  .nord-copy h1 {font-size:clamp(35px,10vw,56px);line-height:1.16}
+  .weitsicht .optic-scene {height:clamp(298px,47svh,540px)}
+  .klecks .hero {padding-top:clamp(76px,10svh,106px)}
+  .klecks .ice-copy {width:100%;max-width:none}
+  .klecks .hero h1 {width:100%;max-width:none;font-size:clamp(33px,10vw,55px);line-height:1.13}
+  .ice-copy .mobile-break {display:block}
+  .ice-copy p {max-width:100%;margin:12px auto;font-size:15px;line-height:1.6}
+  .klecks .scoops-frame {position:absolute;width:84%;aspect-ratio:1.5;left:8%;top:53%;z-index:1}
+  .klecks .scoops-frame .scoops {position:static;display:block;width:100%;height:100%;transform:none}
+  .klecks .ice-badge {bottom:4%}
+}

@@ -8,8 +8,9 @@
     <link rel="icon" href="../../bitter-mark.svg" />
     <link rel="stylesheet" href="../series-h-c/site.css" />
     <script src="../series-h-c/site.js" defer></script>
-  </head>
-  <body class="sichtbar">
+  <link rel="stylesheet" href="../motion.css">
+</head>
+  <body data-design="sichtbar" class="sichtbar">
     <a class="skip" href="#content">رفتن به محتوا</a>
     <header class="topbar">
       <a class="brand" href="#home"
@@ -82,11 +83,11 @@
           </div>
         </div>
       </section>
-      <section id="services" class="block cards">
-        <h2>با هم روی چی کار می‌کنیم؟</h2>
+      <section data-scroll-motion="section" id="services" class="block cards">
+        <h2 data-scroll-motion="heading">با هم روی چی کار می‌کنیم؟</h2>
         <div class="three workshop">
           <article>
-            <img src="portrait-1.svg" alt="" />
+            <img data-scroll-motion="picture" src="portrait-1.svg" alt="" />
             <h3>استراتژی محتوا</h3>
             <p>
               موضوع‌هایی پیدا می‌کنیم که هم به کار تو میان، هم برای مخاطبت ارزش
@@ -94,32 +95,32 @@
             </p>
           </article>
           <article>
-            <img src="portrait-2.svg" alt="" />
+            <img data-scroll-motion="picture" src="portrait-2.svg" alt="" />
             <h3>جلوی دوربین</h3>
             <p>با تمرین‌های کوتاه، روایت کردن جلوی دوربین راحت‌تر می‌شه.</p>
           </article>
           <article>
-            <img src="portrait-3.svg" alt="" />
+            <img data-scroll-motion="picture" src="portrait-3.svg" alt="" />
             <h3>داستان برند</h3>
             <p>لحن و تصویر مشخصی برای معرفی کارت می‌سازیم.</p>
           </article>
         </div>
       </section>
-      <section class="picture">
+      <section data-scroll-motion="section" class="picture">
         <button
           class="artbutton"
           data-view
           data-caption="یک روز آفتابی در مسیر کارگاه"
         >
-          <img
+          <img data-scroll-motion="picture"
             src="landscape.svg"
             alt="یک روز آفتابی در مسیر کارگاه"
             loading="lazy"
           />
         </button>
       </section>
-      <section id="steps" class="block steps">
-        <h2>از کجا شروع کنیم؟</h2>
+      <section data-scroll-motion="section" id="steps" class="block steps">
+        <h2 data-scroll-motion="heading">از کجا شروع کنیم؟</h2>
         <div class="three">
           <article>
             <h3>اول آشنا می‌شیم</h3>
@@ -140,8 +141,8 @@
           </article>
         </div>
       </section>
-      <section id="prices" class="block prices">
-        <h2>برای ریتم خودت انتخاب کن</h2>
+      <section data-scroll-motion="section" id="prices" class="block prices">
+        <h2 data-scroll-motion="heading">برای ریتم خودت انتخاب کن</h2>
         <div class="three pricing">
           <article>
             <h3>جلسهٔ آشنایی</h3>
@@ -166,21 +167,21 @@
           </article>
         </div>
       </section>
-      <section class="picture wideart">
+      <section data-scroll-motion="section" class="picture wideart">
         <button
           class="artbutton"
           data-view
           data-caption="مطالعهٔ رنگ و سایه در کارگاه"
         >
-          <img
+          <img data-scroll-motion="picture"
             src="storyboard.svg"
             alt="مطالعهٔ رنگ و سایه در کارگاه"
             loading="lazy"
           />
         </button>
       </section>
-      <section id="faq" class="block split">
-        <h2>شاید برات سؤال باشه</h2>
+      <section data-scroll-motion="section" id="faq" class="block split">
+        <h2 data-scroll-motion="heading">شاید برات سؤال باشه</h2>
         <div class="faqs">
           <details name="faq">
             <summary>اگر تازه شروع کرده باشم چی؟</summary>
@@ -199,10 +200,10 @@
           </details>
         </div>
       </section>
-      <section class="contact block" id="contact">
+      <section data-scroll-motion="section" class="contact block" id="contact">
         <div>
           <span class="eyebrow">تماس با زیشت‌بار</span>
-          <h2>بیا قصه‌ات رو بشنویم.</h2>
+          <h2 data-scroll-motion="heading">بیا قصه‌ات رو بشنویم.</h2>
           <p>بنویس الان کجای راهی و دوست داری به چه آدم‌هایی برسی.</p>
         </div>
         <form class="brief">

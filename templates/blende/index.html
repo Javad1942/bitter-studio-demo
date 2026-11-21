@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="../choose.css" />
     <script defer src="../series-b/interact.js"></script>
     <script defer src="../series-b/notes.js"></script>
-  </head>
-  <body class="blende" id="top">
+  <link rel="stylesheet" href="../motion.css">
+<link rel="stylesheet" href="../location.css">
+  <script defer src="../location.js"></script>
+</head>
+  <body data-design="blende" class="blende" id="top">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <header class="mast">
       <div class="shell mast-inner">
@@ -67,11 +70,11 @@
           >
         </div>
       </section>
-      <section class="section shell" id="work">
+      <section data-scroll-motion="section" class="section shell" id="work">
         <div class="section-head">
           <div>
             <div class="eyebrow">استودیوی تصویر</div>
-            <h2>در قاب استودیو</h2>
+            <h2 data-scroll-motion="heading">در قاب استودیو</h2>
           </div>
           <p>منتخبی از روایت‌های کوتاه، پرتره و تصویر متحرک.</p>
         </div>
@@ -81,9 +84,9 @@
           ><button data-filter="فیلم" aria-pressed="false">فیلم</button>
         </div>
         <div class="work-grid">
-          <article class="work-card" data-category="عکاسی">
+          <article data-scroll-motion="tile" class="work-card" data-category="عکاسی">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-1.svg"
                 loading="lazy"
                 width="1000"
@@ -100,9 +103,9 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="فیلم">
+          <article data-scroll-motion="tile" class="work-card" data-category="فیلم">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture pop"
                 src="work-2.svg"
                 loading="lazy"
                 width="1000"
@@ -119,9 +122,9 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="عکاسی">
+          <article data-scroll-motion="tile" class="work-card" data-category="عکاسی">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-3.svg"
                 loading="lazy"
                 width="1000"
@@ -140,12 +143,12 @@
           </article>
         </div>
       </section>
-      <section class="band" id="about">
+      <section data-scroll-motion="section" class="band" id="about">
         <div class="section shell">
           <div class="section-head">
             <div>
               <div class="eyebrow">بلِنده</div>
-              <h2>از ایده تا خروجی</h2>
+              <h2 data-scroll-motion="heading">از ایده تا خروجی</h2>
             </div>
           </div>
           <div class="steps">
@@ -167,10 +170,10 @@
           </div>
         </div>
       </section>
-      <section class="field-note" aria-labelledby="field-title">
+      <section data-scroll-motion="section" class="field-note" aria-labelledby="field-title">
         <div class="shell note-layout">
-          <figure>
-            <img
+          <figure data-scroll-motion="tile">
+            <img data-scroll-motion="picture"
               src="work-1.svg"
               width="1000"
               height="580"
@@ -180,7 +183,7 @@
           </figure>
           <div class="note-copy">
             <div class="eyebrow">اتاق تدوین</div>
-            <h2 id="field-title">نور را از کجا شروع کنیم؟</h2>
+            <h2 data-scroll-motion="heading" id="field-title">نور را از کجا شروع کنیم؟</h2>
             <p>
               پیش از روز ضبط، استودیو چند مسیر نوری را برای چهره و صحنه امتحان
               می‌کند.
@@ -207,10 +210,10 @@
           </div>
         </div>
       </section>
-      <section class="section shell faq" id="faq">
+      <section data-scroll-motion="section" class="section shell faq" id="faq">
         <div>
           <div class="eyebrow">پیش از شروع</div>
-          <h2>پرسش‌های رایج</h2>
+          <h2 data-scroll-motion="heading">پرسش‌های رایج</h2>
         </div>
         <div>
           <details>
@@ -228,11 +231,11 @@
           </details>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section data-scroll-motion="section" class="contact" id="contact">
         <div class="section shell contact-grid">
           <div>
             <div class="eyebrow">استودیوی تصویر</div>
-            <h2>یک داستان برایمان بگو.</h2>
+            <h2 data-scroll-motion="heading">یک داستان برایمان بگو.</h2>
             <p>
               این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
               فایل متنی دریافت می‌کنی.
@@ -252,7 +255,15 @@
         </div>
       </section>
     </main>
-    <footer class="shell foot">
+    <aside class="demo-location" aria-label="موقعیت Blende" data-scroll-motion="section">
+  <img class="location-map" src="../location-map.svg" alt="">
+  <i class="location-pin" aria-hidden="true"></i>
+  <div class="location-card">
+    <strong>Blende</strong><small>نقشهٔ نمایشی موقعیت</small>
+    <div class="location-actions"><a href="#contact">راه ارتباطی</a><button type="button" aria-pressed="false">بزرگ‌نمایی نقشه</button></div>
+  </div>
+</aside>
+<footer class="shell foot">
       <span dir="ltr">Blende</span><a href="#top">بازگشت به بالا ↑</a>
     </footer>
     <a

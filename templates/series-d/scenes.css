@@ -46,3 +46,9 @@
   .ink-art{width:97%;justify-self:center;transform:rotate(2deg)}
   .ink-art img{aspect-ratio:1.45}.ink-art span{width:clamp(69px,16vw,94px);font-size:.9rem;left:-10px;bottom:-9px}
 }
+
+@media (max-width: 700px) {
+  .kachel .bento-text {justify-content:flex-start}
+  .kachel .bento-text h1 {width:100%;font-size:clamp(31px,9vw,47px);line-height:1.13}
+  .kachel .mobile-break {display:block}
+}

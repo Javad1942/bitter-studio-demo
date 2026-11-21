@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 343 430">
+  <defs>
+    <linearGradient id="sky" x2="1" y2="1"><stop stop-color="#d7e0fa"/><stop offset=".55" stop-color="#bde8fc"/><stop offset="1" stop-color="#9bdcf6"/></linearGradient>
+    <radialGradient id="blue"><stop stop-color="#545cff"/><stop offset="1" stop-color="#434aec"/></radialGradient>
+  </defs>
+  <rect width="343" height="430" fill="url(#sky)"/>
+  <g transform="translate(221 214)" fill="none" stroke="#4384c2" stroke-opacity=".48" stroke-width="1.25">
+    <circle r="33"/>
+    <circle r="45"/>
+    <circle r="57"/>
+    <circle r="69"/>
+    <circle r="81"/>
+    <circle r="93"/>
+    <circle r="105"/>
+    <circle r="117"/>
+    <circle r="129"/>
+    <circle r="141"/>
+    <circle r="153"/>
+    <circle r="165"/>
+    <circle r="177"/>
+    <circle r="189"/>
+    <circle r="201"/>
+    <circle r="213"/>
+    <circle r="225"/>
+    <circle r="237"/>
+    <circle r="249"/>
+    <circle r="261"/>
+    <circle r="273"/>
+    <circle r="285"/>
+    <circle r="297"/>
+    <circle r="309"/>
+    <circle r="321"/>
+    <circle r="333"/>
+    <circle r="345"/>
+    <circle r="357"/>
+    <circle r="369"/>
+    <circle r="381"/>
+    <circle r="393"/>
+    <circle r="405"/>
+    <circle r="417"/>
+    <circle r="429"/>
+    <circle r="441"/>
+    <circle r="453"/>
+    <circle r="26" fill="url(#blue)" stroke="none"/>
+  </g>
+</svg>

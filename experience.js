@@ -21,6 +21,16 @@ function setupProcess() {
   const clamp=value=>Math.max(0,Math.min(1,value));
   const stagger=.45, dealLength=1+stagger*(cards.length-1), total=dealLength+.35;
   let frame=0, previous=0, progress=0, line=0, inView=false;
+  const depth=[16,24,20,28];
+  const aim={x:0,y:0};
+  const drift={x:0,y:0,turn:0};
+  function point(event){
+    if(!inView || !motion.matches || event.pointerType!=='mouse')return;
+    aim.x=event.clientX/innerWidth-.5;
+    aim.y=event.clientY/innerHeight-.5;
+    queue();
+  }
+  window.addEventListener('pointermove',point,{passive:true});
   function metrics(){
     const style=getComputedStyle(panel);
     const start=panel.getBoundingClientRect().top+scrollY+parseFloat(style.paddingTop);
@@ -35,6 +45,9 @@ function setupProcess() {
     const dt=previous?Math.min((time-previous)/1000,.1):1/60;
     previous=time;
     const follow=(a,b,tau)=>Math.abs(a-b)<.0001?b:b+(a-b)*Math.exp(-dt/tau);
+    drift.x=follow(drift.x,aim.x,.125);
+    drift.y=follow(drift.y,aim.y,.125);
+    drift.turn=follow(drift.turn,aim.x,.167);
     progress=follow(progress,target,.145);
     line=follow(line,trailTarget,.34);
     stage.style.setProperty('--trail',line.toFixed(4));
@@ -42,8 +55,11 @@ function setupProcess() {
       const t=clamp(progress*total-i*stagger);
       const spread=t<.5?4*t**3:1-4*(1-t)**3;
       card.style.setProperty('--fan',spread.toFixed(4));
+      card.style.setProperty('--pointer-x',(drift.x*depth[i]*2).toFixed(2)+'px');
+      card.style.setProperty('--pointer-y',(drift.y*depth[i]*1.5).toFixed(2)+'px');
+      card.style.setProperty('--pointer-turn',(drift.turn*depth[i]*.14).toFixed(2)+'deg');
     });
-    if(progress!==target||line!==trailTarget)queue();
+    if(progress!==target || line!==trailTarget || drift.x!==aim.x || drift.y!==aim.y || drift.turn!==aim.x)queue();
   }
   function queue(){
     if(inView&&motion.matches&&!frame)frame=requestAnimationFrame(update);
@@ -240,7 +256,7 @@ function setupPanelMotion(){
     words.forEach((word,i)=>{if(i)title.append(' ');title.append(word)});
     headings.set(title,{words,progress:null});
   }
-  let frame=0, previous=0;
+  let frame=0, previous=0, faqProgress=null;
   function queue(){if(!frame&&!reduced.matches)frame=requestAnimationFrame(paint)}
   function paint(time){
     frame=0;
@@ -264,6 +280,12 @@ function setupPanelMotion(){
         });
       }else{
         element.style.setProperty('--dome-progress',clamp((box.top-height*.18)/(height*.82)).toFixed(4));
+        if(element.id==='faq'){
+          const target=clamp((height-box.top-box.height*.45)/((height+box.height)*.55));
+          if(faqProgress===null || Math.abs(faqProgress-target)<.0001)faqProgress=target;
+          else{faqProgress=target+(faqProgress-target)*Math.exp(-dt/.28);catchingUp=true}
+          element.style.setProperty('--faq-offset',(1-faqProgress).toFixed(4));
+        }
         const progress=clamp((height-box.top)/(height+box.height));
         for(const [i,orb] of orbs.get(element).entries()){
           const speed=element.id==='pricing'?[1.2,.7][i]:1;

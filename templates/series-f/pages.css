@@ -42,3 +42,13 @@
  .kern{--pad:clamp(16px,5vw,26px)}.kern-hero{min-height:625px;height:calc(100svh - 118px)}.kern-copy h1{max-width:10ch}.kern-window .kern-cover{object-fit:fill}
  .kehre-hero::before{background:linear-gradient(180deg,#08122055,transparent 67%)}
 }
+
+@media (max-width: 700px) {
+  .kehre-copy .mobile-break {display:block}
+  .kehre-copy h1 {max-width:100%}
+  .stapel-hero {grid-template-rows:auto minmax(150px,1fr) auto}
+  .stapel-hero .type-stage {margin-inline:calc(-1 * var(--pad));width:calc(100% + 2 * var(--pad))}
+  .stapel-hero .type-stage img {height:clamp(180px,61vw,310px)}
+  .stapel-caption {min-height:clamp(174px,26svh,238px)}
+  .stapel-caption p {max-width:35ch;line-height:1.85}
+}

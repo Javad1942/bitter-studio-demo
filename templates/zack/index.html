@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../choose.css" />
     <script defer src="../series-b/interact.js"></script>
     <script defer src="../series-b/notes.js"></script>
-  </head>
-  <body class="zack" id="top">
+  <link rel="stylesheet" href="../motion.css">
+</head>
+  <body data-design="zack" class="zack" id="top">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <header class="mast">
       <div class="shell mast-inner">
@@ -74,18 +75,18 @@
           />
         </div>
       </section>
-      <section class="section shell" id="work">
+      <section data-scroll-motion="section" class="section shell" id="work">
         <div class="section-head">
           <div>
             <div class="eyebrow">خدمات فنی ساختمان</div>
-            <h2>چه چیزی نیاز به تعمیر دارد؟</h2>
+            <h2 data-scroll-motion="heading">چه چیزی نیاز به تعمیر دارد؟</h2>
           </div>
           <p>رشته‌ی تخصصی را انتخاب کن و مشکل را برای تیم بنویس.</p>
         </div>
         <div class="work-grid">
-          <article class="work-card" data-category="آب و لوله">
+          <article data-scroll-motion="card" class="work-card" data-category="آب و لوله">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-1.svg"
                 loading="lazy"
                 width="1000"
@@ -102,9 +103,9 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="برق">
+          <article data-scroll-motion="card" class="work-card" data-category="برق">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-2.svg"
                 loading="lazy"
                 width="1000"
@@ -121,9 +122,9 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="گرمایش">
+          <article data-scroll-motion="card" class="work-card" data-category="گرمایش">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-3.svg"
                 loading="lazy"
                 width="1000"
@@ -142,26 +143,26 @@
           </article>
         </div>
       </section>
-      <section class="band" id="about">
+      <section data-scroll-motion="section" class="band" id="about">
         <div class="section shell">
           <div class="section-head">
             <div>
               <div class="eyebrow">زَک</div>
-              <h2>وقتی زَک را خبر می‌کنی</h2>
+              <h2 data-scroll-motion="heading">وقتی زَک را خبر می‌کنی</h2>
             </div>
           </div>
           <div class="steps">
-            <article>
+            <article data-scroll-motion="card">
               <span>۰۱</span>
               <h3>شرح مشکل</h3>
               <p>نوع خرابی و زمان مناسب بازدید را می‌نویسی.</p>
             </article>
-            <article>
+            <article data-scroll-motion="card">
               <span>۰۲</span>
               <h3>بررسی اولیه</h3>
               <p>اطلاعات لازم و هزینه‌ی بازدید پیش از کار روشن می‌شود.</p>
             </article>
-            <article>
+            <article data-scroll-motion="card">
               <span>۰۳</span>
               <h3>آچار به دست</h3>
               <p>تعمیرکار قطعات و راه‌حل را با تو مرور می‌کند.</p>
@@ -169,10 +170,10 @@
           </div>
         </div>
       </section>
-      <section class="field-note" aria-labelledby="field-title">
+      <section data-scroll-motion="section" class="field-note" aria-labelledby="field-title">
         <div class="shell note-layout">
           <figure>
-            <img
+            <img data-scroll-motion="picture"
               src="work-1.svg"
               width="1000"
               height="580"
@@ -182,7 +183,7 @@
           </figure>
           <div class="note-copy">
             <div class="eyebrow">دفتر خدمات</div>
-            <h2 id="field-title">کجای ساختمان؟</h2>
+            <h2 data-scroll-motion="heading" id="field-title">کجای ساختمان؟</h2>
             <p>
               با انتخاب محل خرابی، ببین برای بررسی اولیه چه اطلاعاتی به کار
               می‌آید.
@@ -208,10 +209,10 @@
           </div>
         </div>
       </section>
-      <section class="section shell faq" id="faq">
+      <section data-scroll-motion="section" class="section shell faq" id="faq">
         <div>
           <div class="eyebrow">پیش از شروع</div>
-          <h2>پرسش‌های رایج</h2>
+          <h2 data-scroll-motion="heading">پرسش‌های رایج</h2>
         </div>
         <div>
           <details>
@@ -227,11 +228,11 @@
           </details>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section data-scroll-motion="section" class="contact" id="contact">
         <div class="section shell contact-grid">
           <div>
             <div class="eyebrow">خدمات فنی ساختمان</div>
-            <h2>مشکل را برایمان بنویس.</h2>
+            <h2 data-scroll-motion="heading">مشکل را برایمان بنویس.</h2>
             <p>
               این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
               فایل متنی دریافت می‌کنی.

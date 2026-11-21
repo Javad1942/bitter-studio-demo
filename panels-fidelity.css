@@ -20,7 +20,8 @@
 #pricing .orb-1{width:13vw;inset-inline-start:0;top:22%;transform:translate(20%,var(--drift,0px))}
 #pricing .orb-2{width:7vw;inset-inline-end:5%;bottom:12%}
 #faq .orb-1{width:11vw;inset-inline-start:30%;bottom:14%}
-#faq::after{content:'';position:absolute;pointer-events:none;z-index:-1;inset-inline-start:0;bottom:6%;width:23%;height:16%;border-top:6px solid #fff9;border-radius:70%;transform:rotate(-22deg)}
+#faq .faq-trail {position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#faq .faq-trail path {fill:none;stroke:#fff;stroke-width:8;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:var(--faq-offset,0)}
 #why .section-head h2,#process .section-head h2,#pricing .section-head h2,#faq .section-head h2,#game .section-head h2 {
   font-size:clamp(48px,8.2vw,148px);font-weight:430;line-height:1.15
 }
@@ -159,7 +160,7 @@ html[data-process-arrival] {scroll-behavior:auto}
     width:calc(4 * var(--card-width) + 3 * var(--card-gap));max-width:none;padding:0;z-index:1
   }
   #process #steps article {
-    --fan:0;min-height:min(480px,48.2svh);z-index:var(--z);
+    --fan:0;translate:var(--pointer-x,0px) var(--pointer-y,0px);rotate:var(--pointer-turn,0deg);min-height:min(480px,48.2svh);z-index:var(--z);
     transform:translateX(calc(var(--offset) * (1 - var(--fan,0)))) translateY(calc(var(--stack-y) + (var(--level) - var(--stack-y)) * var(--fan,0))) rotate(calc(var(--pile) + (var(--turn) - var(--pile)) * var(--fan,0)));
     transition:none
   }
@@ -191,6 +192,7 @@ html[data-process-arrival] {scroll-behavior:auto}
 @media(prefers-reduced-motion:reduce) {
   html:has(#main .process-pin) {scroll-behavior:auto}
   #main .stretch-ink {transform:none;font-weight:430}
+  #faq .faq-trail path {stroke-dashoffset:0}
   #process #steps article.awaiting-flight {opacity:1}
   #main :is(#why,#process,#pricing,#faq,#game) {--dome-progress:1!important}
 }

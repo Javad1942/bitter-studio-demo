@@ -8,8 +8,9 @@
     <link href="../../bitter-mark.svg" rel="icon" />
     <link href="../series-h-b/site.css" rel="stylesheet" />
     <script defer="" src="../series-h-b/site.js"></script>
-  </head>
-  <body class="kumo">
+  <link rel="stylesheet" href="../motion.css">
+</head>
+  <body data-design="kumo" class="kumo">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <main id="main">
       <div class="hero" id="top">
@@ -58,10 +59,10 @@
       <div aria-hidden="true" class="tape">
         رامن　✺　دونبوری　✺　گیوزا　✺　موچی　✺　ماچا　✺　رامن　✺　دونبوری　✺　گیوزا　✺　موچی　✺　ماچا　✺　رامن　✺　دونبوری　✺　گیوزا　✺　موچی　✺　ماچا　✺　رامن　✺　دونبوری　✺　گیوزا　✺　موچی　✺　ماچا　✺　
       </div>
-      <section class="section foodband" id="about">
-        <img alt="" src="plate1.svg" />
+      <section data-scroll-motion="section" class="section foodband" id="about">
+        <img data-scroll-motion="glide picture" alt="" src="plate1.svg" />
         <div>
-          <h2>از اوساکا تا بازار</h2>
+          <h2 data-scroll-motion="heading">از اوساکا تا بازار</h2>
           <p>
             یک آشپزخانهٔ کوچک، رشته‌های تازه و کاسه‌هایی که سر میز با هم تقسیم
             می‌کنیم.
@@ -73,9 +74,9 @@
           </div>
         </div>
       </section>
-      <section class="section" id="menu">
+      <section data-scroll-motion="section" class="section" id="menu">
         <div class="rail-head">
-          <h2>منوی ما</h2>
+          <h2 data-scroll-motion="heading">منوی ما</h2>
           <div class="rail-arrows">
             <button aria-label="کارت قبلی" data-step="-1" type="button">
               →</button
@@ -85,31 +86,31 @@
           </div>
         </div>
         <div class="offers">
-          <button class="offer" data-item="دونبوری سالمون" type="button">
-            <img alt="" src="plate0.svg" /><span
+          <button class="offer" data-item="دونبوری سالمون" type="button" data-scroll-motion="tile">
+            <img data-scroll-motion="picture" alt="" src="plate0.svg" /><span
               ><strong>دونبوری سالمون</strong><small>برنج، ماهی و کنجد</small
               ><b>کاسهٔ روز</b></span
             ></button
-          ><button class="offer" data-item="رامن کومو" type="button">
-            <img alt="" src="plate2.svg" /><span
+          ><button class="offer" data-item="رامن کومو" type="button" data-scroll-motion="tile">
+            <img data-scroll-motion="picture pop" alt="" src="plate2.svg" /><span
               ><strong>رامن کومو</strong><small>رشته و قارچ با تخم‌مرغ</small
               ><b>پیشنهاد آشپز</b></span
             ></button
-          ><button class="offer" data-item="گیوزا" type="button">
-            <img alt="" src="plate3.svg" /><span
+          ><button class="offer" data-item="گیوزا" type="button" data-scroll-motion="tile">
+            <img data-scroll-motion="picture" alt="" src="plate3.svg" /><span
               ><strong>گیوزا</strong><small>دامپلینگ سبزیجات با سس سویا</small
               ><b>شش عدد</b></span
             ></button
-          ><button class="offer" data-item="موچی" type="button">
-            <img alt="" src="plate4.svg" /><span
+          ><button class="offer" data-item="موچی" type="button" data-scroll-motion="tile">
+            <img data-scroll-motion="picture" alt="" src="plate4.svg" /><span
               ><strong>موچی</strong><small>بستنی برنجی با سه طعم</small
               ><b>دسر</b></span
             >
           </button>
         </div>
       </section>
-      <section class="section" id="hours">
-        <h2>ساعت کار</h2>
+      <section data-scroll-motion="section" class="section" id="hours">
+        <h2 data-scroll-motion="heading">ساعت کار</h2>
         <div class="rows">
           <div>
             <b>شنبه تا چهارشنبه</b>
@@ -128,9 +129,9 @@
       <div class="widepic">
         <img alt="جزئیات بشقاب رامن" src="plate2.svg" />
       </div>
-      <section class="section branches" id="branches">
+      <section data-scroll-motion="section" class="section branches" id="branches">
         <div>
-          <h2>دو بار کومو</h2>
+          <h2 data-scroll-motion="heading">دو بار کومو</h2>
           <p>
             برای یک ناهار سریع به شعبهٔ بازار سر بزن یا عصر برای میز حیاط وقت
             بگیر.
@@ -143,8 +144,8 @@
         </div>
       </section>
       <div class="widepic"><img alt="چیدمان میز غذا" src="plate3.svg" /></div>
-      <section class="section food-features" id="catering">
-        <h2>پذیرایی کومو</h2>
+      <section data-scroll-motion="section" class="section food-features" id="catering">
+        <h2 data-scroll-motion="heading">پذیرایی کومو</h2>
         <div class="rows">
           <div>
             <b>برای دفتر</b>
@@ -160,25 +161,25 @@
           </div>
         </div>
       </section>
-      <section class="section" id="album">
-        <h2>از نزدیک</h2>
+      <section data-scroll-motion="section" class="section" id="album">
+        <h2 data-scroll-motion="heading">از نزدیک</h2>
         <div class="gallery">
-          <button data-photo="" type="button">
-            <img alt="قاب اول از آشپزخانه" src="plate1.svg" /></button
-          ><button data-photo="" type="button">
-            <img alt="قاب دوم از آشپزخانه" src="plate2.svg" /></button
-          ><button data-photo="" type="button">
-            <img alt="قاب سوم از آشپزخانه" src="plate3.svg" />
+          <button data-photo="" type="button" data-scroll-motion="tile">
+            <img data-scroll-motion="picture" alt="قاب اول از آشپزخانه" src="plate1.svg" /></button
+          ><button data-photo="" type="button" data-scroll-motion="tile">
+            <img data-scroll-motion="picture pop" alt="قاب دوم از آشپزخانه" src="plate2.svg" /></button
+          ><button data-photo="" type="button" data-scroll-motion="tile">
+            <img data-scroll-motion="picture" alt="قاب سوم از آشپزخانه" src="plate3.svg" />
           </button>
         </div>
       </section>
-      <section class="section reserve" id="reserve">
-        <h2>میزت رو رزرو کن</h2>
+      <section data-scroll-motion="section" class="section reserve" id="reserve">
+        <h2 data-scroll-motion="heading">میزت رو رزرو کن</h2>
         <p>برای گروه‌های بزرگ‌تر، تعداد نفرات و روز موردنظرت رو بنویس.</p>
         <a class="btn" href="#contact">نوشتن درخواست میز</a>
       </section>
-      <section class="section contact" id="contact">
-        <h2>جشن، میز یا یک سؤال؟</h2>
+      <section data-scroll-motion="section" class="section contact" id="contact">
+        <h2 data-scroll-motion="heading">جشن، میز یا یک سؤال؟</h2>
         <form>
           <div class="formpair">
             <label

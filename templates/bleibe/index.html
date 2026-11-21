@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="../choose.css" />
     <script defer src="../series-b/interact.js"></script>
     <script defer src="../series-b/notes.js"></script>
-  </head>
-  <body class="bleibe" id="top">
+  <link rel="stylesheet" href="../motion.css">
+<link rel="stylesheet" href="../location.css">
+  <script defer src="../location.js"></script>
+</head>
+  <body data-design="bleibe" class="bleibe" id="top">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <header class="mast">
       <div class="shell mast-inner">
@@ -57,18 +60,18 @@
         </div>
         <a href="#contact" class="pick-chip">برنامه‌ی اقامت <b>↙</b></a>
       </section>
-      <section class="section shell" id="work">
+      <section data-scroll-motion="section" class="section shell" id="work">
         <div class="section-head">
           <div>
             <div class="eyebrow">اقامتگاه طبیعت</div>
-            <h2>جایی برای ماندن</h2>
+            <h2 data-scroll-motion="heading">جایی برای ماندن</h2>
           </div>
           <p>سه کلبه با چشم‌انداز، نور و حال‌وهوای متفاوت.</p>
         </div>
         <div class="work-grid">
           <article class="work-card" data-category="دو مهمان">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-1.svg"
                 loading="lazy"
                 width="1000"
@@ -87,7 +90,7 @@
           </article>
           <article class="work-card" data-category="چهار مهمان">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-2.svg"
                 loading="lazy"
                 width="1000"
@@ -106,7 +109,7 @@
           </article>
           <article class="work-card" data-category="دو مهمان">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-3.svg"
                 loading="lazy"
                 width="1000"
@@ -125,12 +128,12 @@
           </article>
         </div>
       </section>
-      <section class="band" id="about">
+      <section data-scroll-motion="section" class="band" id="about">
         <div class="section shell">
           <div class="section-head">
             <div>
               <div class="eyebrow">بلیبه</div>
-              <h2>اطراف کلبه‌ها</h2>
+              <h2 data-scroll-motion="heading">اطراف کلبه‌ها</h2>
             </div>
           </div>
           <div class="steps">
@@ -152,10 +155,10 @@
           </div>
         </div>
       </section>
-      <section class="field-note" aria-labelledby="field-title">
+      <section data-scroll-motion="section" class="field-note" aria-labelledby="field-title">
         <div class="shell note-layout">
           <figure>
-            <img
+            <img data-scroll-motion="picture"
               src="work-3.svg"
               width="1000"
               height="580"
@@ -165,7 +168,7 @@
           </figure>
           <div class="note-copy">
             <div class="eyebrow">تقویم اقامت</div>
-            <h2 id="field-title">چند شب اینجایی؟</h2>
+            <h2 data-scroll-motion="heading" id="field-title">چند شب اینجایی؟</h2>
             <p>
               تاریخ ورود و خروج را انتخاب کن تا تعداد شب‌ها را حساب کنیم و در
               خلاصه‌ی درخواستت بیاوریم.
@@ -181,10 +184,10 @@
           </div>
         </div>
       </section>
-      <section class="section shell faq" id="faq">
+      <section data-scroll-motion="section" class="section shell faq" id="faq">
         <div>
           <div class="eyebrow">پیش از شروع</div>
-          <h2>پرسش‌های رایج</h2>
+          <h2 data-scroll-motion="heading">پرسش‌های رایج</h2>
         </div>
         <div>
           <details>
@@ -200,11 +203,11 @@
           </details>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section data-scroll-motion="section" class="contact" id="contact">
         <div class="section shell contact-grid">
           <div>
             <div class="eyebrow">اقامتگاه طبیعت</div>
-            <h2>برای اقامت برنامه بچین.</h2>
+            <h2 data-scroll-motion="heading">برای اقامت برنامه بچین.</h2>
             <p>
               این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
               فایل متنی دریافت می‌کنی.
@@ -224,7 +227,15 @@
         </div>
       </section>
     </main>
-    <footer class="shell foot">
+    <aside class="demo-location" aria-label="موقعیت Bleibe" data-scroll-motion="section">
+  <img class="location-map" src="../location-map.svg" alt="">
+  <i class="location-pin" aria-hidden="true"></i>
+  <div class="location-card">
+    <strong>Bleibe</strong><small>نقشهٔ نمایشی موقعیت</small>
+    <div class="location-actions"><a href="#contact">راه ارتباطی</a><button type="button" aria-pressed="false">بزرگ‌نمایی نقشه</button></div>
+  </div>
+</aside>
+<footer class="shell foot">
       <span dir="ltr">Bleibe</span><a href="#top">بازگشت به بالا ↑</a>
     </footer>
     <a

@@ -1,0 +1,45 @@
+/* Location block between the contact section and footer. */
+.demo-location {
+  --map-accent: var(--accent, var(--dot, #276c59));
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(90%, 1180px);
+  height: clamp(350px, 41vw, 445px);
+  margin: clamp(24px, 5vw, 64px) auto;
+  border-radius: var(--radius, 20px);
+  background: #dadddd;
+  color: #182220;
+  text-align: start;
+}
+.demo-location .location-map {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; transform-origin: 55% 33%;
+}
+.demo-location .location-pin {
+  position: absolute; inset: 25% auto auto 53%; width: 25px; height: 25px;
+  background: var(--map-accent); border: 6px solid white;
+  border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+  box-shadow: -2px 2px 3px #213b3725;
+}
+.demo-location .location-card {
+  position: absolute; inset-inline-start: 16px; bottom: 16px;
+  width: min(315px, calc(100% - 32px)); box-sizing: border-box;
+  padding: 17px; background: #fffffff5; color: #192121;
+  border-radius: 15px; box-shadow: 0 3px 14px #2935331a;
+}
+.demo-location .location-card strong { display: block; font-size: 19px; line-height: 1.55; }
+.demo-location .location-card small { display: block; margin-block: 1px 12px; font-size: 13px; }
+.demo-location .location-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.demo-location .location-actions :is(a,button) {
+  display: inline-flex; align-items: center; margin: 0; width: auto; min-height: 40px;
+  padding: 4px 14px; border-radius: 30px; font: inherit; font-size: 13px;
+  cursor: pointer; text-decoration: none; border: 1px solid #26342f33;
+  background: transparent; color: #17211e;
+}
+.demo-location .location-actions a { color: white; background: #213b33; border-color: transparent; }
+.demo-location[data-zoom] .location-map { transform: scale(1.65); }
+@media (prefers-reduced-motion: no-preference) {
+  .demo-location .location-map { transition: transform .55s cubic-bezier(.22,.72,.18,1); }
+}
+@media (max-width: 700px) { .demo-location { height: 374px; } }

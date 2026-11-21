@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../choose.css" />
     <script defer src="../series-b/interact.js"></script>
     <script defer src="../series-b/notes.js"></script>
-  </head>
-  <body class="groschen" id="top">
+  <link rel="stylesheet" href="../motion.css">
+</head>
+  <body data-design="groschen" class="groschen" id="top">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <header class="mast">
       <div class="shell mast-inner">
@@ -67,18 +68,18 @@
           <figcaption>روند ماهانه‌ی قلک‌ها</figcaption>
         </figure>
       </section>
-      <section class="section shell" id="work">
+      <section data-scroll-motion="section" class="section shell" id="work">
         <div class="section-head">
           <div>
             <div class="eyebrow">پس‌انداز شخصی</div>
-            <h2>پول و برنامه‌ی تو</h2>
+            <h2 data-scroll-motion="heading">پول و برنامه‌ی تو</h2>
           </div>
           <p>ابزارهایی کوچک برای نظم دادن به عادت‌های مالی روزانه.</p>
         </div>
         <div class="work-grid">
           <article class="work-card" data-category="هدف‌گذاری">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-1.svg"
                 loading="lazy"
                 width="1000"
@@ -97,7 +98,7 @@
           </article>
           <article class="work-card" data-category="گزارش">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-2.svg"
                 loading="lazy"
                 width="1000"
@@ -116,7 +117,7 @@
           </article>
           <article class="work-card" data-category="عادت‌ها">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-3.svg"
                 loading="lazy"
                 width="1000"
@@ -135,9 +136,9 @@
           </article>
         </div>
       </section>
-      <section class="section shell calc" id="estimate">
+      <section data-scroll-motion="section" class="section shell calc" id="estimate">
         <div>
-          <h2>تا هدف چقدر مانده؟</h2>
+          <h2 data-scroll-motion="heading">تا هدف چقدر مانده؟</h2>
           <p>
             برای یک هدف ۶۰ میلیون تومانی، مبلغ پس‌انداز ماهانه‌ات را انتخاب کن.
           </p>
@@ -159,12 +160,12 @@
           >
         </div>
       </section>
-      <section class="band" id="about">
+      <section data-scroll-motion="section" class="band" id="about">
         <div class="section shell">
           <div class="section-head">
             <div>
               <div class="eyebrow">گروشن</div>
-              <h2>سه قدم تا قلک اول</h2>
+              <h2 data-scroll-motion="heading">سه قدم تا قلک اول</h2>
             </div>
           </div>
           <div class="steps">
@@ -186,10 +187,10 @@
           </div>
         </div>
       </section>
-      <section class="field-note" aria-labelledby="field-title">
+      <section data-scroll-motion="section" class="field-note" aria-labelledby="field-title">
         <div class="shell note-layout">
           <figure>
-            <img
+            <img data-scroll-motion="picture"
               src="work-3.svg"
               width="1000"
               height="580"
@@ -199,7 +200,7 @@
           </figure>
           <div class="note-copy">
             <div class="eyebrow">نقشه‌ی قلک</div>
-            <h2 id="field-title">یک قدم کوچک، هر هفته.</h2>
+            <h2 data-scroll-motion="heading" id="field-title">یک قدم کوچک، هر هفته.</h2>
             <p>
               یک ریتم سبک برای پس‌انداز انتخاب کن. می‌توانی هر زمان مقدار یا
               فاصله را تغییر بدهی.
@@ -227,10 +228,10 @@
           </div>
         </div>
       </section>
-      <section class="section shell faq" id="faq">
+      <section data-scroll-motion="section" class="section shell faq" id="faq">
         <div>
           <div class="eyebrow">پیش از شروع</div>
-          <h2>پرسش‌های رایج</h2>
+          <h2 data-scroll-motion="heading">پرسش‌های رایج</h2>
         </div>
         <div>
           <details>
@@ -249,11 +250,11 @@
           </details>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section data-scroll-motion="section" class="contact" id="contact">
         <div class="section shell contact-grid">
           <div>
             <div class="eyebrow">پس‌انداز شخصی</div>
-            <h2>خبرهای گروشن را دنبال کن.</h2>
+            <h2 data-scroll-motion="heading">خبرهای گروشن را دنبال کن.</h2>
             <p>
               این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
               فایل متنی دریافت می‌کنی.

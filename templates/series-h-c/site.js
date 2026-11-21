@@ -119,12 +119,21 @@ if (story) {
     photo.alt = captions[index];
   };
   one(".storyprogress").addEventListener("animationiteration", advanceFrame);
-  if (reduce.matches) window.setInterval(advanceFrame, 8000);
+  let playbackTimer;
+  function syncPlayback() {
+    clearInterval(playbackTimer);
+    if (reduce.matches && !paused) playbackTimer = window.setInterval(advanceFrame, 8000);
+    renderPause();
+  }
+  reduce.addEventListener("change", () => {
+    if (reduce.matches) paused = true;
+    syncPlayback();
+  });
   play.addEventListener("click", () => {
     paused = !paused;
-    renderPause();
+    syncPlayback();
   });
-  renderPause();
+  syncPlayback();
 }
 
 all("[data-hue]").forEach((button) =>

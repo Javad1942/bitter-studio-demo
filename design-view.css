@@ -1,4 +1,5 @@
 /* Case sheet and device preview */
+.case-main.shell {width:100%;max-width:2560px;padding-inline:clamp(16px,4.2vw,60px)}
 .case-main {padding-block:120px clamp(80px,9vw,120px)}
 .case-main #case-back {
   position:relative;z-index:1;height:44px;gap:10px;padding-inline:15px 18px;border:1px solid #19182c16;
@@ -16,14 +17,26 @@
 .case-heading h1 {display:grid;gap:14px;margin:0;min-width:0}
 .case-heading h1 small {font-size:17px;line-height:1.3;font-weight:550;color:var(--muted)}
 #case-title {
-  display:block;line-height:.94;font-weight:495;
+  display:block;line-height:.92;font-weight:495;
   font-size:min(clamp(52px,9vw,128px),var(--title-wide,25cqw));
 }
-#case-title .case-word {display:inline-block;transform-origin:50% 85%}
+#case-title .case-word {position:relative;display:inline-block;white-space:nowrap}
+.case-letters,.case-letters > span {position:absolute;inset:0;pointer-events:none;user-select:none}
+.case-letters {color:var(--ink)}
+.case-letters > span::before {content:attr(data-word)}
 @media(prefers-reduced-motion:no-preference){
-  #case-title .case-word {animation:case-settle 1.15s cubic-bezier(.2,.9,.25,1) both;animation-delay:calc(.12s + var(--word-index)*69ms)}
-  @keyframes case-settle {from{opacity:0;transform:scaleY(2.4);font-weight:775}35%{opacity:1}to{transform:none;font-weight:495}}
+  .case-word.entering {color:transparent}
+  .case-letters > span {
+    transform-origin:50% 100%;
+    animation:case-stretch 1.15s cubic-bezier(.2,.9,.25,1) both;
+  }
+  @keyframes case-stretch {from{opacity:0;transform:scaleY(2.4);font-weight:820}35%{opacity:1}}
+  @media(max-width:820px){
+    .case-letters > span {animation-name:case-stretch-narrow}
+    @keyframes case-stretch-narrow {from{opacity:0;transform:scaleY(2.4)}35%{opacity:1}}
+  }
 }
+@media(prefers-reduced-motion:reduce){.case-letters{display:none}}
 .case-facts {display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px}
 .case-facts a,.case-specs a {text-decoration:underline;text-decoration-color:#25243944;text-underline-offset:.23em}
 .case-facts a:hover,.case-specs a:hover {text-decoration-color:currentColor}
@@ -51,7 +64,7 @@
 .switch-view {display:flex;justify-self:end;border-radius:30px;padding:4px;background:var(--paper)}
 .switch-view button {
   flex:none;height:38px;padding-inline:18px;border:0;border-radius:30px;font-size:15px;font-weight:550;
-  background:transparent;color:var(--muted);transition:background-color .3s,color .3s,box-shadow .3s
+  background:transparent;color:var(--muted);transition:background-color .3s cubic-bezier(.16,1,.3,1),color .3s cubic-bezier(.16,1,.3,1),box-shadow .3s cubic-bezier(.16,1,.3,1)
 }
 .switch-view button[aria-pressed=true] {color:var(--ink);background:white;box-shadow:0 1px 3px #17132c26}
 .view-stage {
@@ -64,10 +77,12 @@
   width:min(390px,calc(100% - 32px));border-radius:34px;
   box-shadow:0 0 0 8px var(--ink),0 40px 80px -40px #19182c80
 }
-#case-poster {display:block;width:100%;height:auto}
-#case-poster[hidden],#live-preview[hidden] {display:none}
+.case-poster {display:block;width:100%;height:auto}
+.case-poster[hidden],#live-preview[hidden] {display:none}
 .view-stage[data-mode=live] {overflow:hidden}
 .view-stage[data-mode=live] .device-screen {height:100%;position:relative}
+.view-stage[data-mode=live][data-device=mobile] {height:auto}
+.view-stage[data-mode=live][data-device=mobile] .device-screen {height:auto;aspect-ratio:390 / 844}
 #live-preview {display:block;position:absolute;top:0;left:0;border:0;background:white;transform-origin:top left}
 .case-offer {padding:32px}
 .offer-intro h2 {margin:0;font-size:clamp(48px,5vw,76px);font-weight:495;line-height:1.13}
@@ -119,7 +134,7 @@
   .view-stage:not([data-mode=live]) {overflow:hidden;overscroll-behavior:auto;touch-action:pan-y pinch-zoom}
   #view-full {display:inline-flex}
 }
-@container(max-width:680px) { .switch-view button {padding-inline:12px} }
+@container(max-width:720px) { .switch-view button {padding-inline:13px} }
 @container(max-width:520px) {
   .view-domain {grid-column:1/-2;grid-row:1}
   .switch-view {grid-column:-2/-1;grid-row:1}

@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../choose.css" />
     <script defer src="../series-b/interact.js"></script>
     <script defer src="../series-b/notes.js"></script>
-  </head>
-  <body class="mosaik" id="top">
+  <link rel="stylesheet" href="../motion.css">
+</head>
+  <body data-design="mosaik" class="mosaik" id="top">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <header class="mast">
       <div class="shell mast-inner">
@@ -69,11 +70,11 @@
           </div>
         </div>
       </section>
-      <section class="section shell" id="work">
+      <section data-scroll-motion="section" class="section shell" id="work">
         <div class="section-head">
           <div>
             <div class="eyebrow">استودیوی دیجیتال</div>
-            <h2>پروژه‌های منتخب</h2>
+            <h2 data-scroll-motion="heading">پروژه‌های منتخب</h2>
           </div>
           <p>بخشی از کارهای استودیو؛ از اولین اتود تا آخرین پیکسل.</p>
         </div>
@@ -85,7 +86,7 @@
           ><button data-filter="کمپین" aria-pressed="false">کمپین</button>
         </div>
         <div class="work-grid">
-          <article class="work-card" data-category="هویت بصری">
+          <article data-scroll-motion="tile" class="work-card" data-category="هویت بصری">
             <div class="media">
               <img
                 src="work-1.svg"
@@ -107,7 +108,7 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="وب‌سایت">
+          <article data-scroll-motion="tile" class="work-card" data-category="وب‌سایت">
             <div class="media">
               <img
                 src="work-2.svg"
@@ -129,7 +130,7 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="کمپین">
+          <article data-scroll-motion="tile" class="work-card" data-category="کمپین">
             <div class="media">
               <img
                 src="work-3.svg"
@@ -150,12 +151,12 @@
           </article>
         </div>
       </section>
-      <section class="band" id="about">
+      <section data-scroll-motion="section" class="band" id="about">
         <div class="section shell">
           <div class="section-head">
             <div>
               <div class="eyebrow">موزاییک</div>
-              <h2>با هم چطور کار می‌کنیم؟</h2>
+              <h2 data-scroll-motion="heading">با هم چطور کار می‌کنیم؟</h2>
             </div>
           </div>
           <div class="steps">
@@ -177,20 +178,20 @@
           </div>
         </div>
       </section>
-      <section class="field-note" aria-labelledby="field-title">
+      <section data-scroll-motion="section" class="field-note" aria-labelledby="field-title">
         <div class="shell note-layout">
-          <figure>
+          <figure data-scroll-motion="tile">
             <img
               src="hero.svg"
               width="1000"
               height="580"
               loading="lazy"
               alt="پشت صحنه یک میز، سه تخصص."
-            />
+            / data-scroll-motion="glide">
           </figure>
           <div class="note-copy">
             <div class="eyebrow">پشت صحنه</div>
-            <h2 id="field-title">یک میز، سه تخصص.</h2>
+            <h2 data-scroll-motion="heading" id="field-title">یک میز، سه تخصص.</h2>
             <p>
               از نخستین طرح با مداد تا روز انتشار، طراح، نویسنده و توسعه‌دهنده
               روی یک مسئله کار می‌کنند.
@@ -216,10 +217,10 @@
           </div>
         </div>
       </section>
-      <section class="section shell faq" id="faq">
+      <section data-scroll-motion="section" class="section shell faq" id="faq">
         <div>
           <div class="eyebrow">پیش از شروع</div>
-          <h2>پرسش‌های رایج</h2>
+          <h2 data-scroll-motion="heading">پرسش‌های رایج</h2>
         </div>
         <div>
           <details>
@@ -238,11 +239,11 @@
           </details>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section data-scroll-motion="section" class="contact" id="contact">
         <div class="section shell contact-grid">
           <div>
             <div class="eyebrow">استودیوی دیجیتال</div>
-            <h2>بیایید چیزی بسازیم.</h2>
+            <h2 data-scroll-motion="heading">بیایید چیزی بسازیم.</h2>
             <p>
               این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
               فایل متنی دریافت می‌کنی.

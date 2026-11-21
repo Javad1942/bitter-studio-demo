@@ -8,8 +8,9 @@
     <link href="../../bitter-mark.svg" rel="icon" />
     <link href="../series-h-b/site.css" rel="stylesheet" />
     <script defer="" src="../series-h-b/site.js"></script>
-  </head>
-  <body class="kreisel">
+  <link rel="stylesheet" href="../motion.css">
+</head>
+  <body data-design="kreisel" class="kreisel">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <main id="main">
       <div class="hero" id="top">
@@ -69,9 +70,9 @@
           </div>
         </div>
       </div>
-      <section class="section" id="boats">
+      <section data-scroll-motion="section" class="section" id="boats">
         <div class="rail-head">
-          <h2>قایق‌ها و نرخ‌ها</h2>
+          <h2 data-scroll-motion="heading">قایق‌ها و نرخ‌ها</h2>
           <div class="rail-arrows">
             <button aria-label="کارت قبلی" data-step="-1" type="button">
               →</button
@@ -82,17 +83,17 @@
         </div>
         <div class="offers">
           <button class="offer" data-item="قایق پدالی" type="button">
-            <img alt="" src="boathouse.svg" /><span
+            <img data-scroll-motion="picture" alt="" src="boathouse.svg" /><span
               ><strong>قایق پدالی</strong><small>تا چهار نفر، با سایه‌بان</small
               ><b>هر ساعت ۳۶۰ هزار تومان</b></span
             ></button
           ><button class="offer" data-item="کانو" type="button">
-            <img alt="" src="lake1.svg" /><span
+            <img data-scroll-motion="picture" alt="" src="lake1.svg" /><span
               ><strong>کانو</strong><small>دو نفره با جلیقهٔ نجات</small
               ><b>هر ساعت ۳۰۰ هزار تومان</b></span
             ></button
           ><button class="offer" data-item="تختهٔ پارویی" type="button">
-            <img alt="" src="lake2.svg" /><span
+            <img data-scroll-motion="picture" alt="" src="lake2.svg" /><span
               ><strong>تختهٔ پارویی</strong
               ><small>تخته و پارو برای یک نفر</small
               ><b>هر ساعت ۲۸۰ هزار تومان</b></span
@@ -100,9 +101,9 @@
           </button>
         </div>
       </section>
-      <section class="section" id="hours">
+      <section data-scroll-motion="section" class="section" id="hours">
         <div class="hours-info">
-          <h2>ساعت کار</h2>
+          <h2 data-scroll-motion="heading">ساعت کار</h2>
           <div class="rows">
             <div>
               <b>فصل قایقرانی</b>
@@ -119,15 +120,15 @@
           </div>
         </div>
         <a class="dock-address" href="#map"
-          ><img alt="ساختمان چوبی اسکله" src="boathouse.svg" /><strong
+          ><img data-scroll-motion="picture" alt="ساختمان چوبی اسکله" src="boathouse.svg" /><strong
             >راهنمای مسیر تا اسکله ←</strong
           ></a
         >
       </section>
-      <section class="section profile" id="about">
-        <img alt="" src="lake3.svg" />
+      <section data-scroll-motion="section" class="section profile" id="about">
+        <img data-scroll-motion="picture" alt="" src="lake3.svg" />
         <div>
-          <h2>روزهایمان کنار آب می‌گذرد</h2>
+          <h2 data-scroll-motion="heading">روزهایمان کنار آب می‌گذرد</h2>
           <p>
             قبل از راه افتادن، قایق رو با هم می‌بینیم و جلیقهٔ مناسب رو انتخاب
             می‌کنیم.
@@ -139,8 +140,8 @@
           </div>
         </div>
       </section>
-      <section class="section faq" id="faq">
-        <h2>خوبه بدونیم</h2>
+      <section data-scroll-motion="section" class="section faq" id="faq">
+        <h2 data-scroll-motion="heading">خوبه بدونیم</h2>
         <details>
           <summary>برای اجاره چطور درخواست بدم؟</summary>
           <p>
@@ -156,21 +157,21 @@
           <p>روی کارت هر قایق، ظرفیتش رو می‌بینی.</p>
         </details>
       </section>
-      <section class="section" id="views">
-        <h2>کنار دریاچه</h2>
+      <section data-scroll-motion="section" class="section" id="views">
+        <h2 data-scroll-motion="heading">کنار دریاچه</h2>
         <p>از منظره‌های کنار آب یکی را باز کن.</p>
         <div class="gallery">
           <button data-photo="">
-            <img alt="نمای اسکله و قایق‌ها" src="lake1.svg" /></button
+            <img data-scroll-motion="picture" alt="نمای اسکله و قایق‌ها" src="lake1.svg" /></button
           ><button data-photo="">
-            <img alt="نمای اسکله و قایق‌ها" src="lake2.svg" /></button
+            <img data-scroll-motion="picture" alt="نمای اسکله و قایق‌ها" src="lake2.svg" /></button
           ><button data-photo="">
-            <img alt="نمای اسکله و قایق‌ها" src="lake3.svg" />
+            <img data-scroll-motion="picture" alt="نمای اسکله و قایق‌ها" src="lake3.svg" />
           </button>
         </div>
       </section>
-      <section class="section contact" id="contact">
-        <h2>تا دیدار کنار اسکله.</h2>
+      <section data-scroll-motion="section" class="section contact" id="contact">
+        <h2 data-scroll-motion="heading">تا دیدار کنار اسکله.</h2>
         <form>
           <div class="formpair">
             <label
@@ -199,7 +200,7 @@
           ><output role="status"></output>
         </form>
       </section>
-      <section class="section map" id="map">
+      <section data-scroll-motion="section" class="section map" id="map">
         <div aria-hidden="true" class="map-art"></div>
         <div class="addr">
           <strong>اسکلهٔ آبی</strong>

@@ -1,0 +1,178 @@
+[data-design="neutral"] .darkhero,
+[data-design="karst"] main,
+[data-design="lehm"] .region,
+[data-design="phase"] .region { overflow-x: clip; }
+
+/* Scroll progress is measured inside the template viewport, including in the phone preview. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    [data-design] [data-scroll-motion~="section"],
+    [data-design] [data-scroll-motion~="heading"],
+    [data-design] [data-scroll-motion~="tile"],
+    [data-design] [data-scroll-motion~="card"],
+    [data-design] [data-scroll-motion~="row"],
+    [data-design] [data-scroll-motion~="picture"],
+    [data-design] [data-scroll-motion~="pop"] {
+      animation: var(--template-entry) linear both;
+      animation-timeline: view(block);
+      animation-range: var(--template-range);
+    }
+    [data-design] [data-scroll-motion~="section"] {
+      --template-entry: section-arrival;
+      --template-range: entry 0px entry 260px;
+    }
+    [data-design] [data-scroll-motion~="heading"] {
+      --template-entry: heading-arrival;
+      --template-range: entry 8% cover 26%;
+    }
+    [data-design] [data-scroll-motion~="picture"] {
+      --template-entry: frame-opening;
+      --template-range: entry 5% cover 38%;
+      animation-name: frame-opening, illustration-settle;
+      animation-timeline: view(block), view(block);
+      animation-range: entry 5% cover 38%, entry 0% cover 55%;
+    }
+    [data-design] [data-scroll-motion~="tile"] {
+      --template-entry: tile-opening;
+      --template-range: entry 4% cover 30%;
+    }
+    [data-design] [data-scroll-motion~="card"] {
+      --template-entry: card-arrival;
+      --template-range: entry 0% entry 60%;
+    }
+    [data-design] [data-scroll-motion~="row"] {
+      --template-entry: row-arrival;
+      --template-range: entry 0% entry 80%;
+    }
+    [data-design] [data-scroll-motion~="pop"] {
+      animation-name: inset-arrival;
+      animation-range: entry 30% cover 45%;
+    }
+
+    @keyframes section-arrival { from { opacity: 0; translate: 0 3.2cqw; } }
+    @keyframes heading-arrival { from { opacity: 0; translate: 0 .55em; } }
+    @keyframes frame-opening {
+      from { clip-path: inset(9% 7% round 4cqw); }
+      to { clip-path: inset(-6cqw); }
+    }
+    @keyframes illustration-settle { from { scale: 1.18; } }
+    @keyframes tile-opening {
+      from { opacity: 0; clip-path: inset(24% 0 0 round 2cqw); }
+      to { clip-path: inset(-8cqw); }
+    }
+    @keyframes card-arrival { from { opacity: 0; translate: 0 3cqw; scale: .96; } }
+    @keyframes row-arrival { from { opacity: 0; translate: -4cqw 0; } }
+    @keyframes inset-arrival { from { opacity: 0; translate: 0 5cqw; scale: .92; } }
+  }
+}
+
+/* Foreground drawings and type move independently of the navigation and tap targets. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-design="neutral"] .darkscape { animation: artwork-settle 2.4s ease-out both; }
+  [data-design="neutral"] .darkcontent > *,
+  [data-design="neugier"] .radar .meta { animation: copy-arrive 1.1s ease-out both; }
+  [data-design="neugier"] .orb { animation: orb-arrive 1.4s ease-out both; }
+  [data-design="neugier"] .radar h1 { animation: type-arrive 1.2s .35s ease-out both; }
+  [data-design="doppel"] .scene-copy h1 { animation: tilted-type .9s .15s ease-out both; }
+  [data-design="karst"] .ks-lower h1,
+  [data-design="mohn"] .mohn-words h1 { animation: soft-type 1.3s .15s cubic-bezier(.2,.8,.2,1) both; }
+  [data-design="karst"] .ks-brand, [data-design="doppel"] .scene-copy .eyebrow,
+  [data-design="lehm"] .house-copy, [data-design="sonnseite"] .hero .intro { animation: copy-arrive 1.1s .55s ease-out both; }
+  [data-design="kehre"] .coupe { animation: car-arrive 1.9s .25s cubic-bezier(.16,.82,.23,1) both; }
+  [data-design="kehre"] .big-name { animation: type-uncover 1.3s .1s ease-out both; }
+  [data-design="kehre"] .kehre-copy { animation: copy-arrive .9s .5s ease-out both; }
+  [data-design="korb"] .word { animation: ball-title 1.1s .1s cubic-bezier(.25,.7,.32,1) both; }
+  [data-design="korb"] .kcopy { animation: type-arrive 1.3s .35s ease-out both; }
+  [data-design="lot"] .lot-index { animation: plumb-swing 1.8s .2s ease-in-out both; transform-origin: top center; }
+  [data-design="gefuege"] .houseart .photo { animation: assembly-rise 1.1s .12s cubic-bezier(.2,.7,.2,1) both; }
+  [data-design="gefuege"] .housecopy { animation: copy-arrive .6s .4s ease-out both; }
+  [data-design="kapitel"] .wordmark { animation: mark-light 1.6s ease-out both; }
+  [data-design="neugier"] .orb .art { animation: orb-breathe 7s ease-in-out 3 alternate; }
+  [data-design="phase"] .lighting { animation: switch-press .3s 1.55s ease-in-out; }
+  [data-design="phase"] .cert { animation: mark-light .45s 1.7s ease both; }
+  [data-design="schnitt"] .hero .intro { animation: copy-arrive .9s .15s ease-out both; }
+  [data-design="schnitt"] .plate { animation: mark-light .9s .35s ease both; }
+  [data-design="zugabe"] .token { animation: stage-float 3.6s .4s ease-in-out 4; }
+  [data-design="zugabe"] .token.sun { animation-delay: .9s; }
+  [data-design="grotesk"] .typeface { animation: variable-intro 1.2s .12s ease-out backwards; }
+  [data-design="zack"] .z-head { animation: copy-arrive .7s .15s ease-out both; }
+  [data-design="zack"] .online { animation: mark-light .9s 2.9s ease both; }
+  [data-design="norm"] .product-meta { animation: mark-light .35s 1.85s ease-out both; }
+  [data-design="vorlauf"] .thermal-hot { animation: thermal-sweep 3.2s .6s ease-in-out backwards; }
+  [data-design="vorlauf"] .thermal-scene:focus-within .thermal-hot,
+  [data-design="vorlauf"] .thermal-scene:active .thermal-hot { animation: none; }
+  @keyframes artwork-settle { from { scale: 1.06; } }
+  @keyframes mark-light { from { opacity: .15; } }
+  @keyframes copy-arrive { from { opacity: 0; translate: 0 1.4cqw; } }
+  @keyframes tilted-type { from { opacity: 0; translate: 0 .5em; rotate: -5deg; } }
+  @keyframes type-arrive { from { opacity: 0; translate: 0 25%; } }
+  @keyframes type-uncover { from { clip-path: inset(100% 0 0); translate: 0 25%; } }
+  @keyframes soft-type { from { opacity: 0; filter: blur(.5cqw); translate: 0 45%; } }
+  @keyframes orb-arrive { from { opacity: 0; scale: .8; } }
+  @keyframes orb-breathe { from { opacity: .7; scale: .92; } to { scale: 1.06; } }
+  @keyframes car-arrive { from { translate: 80cqw 0; } }
+  @keyframes ball-title {
+    from { opacity: 0; translate: 0 40%; scale: .7 1.25; }
+    62% { translate: 0 -4%; scale: 1.04 .94; }
+  }
+  @keyframes plumb-swing { 0% { rotate: 6deg; } 28% { rotate: -4deg; } 54% { rotate: 2deg; } 80% { rotate: -1deg; } }
+  @keyframes assembly-rise { from { opacity: 0; translate: 0 -40px; } }
+  @keyframes switch-press { 50% { scale: .965; } }
+  @keyframes stage-float { 50% { translate: 0 -6px; rotate: 2deg; } }
+  @keyframes variable-intro { from { font-weight: 200; letter-spacing: -.08em; } }
+  @keyframes thermal-sweep { from { clip-path: inset(0 100% 0 0); } }
+  @supports (animation-timeline: view()) {
+    [data-design="kapitel"] .consultancy .cover,
+    [data-design="kehre"] .kehre-hero .land,
+    [data-design="zugabe"] .zhero .phones,
+    [data-design="schnitt"] .blueprint img,
+    [data-design="stapel"] .type-stage {
+      animation: var(--hero-parallax) linear both;
+      animation-timeline: view(block);
+      animation-range: exit 0% exit 100%;
+    }
+    [data-design="kapitel"] .consultancy .cover { --hero-parallax: cover-drift; }
+    [data-design="kehre"] .kehre-hero .land { --hero-parallax: road-depth; }
+    [data-design="zugabe"] .zhero .phones { --hero-parallax: phone-drift; }
+    [data-design="schnitt"] .blueprint img { --hero-parallax: plan-drift; }
+    [data-design="stapel"] .type-stage { --hero-parallax: type-tilt; }
+    @keyframes cover-drift { from { scale: 1.06; } to { translate: 0 1.2cqw; } }
+    @keyframes road-depth { to { translate: 0 8%; } }
+    @keyframes phone-drift { to { translate: 0 16px; } }
+    @keyframes plan-drift { to { translate: 0 -24px; } }
+    @keyframes type-tilt { to { rotate: -4deg; } }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    [data-design] [data-scroll-motion~="glide"] {
+      animation: collage-glide linear both;
+      animation-timeline: view(block);
+      animation-range: cover 0% cover 100%;
+    }
+    [data-design] [data-scroll-motion~="window"] {
+      animation: horizontal-opening linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% cover 40%;
+    }
+    [data-design] [data-scroll-motion~="light"] {
+      animation: text-light linear both;
+      animation-timeline: view(block);
+      animation-range: cover 14% cover 22%;
+    }
+    @keyframes collage-glide { from { translate: -5% 0; } to { translate: 5% 0; } }
+    @keyframes horizontal-opening { from { clip-path: inset(0 12% round 2cqw); } to { clip-path: inset(0 round 2cqw); } }
+    @keyframes text-light { from { opacity: .16; } }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(> body[data-design]) { scroll-behavior: auto; }
+  [data-design] *,
+  [data-design] *::before,
+  [data-design] *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

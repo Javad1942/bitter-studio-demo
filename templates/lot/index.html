@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="../choose.css" />
     <script defer src="../series-b/interact.js"></script>
     <script defer src="../series-b/notes.js"></script>
-  </head>
-  <body class="lot" id="top">
+  <link rel="stylesheet" href="../motion.css">
+<link rel="stylesheet" href="../location.css">
+  <script defer src="../location.js"></script>
+</head>
+  <body data-design="lot" class="lot" id="top">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <header class="mast">
       <div class="shell mast-inner">
@@ -71,18 +74,18 @@
           >
         </div>
       </section>
-      <section class="section shell" id="work">
+      <section data-scroll-motion="section" class="section shell" id="work">
         <div class="section-head">
           <div>
             <div class="eyebrow">دفتر معماری</div>
-            <h2>ساخته‌ها و طرح‌ها</h2>
+            <h2 data-scroll-motion="heading">ساخته‌ها و طرح‌ها</h2>
           </div>
           <p>چند مطالعه درباره‌ی نور، سکونت و پیوند بنا با زمین.</p>
         </div>
         <div class="work-grid">
-          <article class="work-card" data-category="مسکونی">
+          <article data-scroll-motion="card tile" class="work-card" data-category="مسکونی">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture window"
                 src="work-1.svg"
                 loading="lazy"
                 width="1000"
@@ -99,9 +102,9 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="فرهنگی">
+          <article data-scroll-motion="card tile" class="work-card" data-category="فرهنگی">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture window"
                 src="work-2.svg"
                 loading="lazy"
                 width="1000"
@@ -118,9 +121,9 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="بازسازی">
+          <article data-scroll-motion="card tile" class="work-card" data-category="بازسازی">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture window"
                 src="work-3.svg"
                 loading="lazy"
                 width="1000"
@@ -139,26 +142,26 @@
           </article>
         </div>
       </section>
-      <section class="band" id="about">
+      <section data-scroll-motion="section" class="band" id="about">
         <div class="section shell">
           <div class="section-head">
             <div>
               <div class="eyebrow">لوت</div>
-              <h2>دامنه‌ی کار دفتر</h2>
+              <h2 data-scroll-motion="heading">دامنه‌ی کار دفتر</h2>
             </div>
           </div>
           <div class="steps">
-            <article>
+            <article data-scroll-motion="card row">
               <span>۰۱</span>
               <h3>پژوهش زمینه</h3>
               <p>خوانش زمین، نور، همسایگی و حافظه‌ی مکان.</p>
             </article>
-            <article>
+            <article data-scroll-motion="card row">
               <span>۰۲</span>
               <h3>طرح و جزئیات</h3>
               <p>تبدیل مطالعات به نقشه و نمونه‌ی فیزیکی مصالح.</p>
             </article>
-            <article>
+            <article data-scroll-motion="card row">
               <span>۰۳</span>
               <h3>همراهی اجرا</h3>
               <p>حضور در کارگاه و پیگیری کیفیت جزئیات تا پایان.</p>
@@ -166,10 +169,10 @@
           </div>
         </div>
       </section>
-      <section class="field-note" aria-labelledby="field-title">
+      <section data-scroll-motion="section" class="field-note" aria-labelledby="field-title">
         <div class="shell note-layout">
-          <figure>
-            <img
+          <figure data-scroll-motion="tile">
+            <img data-scroll-motion="picture"
               src="work-3.svg"
               width="1000"
               height="580"
@@ -179,7 +182,7 @@
           </figure>
           <div class="note-copy">
             <div class="eyebrow">دفترچه‌ی مصالح</div>
-            <h2 id="field-title">ماده، نور، مقیاس.</h2>
+            <h2 data-scroll-motion="heading" id="field-title">ماده، نور، مقیاس.</h2>
             <p>
               سه یادداشت از تصمیم‌هایی که شخصیت ساختمان را در مرحله‌ی جزئیات شکل
               می‌دهند.
@@ -208,17 +211,17 @@
           </div>
         </div>
       </section>
-      <section class="section shell faq" id="faq">
+      <section data-scroll-motion="section" class="section shell faq" id="faq">
         <div>
           <div class="eyebrow">پیش از شروع</div>
-          <h2>پرسش‌های رایج</h2>
+          <h2 data-scroll-motion="heading">پرسش‌های رایج</h2>
         </div>
         <div>
-          <details>
+          <details data-scroll-motion="row">
             <summary>پیش از شروع طراحی چه مدارکی لازم است؟</summary>
             <p>موقعیت زمین، حدود متراژ و تصویری از نیازهای استفاده‌کنندگان.</p>
           </details>
-          <details>
+          <details data-scroll-motion="row">
             <summary>چطور جزئیات دلخواهم را آماده کنم؟</summary>
             <p>
               فرم پایین صفحه را تکمیل کن. یک فایل متنی از انتخاب و توضیحاتت
@@ -227,11 +230,11 @@
           </details>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section data-scroll-motion="section" class="contact" id="contact">
         <div class="section shell contact-grid">
           <div>
             <div class="eyebrow">دفتر معماری</div>
-            <h2>درباره‌ی زمین و ایده‌ات بگو.</h2>
+            <h2 data-scroll-motion="heading">درباره‌ی زمین و ایده‌ات بگو.</h2>
             <p>
               این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
               فایل متنی دریافت می‌کنی.
@@ -251,7 +254,15 @@
         </div>
       </section>
     </main>
-    <footer class="shell foot">
+    <aside class="demo-location" aria-label="موقعیت Lot" data-scroll-motion="section">
+  <img class="location-map" src="../location-map.svg" alt="">
+  <i class="location-pin" aria-hidden="true"></i>
+  <div class="location-card">
+    <strong>Lot</strong><small>نقشهٔ نمایشی موقعیت</small>
+    <div class="location-actions"><a href="#contact">راه ارتباطی</a><button type="button" aria-pressed="false">بزرگ‌نمایی نقشه</button></div>
+  </div>
+</aside>
+<footer class="shell foot">
       <span dir="ltr">Lot</span><a href="#top">بازگشت به بالا ↑</a>
     </footer>
     <a

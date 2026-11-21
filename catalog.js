@@ -257,7 +257,13 @@ function mountProjectBrief(onDialogChange=()=>{}) {
   const sample=form.querySelector('.brief-face');
   let lastDesign, coverUrl='';
   let templateEditor;
-  const scaleFrame=()=>sample.style.setProperty('--brief-scale',sample.clientWidth/1280);
+  const phonePreview=matchMedia('(max-width:700px)');
+  function scaleFrame(){
+    const width=phonePreview.matches ? 390 : 1280;
+    sample.style.setProperty('--brief-viewport',width+'px');
+    sample.style.setProperty('--brief-scale',sample.clientWidth/width);
+  }
+  phonePreview.addEventListener('change',scaleFrame);
   new ResizeObserver(scaleFrame).observe(sample);
   function mountTemplate(project){
     sample.replaceChildren();sample.classList.add('live-template');
@@ -266,10 +272,15 @@ function mountProjectBrief(onDialogChange=()=>{}) {
     frame.addEventListener('load',()=>{
       if(!frame.isConnected)return;
       const page=frame.contentDocument;
+      // The editor is a fixed, inert thumbnail. Keep decorative overflow
+      // inside its viewport, including wide moving strips in RTL templates.
+      page.documentElement.style.overflow='clip';
+      page.body.style.overflowX='clip';
       const title=page.querySelector('[data-template-title]') || page.querySelector('h1');
-      const brands=[...page.querySelectorAll('[data-template-brand]')];
-      const cover=page.querySelector('[data-template-cover]');
-      form.elements.cover.closest('label').hidden=!cover;
+      const brands=[...page.querySelectorAll(project.template?'[data-template-brand]':'.microbar b')];
+      const concept=project.template?null:page.querySelector('.face');
+      const cover=page.querySelector('[data-template-cover]') || concept?.querySelector('img');
+      form.elements.cover.closest('label').hidden=!(cover||concept);
       const textFields=[[title,form.elements.headline],...brands.map(node=>[node,form.elements.brand])].filter(([node])=>node);
       const originals=textFields.map(([node])=>node.innerHTML);
       const photo=page.createElement('img');
@@ -281,6 +292,13 @@ function mountProjectBrief(onDialogChange=()=>{}) {
           if(input.value.trim())node.textContent=input.value.trim();
           else if(node.innerHTML!==originals[i])node.innerHTML=originals[i];
         });
+        if(concept){
+          concept.classList.toggle('custom-cover',Boolean(coverUrl));
+          if(!cover && coverUrl){
+            photo.src=coverUrl;
+            if(photo.parentNode!==concept)concept.prepend(photo);
+          }else photo.remove();
+        }
         if(!cover)return;
         if(cover.tagName==='IMG'){
           if(coverUrl)cover.src=coverUrl;else if(originalSrc)cover.src=originalSrc;
@@ -290,7 +308,8 @@ function mountProjectBrief(onDialogChange=()=>{}) {
       };
       templateEditor();scaleFrame();
     });
-    frame.src=templatePath(project);sample.append(frame);scaleFrame();
+    frame.src=project.template ? templatePath(project) : 'design-preview.html?name='+encodeURIComponent(project.slug);
+    sample.append(frame);scaleFrame();
   }
   function updatePreview(){
     const project=catalogDesigns[Number(byId('brief-design').value)];
@@ -301,24 +320,9 @@ function mountProjectBrief(onDialogChange=()=>{}) {
       form.querySelector('[data-brief-field]').textContent=project.field;
       form.querySelector('.brief-sample').style.setProperty('--sample-tone',project.wash);
       form.elements.cover.closest('label').hidden=false;
-      if(project.template)mountTemplate(project);
-      else{sample.classList.remove('live-template');sample.innerHTML=preview(project)}
+      mountTemplate(project);
     }
-    if(project.template){templateEditor?.();return}
-    const face=sample.firstElementChild;
-    face.querySelector('.microbar b').textContent=form.elements.brand.value.trim()||project.name;
-    const heading=face.querySelector('.face-title');
-    if(form.elements.headline.value.trim())heading.textContent=form.elements.headline.value.trim();
-    else heading.innerHTML=project.title;
-    let img=face.querySelector('img');
-    if(coverUrl){
-      if(!img){img=document.createElement('img');img.alt='';face.prepend(img)}
-      img.src=coverUrl;face.classList.add('custom-cover');
-    }else{
-      face.classList.remove('custom-cover');
-      if(img && project.img)img.src='concept-'+project.img+'.webp';
-      else img?.remove();
-    }
+    templateEditor?.();
   }
   form.elements.cover.addEventListener('change',()=>{
     if(coverUrl)URL.revokeObjectURL(coverUrl);

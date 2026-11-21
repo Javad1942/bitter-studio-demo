@@ -20,7 +20,7 @@
     document.documentElement.style.setProperty('--sample-ink', project.ink);
     document.documentElement.style.setProperty('--sample-dot', project.dot);
     main.innerHTML = preview(project) + pageStrip(project) +
-      '<section id="concept-story" class="sample-story"><span>دربارهٔ '+project.name+'</span><h2>'+project.section+'</h2><p>'+project.desc+'</p></section>'+
+      '<section id="concept-story" class="sample-story" data-scroll-motion="section"><span>دربارهٔ '+project.name+'</span><h2 data-scroll-motion="heading">'+project.section+'</h2><p>'+project.desc+'</p></section>'+
       '<footer class="sample-footer"><strong>'+project.name+'</strong><a href="'+pageURL+'" target="_top">مشخصات این طرح در Bitter</a></footer>';
     const face = main.querySelector('.face');
     face.removeAttribute('aria-hidden');
@@ -29,6 +29,8 @@
     heading.className=title.className; heading.innerHTML=title.innerHTML; title.replaceWith(heading);
     const strip=main.querySelector('.sample-strip');
     strip.id='collection'; strip.removeAttribute('aria-hidden');
+    strip.querySelector('b').dataset.scrollMotion='heading';
+    for(const card of strip.querySelectorAll('.strip-grid > div'))card.dataset.scrollMotion='card';
     const action=face.querySelector('.face-action'),link=document.createElement('a');
     link.className=action.className;link.textContent=action.textContent;link.href='#collection';action.replaceWith(link);
     const nav=face.querySelector('.microbar small');
@@ -50,12 +52,49 @@
   const length=Math.max(1,[...project.name].filter(letter=>letter.trim()&&letter!=='‌').length);
   name.style.setProperty('--title-wide',(44/(length*.56))+'cqw');
   name.style.setProperty('--title-narrow',(96/(length*.56))+'cqw');
-  project.name.split(/\s+/).forEach((word,index)=>{
-    const part=document.createElement('span');
-    part.className='case-word';part.textContent=word;part.style.setProperty('--word-index',index);
-    if(index)name.append(' ');
+  const motionAllowed = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let characterIndex = 0;
+  for (const word of project.name.split(/\s+/)) {
+    const part = document.createElement('span');
+    part.className = 'case-word';
+    part.textContent = word;
+    if (name.hasChildNodes()) name.append(' ');
     name.append(part);
-  });
+
+    // Slice the already-shaped word so staggered letters keep their Persian joining forms.
+    if (!motionAllowed || !Intl.Segmenter) continue;
+    const segmenter = new Intl.Segmenter('fa', {granularity: 'grapheme'});
+    const range = document.createRange();
+    const bounds = part.getBoundingClientRect();
+    if (!bounds.width) continue;
+    const slices = [];
+    for (const {segment, index} of segmenter.segment(word)) {
+      range.setStart(part.firstChild, index);
+      range.setEnd(part.firstChild, index + segment.length);
+      const rect = range.getBoundingClientRect();
+      if (rect.width) slices.push({middle: (rect.left + rect.width / 2 - bounds.left) / bounds.width, index: characterIndex++});
+    }
+    if (!slices.length) continue;
+    slices.sort((a,b) => a.middle - b.middle);
+    const layer = document.createElement('span');
+    layer.className = 'case-letters';
+    layer.setAttribute('aria-hidden', 'true');
+    slices.forEach((slice, index) => {
+      const strip = document.createElement('span');
+      strip.dataset.word = word;
+      const left = index ? (slice.middle + slices[index-1].middle) * 50 : -8;
+      const right = index < slices.length-1 ? 100 - (slice.middle + slices[index+1].middle) * 50 : -8;
+      strip.style.clipPath = 'inset(-100% ' + right + '% -100% ' + left + '%)';
+      strip.style.animationDelay = (120 + 26 * slice.index) + 'ms';
+      layer.append(strip);
+    });
+    part.append(layer);
+    part.classList.add('entering');
+    Promise.allSettled(layer.getAnimations({subtree:true}).map(animation => animation.finished)).then(() => {
+      part.classList.remove('entering');
+      layer.remove();
+    });
+  }
 
   const fieldsURL='designs.html?field='+encodeURIComponent(project.field);
   const list=new Intl.ListFormat('fa',{style:'long',type:'conjunction'});
@@ -127,7 +166,7 @@
 
   const stage=byId('stage');
   const screen=stage.querySelector('.device-screen');
-  const poster=byId('case-poster');
+  const posters={desktop:byId('case-poster'), mobile:byId('phone-poster')};
   const frame=byId('live-preview');
   const modeButton=byId('preview-mode');
   const deviceButtons=[...document.querySelectorAll('.switch-view button')];
@@ -139,10 +178,10 @@
 
   function sizeFrame(){
     if(frame.hidden || !screen.clientWidth)return;
-    const logicalWidth=device==='desktop'?Math.max(screen.clientWidth,1280):390;
+    const logicalWidth=device==='desktop'?Math.max(screen.clientWidth,1440):390;
     const scale=screen.clientWidth/logicalWidth;
     frame.style.width=logicalWidth+'px';
-    frame.style.height=Math.ceil(screen.clientHeight/scale)+'px';
+    frame.style.height=(device==='mobile'?844:Math.ceil(screen.clientHeight/scale))+'px';
     frame.style.transform='scale('+scale+')';
   }
 
@@ -150,7 +189,7 @@
     const live=requestedLive || failedPosters.has(device);
     stage.dataset.device=device;
     stage.dataset.mode=live?'live':'poster';
-    poster.hidden=live;
+    for(const [view,image] of Object.entries(posters)) image.hidden=live || view!==device;
     frame.hidden=!live;
     stage.tabIndex=live || coarse.matches?-1:0;
     const deviceLabel=device==='mobile'?'موبایل':'دسکتاپ';
@@ -164,18 +203,21 @@
       if(!frame.getAttribute('src'))frame.src=sampleURL;
       else frame.contentDocument?.defaultView?.scrollTo({top:0,behavior:'instant'});
     }else{
+      const poster=posters[device];
       const src='previews/'+project.slug+'-'+device+'.webp';
       poster.alt='صفحهٔ کامل طرح '+project.name+' در نمای '+deviceLabel;
       if(poster.getAttribute('src')!==src)poster.src=src;
     }
     stage.scrollTop=0;
   }
-  poster.addEventListener('error',()=>{
-    failedPosters.add(device);
-    showView();
-  });
+  for (const [view,image] of Object.entries(posters)) {
+    image.addEventListener('error', () => {
+      failedPosters.add(view);
+      if (device === view) showView();
+    });
+  }
   modeButton.addEventListener('click',()=>{
-    requestedLive=!requestedLive;
+    requestedLive=frame.hidden;
     showView();
   });
   deviceButtons.forEach(button=>button.addEventListener('click',()=>{

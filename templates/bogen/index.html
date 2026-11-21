@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="../choose.css" />
     <script defer src="../series-b/interact.js"></script>
     <script defer src="../series-b/notes.js"></script>
-  </head>
-  <body class="bogen" id="top">
+  <link rel="stylesheet" href="../motion.css">
+<link rel="stylesheet" href="../location.css">
+  <script defer src="../location.js"></script>
+</head>
+  <body data-design="bogen" class="bogen" id="top">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <header class="mast">
       <div class="shell mast-inner">
@@ -62,17 +65,25 @@
           />
           <figcaption>مدل سدان · مجموعه‌ی آبان</figcaption>
         </figure>
+        <div class="model-picker" aria-label="مدل‌های نمایشگاه">
+          <div class="model-controls">
+            <strong id="model-name" aria-live="polite">سدان آبان</strong>
+            <button type="button" data-step="-1" aria-label="مدل قبلی">→</button>
+            <button type="button" data-step="1" aria-label="مدل بعدی">←</button>
+          </div>
+          <img id="model-preview" src="work-1.svg" width="1000" height="580" alt="سدان آبان">
+        </div>
       </section>
-      <section class="section shell" id="work">
+      <section data-scroll-motion="section" class="section shell" id="work">
         <div class="section-head">
           <div>
             <div class="eyebrow">خانه‌ی خودرو</div>
-            <h2>خودروهای نمایشگاه</h2>
+            <h2 data-scroll-motion="heading">خودروهای نمایشگاه</h2>
           </div>
           <p>سه پیشنهاد برای شهر، سفر و مسیرهای بیرون از شهر.</p>
         </div>
         <div class="work-grid">
-          <article class="work-card" data-category="سواری">
+          <article data-scroll-motion="tile" class="work-card" data-category="سواری">
             <div class="media">
               <img
                 src="work-1.svg"
@@ -91,7 +102,7 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="شهری">
+          <article data-scroll-motion="tile" class="work-card" data-category="شهری">
             <div class="media">
               <img
                 src="work-2.svg"
@@ -110,7 +121,7 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="کراس‌اور">
+          <article data-scroll-motion="tile" class="work-card" data-category="کراس‌اور">
             <div class="media">
               <img
                 src="work-3.svg"
@@ -131,12 +142,12 @@
           </article>
         </div>
       </section>
-      <section class="band" id="about">
+      <section data-scroll-motion="section" class="band" id="about">
         <div class="section shell">
           <div class="section-head">
             <div>
               <div class="eyebrow">بوگن</div>
-              <h2>خدمات پس از انتخاب</h2>
+              <h2 data-scroll-motion="heading">خدمات پس از انتخاب</h2>
             </div>
           </div>
           <div class="steps">
@@ -158,20 +169,20 @@
           </div>
         </div>
       </section>
-      <section class="field-note" aria-labelledby="field-title">
+      <section data-scroll-motion="section" class="field-note" aria-labelledby="field-title">
         <div class="shell note-layout">
-          <figure>
+          <figure data-scroll-motion="tile">
             <img
               src="work-1.svg"
               width="1000"
               height="580"
               loading="lazy"
               alt="پیش از خرید کدام مدل به کارت می‌آید؟"
-            />
+            / data-scroll-motion="glide">
           </figure>
           <div class="note-copy">
             <div class="eyebrow">پیش از خرید</div>
-            <h2 id="field-title">کدام مدل به کارت می‌آید؟</h2>
+            <h2 data-scroll-motion="heading" id="field-title">کدام مدل به کارت می‌آید؟</h2>
             <p>
               سه خودروی نمایشگاه را بر اساس نوع استفاده و مشخصات پایه مرور کن.
             </p>
@@ -196,10 +207,10 @@
           </div>
         </div>
       </section>
-      <section class="section shell faq" id="faq">
+      <section data-scroll-motion="section" class="section shell faq" id="faq">
         <div>
           <div class="eyebrow">پیش از شروع</div>
-          <h2>پرسش‌های رایج</h2>
+          <h2 data-scroll-motion="heading">پرسش‌های رایج</h2>
         </div>
         <div>
           <details>
@@ -218,11 +229,11 @@
           </details>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section data-scroll-motion="section" class="contact" id="contact">
         <div class="section shell contact-grid">
           <div>
             <div class="eyebrow">خانه‌ی خودرو</div>
-            <h2>یک بازدید هماهنگ کن.</h2>
+            <h2 data-scroll-motion="heading">یک بازدید هماهنگ کن.</h2>
             <p>
               این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
               فایل متنی دریافت می‌کنی.
@@ -242,7 +253,15 @@
         </div>
       </section>
     </main>
-    <footer class="shell foot">
+    <aside class="demo-location" aria-label="موقعیت Bogen" data-scroll-motion="section">
+  <img class="location-map" src="../location-map.svg" alt="">
+  <i class="location-pin" aria-hidden="true"></i>
+  <div class="location-card">
+    <strong>Bogen</strong><small>نقشهٔ نمایشی موقعیت</small>
+    <div class="location-actions"><a href="#contact">راه ارتباطی</a><button type="button" aria-pressed="false">بزرگ‌نمایی نقشه</button></div>
+  </div>
+</aside>
+<footer class="shell foot">
       <span dir="ltr">Bogen</span><a href="#top">بازگشت به بالا ↑</a>
     </footer>
     <a

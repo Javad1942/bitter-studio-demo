@@ -107,3 +107,20 @@
       "خلاصه‌ی درخواست برای دانلود آماده شد.";
   });
 })();
+
+const modelPicker = document.querySelector('.model-picker');
+if (modelPicker) {
+  const models = [...document.querySelectorAll('#work .work-card .media img')];
+  const preview = document.getElementById('model-preview');
+  const name = document.getElementById('model-name');
+  let currentModel = 0;
+  for (const button of modelPicker.querySelectorAll('[data-step]')) {
+    button.addEventListener('click', () => {
+      currentModel = (currentModel + Number(button.dataset.step) + models.length) % models.length;
+      const model = models[currentModel];
+      preview.src = model.src;
+      preview.alt = model.alt;
+      name.textContent = model.alt;
+    });
+  }
+}

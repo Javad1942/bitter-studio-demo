@@ -54,7 +54,7 @@
 .template-shot{display:block;width:100%;height:auto;aspect-ratio:1280/1120}
 .face.template-face img{inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0}
 .brief-face.live-template{position:relative;aspect-ratio:1.6;background:white}
-.brief-face.live-template iframe{position:absolute;inset:0 auto auto 0;width:1280px;height:800px;transform:scale(var(--brief-scale,0.25));transform-origin:top left;border:0;background:white}
+.brief-face.live-template iframe{position:absolute;inset:0 auto auto 0;width:var(--brief-viewport,1280px);height:var(--brief-height,800px);transform:scale(var(--brief-scale,0.25));transform-origin:top left;border:0;background:white}
 .brief-fields label[hidden]{display:none}
 
 /* The caption stays put while the visitor moves through the actual page inside the frame. */
@@ -149,3 +149,7 @@
  .design-catalogue #gallery{margin-block-start:32px}
 }
 @media(prefers-reduced-motion:reduce){.picker-list:not([hidden]){animation:none}.filters .catalog-picker>button,.catalog-picker>button::after,.picker-list button,.picker-list button i,.gallery-card .sample-cta{transition:none}}
+
+.sample-site .face.custom-cover > img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sample-site .custom-cover :is(.poster-art,.playful-art,.sample-art) {display:none}
+.sample-site .custom-cover :is(.face-title,.microbar) {background:#fffc;color:#151525;border-radius:4px;padding-inline:.2em}

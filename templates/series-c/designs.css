@@ -120,3 +120,23 @@
  .phase .lighting{min-height:235px;flex:1}.phase .lighting img{object-fit:cover}
  .house-copy{margin-bottom:clamp(35px,7svh,94px)}
 }
+
+@media (max-width: 700px) {
+  .phase .hero {padding-bottom:clamp(138px,19.5svh,176px)}
+  .phase .phase-copy {margin:clamp(38px,6.8svh,64px) var(--pad) 18px}
+  .phase-copy h1 {font-size:clamp(41px,12vw,68px);line-height:1.16}
+  .phase-copy .mobile-break,.neugier .mobile-break,.malve .mobile-break {display:block}
+  .neugier .hero h1 {margin-top:clamp(15px,3svh,32px);width:100%}
+  .neugier .mobile-break + br,.malve .mobile-break + br {display:none}
+  .phase-copy p {font-size:16px;line-height:1.6}
+  .phase .lighting {flex:0 0 auto;min-height:0;aspect-ratio:1.49}
+  .phase .lighting picture,.phase .lighting img {display:block;width:100%;height:100%}
+  .phase-copy .cert {bottom:76px;gap:6px;max-width:300px;flex-wrap:wrap}
+  .phase-copy .cert span {font-size:12px;padding:6px 12px}
+  .phase-copy .actions {bottom:18px}
+  .phase-copy .actions a {min-height:48px}
+  .malve .hero {margin:0;padding:clamp(76px,11.3svh,110px) 4vw 5vw}
+  .malve .hero-copy h1 {font-size:clamp(35px,10vw,58px);line-height:1.12}
+  .malve .hero-pair {margin-top:clamp(34px,7svh,68px)}
+  .malve .hero-pair>img,.malve .hero-pair>div {height:auto;aspect-ratio:1.21}
+}

@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="../choose.css" />
     <script defer src="../series-b/interact.js"></script>
     <script defer src="../series-b/notes.js"></script>
-  </head>
-  <body class="doppel" id="top">
+  <link rel="stylesheet" href="../motion.css">
+<link rel="stylesheet" href="../location.css">
+  <script defer src="../location.js"></script>
+</head>
+  <body data-design="doppel" class="doppel" id="top">
     <a class="skip" href="#main">رفتن به محتوا</a>
     <header class="mast">
       <div class="shell mast-inner">
@@ -58,18 +61,18 @@
           >
         </div>
       </section>
-      <section class="section shell" id="work">
+      <section data-scroll-motion="section" class="section shell" id="work">
         <div class="section-head">
           <div>
             <div class="eyebrow">باشگاه پدل</div>
-            <h2>روی زمین چه می‌گذرد؟</h2>
+            <h2 data-scroll-motion="heading">روی زمین چه می‌گذرد؟</h2>
           </div>
           <p>تمرین گروهی، بازی آزاد و دورهمی‌های هفتگی باشگاه.</p>
         </div>
         <div class="work-grid">
-          <article class="work-card" data-category="آموزش">
+          <article data-scroll-motion="card" class="work-card" data-category="آموزش">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-1.svg"
                 loading="lazy"
                 width="1000"
@@ -86,9 +89,9 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="بازی آزاد">
+          <article data-scroll-motion="card" class="work-card" data-category="بازی آزاد">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-2.svg"
                 loading="lazy"
                 width="1000"
@@ -105,9 +108,9 @@
               </button>
             </div>
           </article>
-          <article class="work-card" data-category="لیگ دوستانه">
+          <article data-scroll-motion="card" class="work-card" data-category="لیگ دوستانه">
             <div class="media">
-              <img
+              <img data-scroll-motion="picture"
                 src="work-3.svg"
                 loading="lazy"
                 width="1000"
@@ -126,9 +129,9 @@
           </article>
         </div>
       </section>
-      <section class="section shell schedule" id="schedule">
+      <section data-scroll-motion="section" class="section shell schedule" id="schedule">
         <div class="section-head">
-          <h2>برنامه‌ی زمین‌ها</h2>
+          <h2 data-scroll-motion="heading">برنامه‌ی زمین‌ها</h2>
           <p>روز بازی را انتخاب کن تا سانس‌های همان روز نمایش داده شوند.</p>
         </div>
         <div class="filters" data-days aria-label="روز بازی">
@@ -158,26 +161,26 @@
           </button>
         </div>
       </section>
-      <section class="band" id="about">
+      <section data-scroll-motion="section" class="band" id="about">
         <div class="section shell">
           <div class="section-head">
             <div>
               <div class="eyebrow">دُپل</div>
-              <h2>از اولین ضربه تا مسابقه</h2>
+              <h2 data-scroll-motion="heading">از اولین ضربه تا مسابقه</h2>
             </div>
           </div>
           <div class="steps">
-            <article>
+            <article data-scroll-motion="card">
               <span>۰۱</span>
               <h3>سانست را پیدا کن</h3>
               <p>برنامه‌ی هفتگی را بر اساس روز مرور کن.</p>
             </article>
-            <article>
+            <article data-scroll-motion="card">
               <span>۰۲</span>
               <h3>راکت بردار</h3>
               <p>برای جلسه‌ی اول تجهیزات در باشگاه آماده است.</p>
             </article>
-            <article>
+            <article data-scroll-motion="card">
               <span>۰۳</span>
               <h3>وارد بازی شو</h3>
               <p>مربی قواعد و ترکیب بازی را همان‌جا معرفی می‌کند.</p>
@@ -185,10 +188,10 @@
           </div>
         </div>
       </section>
-      <section class="field-note" aria-labelledby="field-title">
+      <section data-scroll-motion="section" class="field-note" aria-labelledby="field-title">
         <div class="shell note-layout">
           <figure>
-            <img
+            <img data-scroll-motion="picture"
               src="work-2.svg"
               width="1000"
               height="580"
@@ -198,7 +201,7 @@
           </figure>
           <div class="note-copy">
             <div class="eyebrow">عضویت باشگاه</div>
-            <h2 id="field-title">چه‌قدر بازی می‌کنی؟</h2>
+            <h2 data-scroll-motion="heading" id="field-title">چه‌قدر بازی می‌کنی؟</h2>
             <p>
               از سانس تک‌جلسه‌ای تا یک فصل کامل، برنامه‌ای متناسب با ریتمت
               انتخاب کن.
@@ -224,10 +227,10 @@
           </div>
         </div>
       </section>
-      <section class="section shell faq" id="faq">
+      <section data-scroll-motion="section" class="section shell faq" id="faq">
         <div>
           <div class="eyebrow">پیش از شروع</div>
-          <h2>پرسش‌های رایج</h2>
+          <h2 data-scroll-motion="heading">پرسش‌های رایج</h2>
         </div>
         <div>
           <details>
@@ -243,11 +246,11 @@
           </details>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section data-scroll-motion="section" class="contact" id="contact">
         <div class="section shell contact-grid">
           <div>
             <div class="eyebrow">باشگاه پدل</div>
-            <h2>برای بازی آماده‌ای؟</h2>
+            <h2 data-scroll-motion="heading">برای بازی آماده‌ای؟</h2>
             <p>
               این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
               فایل متنی دریافت می‌کنی.
@@ -267,7 +270,15 @@
         </div>
       </section>
     </main>
-    <footer class="shell foot">
+    <aside class="demo-location" aria-label="موقعیت Doppel" data-scroll-motion="section">
+  <img class="location-map" src="../location-map.svg" alt="">
+  <i class="location-pin" aria-hidden="true"></i>
+  <div class="location-card">
+    <strong>Doppel</strong><small>نقشهٔ نمایشی موقعیت</small>
+    <div class="location-actions"><a href="#contact">راه ارتباطی</a><button type="button" aria-pressed="false">بزرگ‌نمایی نقشه</button></div>
+  </div>
+</aside>
+<footer class="shell foot">
       <span dir="ltr">Doppel</span><a href="#top">بازگشت به بالا ↑</a>
     </footer>
     <a
