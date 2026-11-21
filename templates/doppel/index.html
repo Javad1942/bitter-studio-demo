@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../../bitter-mark.svg" />
+    <meta name="theme-color" content="#eee" />
+    <title>دُپل | باشگاه پدل</title>
+    <meta
+      name="description"
+      content="زمین آبی، راکت آماده و یک هم‌بازی تازه. پدل را همین‌جا شروع کن."
+    />
+    <link rel="stylesheet" href="../series-b/base.css" />
+    <link rel="stylesheet" href="../series-b/scenes.css" />
+    <link rel="stylesheet" href="../series-b/refinements.css" />
+    <link rel="stylesheet" href="../series-b/notes.css" />
+    <link rel="stylesheet" href="../choose.css" />
+    <script defer src="../series-b/interact.js"></script>
+    <script defer src="../series-b/notes.js"></script>
+  </head>
+  <body class="doppel" id="top">
+    <a class="skip" href="#main">رفتن به محتوا</a>
+    <header class="mast">
+      <div class="shell mast-inner">
+        <a href="#top" class="brand"
+          ><span class="mark" aria-hidden="true">◍</span
+          ><span data-template-brand>Doppel</span></a
+        ><button class="menu" aria-expanded="false" aria-controls="nav">
+          منو <b aria-hidden="true">☰</b>
+        </button>
+        <nav id="nav">
+          <a href="#work">روی زمین چه می‌گذرد؟</a
+          ><a href="#about">از اولین ضربه تا مسابقه</a><a href="#faq">پرسش‌ها</a
+          ><a class="btn small" href="#contact"
+            >تماس<span aria-hidden="true">↙</span></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero shell">
+        <img
+          class="hero-art"
+          data-template-cover
+          src="hero.svg"
+          width="1000"
+          height="580"
+          alt="باشگاه پدل؛ تصویرسازی دُپل"
+          fetchpriority="high"
+        />
+        <div class="scene-copy">
+          <div class="eyebrow">باشگاه پدل و بازی جمعی</div>
+          <h1 data-template-title>دو نفره، بهتره.</h1>
+        </div>
+        <div class="court-action">
+          <a class="btn" href="#schedule"
+            >انتخاب سانس<span aria-hidden="true">↙</span></a
+          >
+        </div>
+      </section>
+      <section class="section shell" id="work">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">باشگاه پدل</div>
+            <h2>روی زمین چه می‌گذرد؟</h2>
+          </div>
+          <p>تمرین گروهی، بازی آزاد و دورهمی‌های هفتگی باشگاه.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card" data-category="آموزش">
+            <div class="media">
+              <img
+                src="work-1.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="اولین راکت"
+              />
+            </div>
+            <div class="caption">
+              <small>آموزش</small>
+              <h3>اولین راکت</h3>
+              <p>مبانی ضربه و حرکت در سه جلسه‌ی سبک گروهی.</p>
+              <button class="text-action" data-pick="اولین راکت">
+                انتخاب فعالیت ↙
+              </button>
+            </div>
+          </article>
+          <article class="work-card" data-category="بازی آزاد">
+            <div class="media">
+              <img
+                src="work-2.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="چهار نفر، یک زمین"
+              />
+            </div>
+            <div class="caption">
+              <small>بازی آزاد</small>
+              <h3>چهار نفر، یک زمین</h3>
+              <p>سانس مستقل برای بازیکن‌هایی که گروه خود را دارند.</p>
+              <button class="text-action" data-pick="چهار نفر، یک زمین">
+                انتخاب فعالیت ↙
+              </button>
+            </div>
+          </article>
+          <article class="work-card" data-category="لیگ دوستانه">
+            <div class="media">
+              <img
+                src="work-3.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="پنجشنبه‌های دُپل"
+              />
+            </div>
+            <div class="caption">
+              <small>لیگ دوستانه</small>
+              <h3>پنجشنبه‌های دُپل</h3>
+              <p>دیدارهای کوتاه و جابه‌جایی حریف در هر دور.</p>
+              <button class="text-action" data-pick="پنجشنبه‌های دُپل">
+                انتخاب فعالیت ↙
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section shell schedule" id="schedule">
+        <div class="section-head">
+          <h2>برنامه‌ی زمین‌ها</h2>
+          <p>روز بازی را انتخاب کن تا سانس‌های همان روز نمایش داده شوند.</p>
+        </div>
+        <div class="filters" data-days aria-label="روز بازی">
+          <button data-day="0" aria-pressed="true">شنبه</button
+          ><button data-day="1" aria-pressed="false">دوشنبه</button
+          ><button data-day="2" aria-pressed="false">پنجشنبه</button>
+        </div>
+        <div class="slots" data-slots="0">
+          <button data-pick="شنبه ۱۶:۰۰ · آشنایی با پدل">
+            <b>۱۶:۰۰ · آشنایی با پدل</b><span>انتخاب سانس ↙</span></button
+          ><button data-pick="شنبه ۱۸:۳۰ · بازی آزاد">
+            <b>۱۸:۳۰ · بازی آزاد</b><span>انتخاب سانس ↙</span>
+          </button>
+        </div>
+        <div class="slots" data-slots="1" hidden>
+          <button data-pick="دوشنبه ۱۷:۰۰ · تمرین گروهی">
+            <b>۱۷:۰۰ · تمرین گروهی</b><span>انتخاب سانس ↙</span></button
+          ><button data-pick="دوشنبه ۱۹:۳۰ · بازی آزاد">
+            <b>۱۹:۳۰ · بازی آزاد</b><span>انتخاب سانس ↙</span>
+          </button>
+        </div>
+        <div class="slots" data-slots="2" hidden>
+          <button data-pick="پنجشنبه ۰۹:۰۰ · لیگ دوستانه">
+            <b>۰۹:۰۰ · لیگ دوستانه</b><span>انتخاب سانس ↙</span></button
+          ><button data-pick="پنجشنبه ۱۱:۰۰ · تمرین گروهی">
+            <b>۱۱:۰۰ · تمرین گروهی</b><span>انتخاب سانس ↙</span>
+          </button>
+        </div>
+      </section>
+      <section class="band" id="about">
+        <div class="section shell">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">دُپل</div>
+              <h2>از اولین ضربه تا مسابقه</h2>
+            </div>
+          </div>
+          <div class="steps">
+            <article>
+              <span>۰۱</span>
+              <h3>سانست را پیدا کن</h3>
+              <p>برنامه‌ی هفتگی را بر اساس روز مرور کن.</p>
+            </article>
+            <article>
+              <span>۰۲</span>
+              <h3>راکت بردار</h3>
+              <p>برای جلسه‌ی اول تجهیزات در باشگاه آماده است.</p>
+            </article>
+            <article>
+              <span>۰۳</span>
+              <h3>وارد بازی شو</h3>
+              <p>مربی قواعد و ترکیب بازی را همان‌جا معرفی می‌کند.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="field-note" aria-labelledby="field-title">
+        <div class="shell note-layout">
+          <figure>
+            <img
+              src="work-2.svg"
+              width="1000"
+              height="580"
+              loading="lazy"
+              alt="عضویت باشگاه چه‌قدر بازی می‌کنی؟"
+            />
+          </figure>
+          <div class="note-copy">
+            <div class="eyebrow">عضویت باشگاه</div>
+            <h2 id="field-title">چه‌قدر بازی می‌کنی؟</h2>
+            <p>
+              از سانس تک‌جلسه‌ای تا یک فصل کامل، برنامه‌ای متناسب با ریتمت
+              انتخاب کن.
+            </p>
+            <div class="note-options" aria-label="چه‌قدر بازی می‌کنی؟">
+              <button type="button" data-note="0" aria-pressed="true">
+                تک‌جلسه</button
+              ><button type="button" data-note="1" aria-pressed="false">
+                گروهی</button
+              ><button type="button" data-note="2" aria-pressed="false">
+                فصلی
+              </button>
+            </div>
+            <p class="note-answer" data-answer="0">
+              یک نوبت بازی آزاد برای امتحان زمین و پیدا کردن هم‌بازی.
+            </p>
+            <p class="note-answer" data-answer="1" hidden>
+              چهار جلسه‌ی تمرین با مربی برای یک گروه هم‌سطح.
+            </p>
+            <p class="note-answer" data-answer="2" hidden>
+              جای ثابت در برنامه‌ی تمرین و اولویت حضور در لیگ دوستانه.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section shell faq" id="faq">
+        <div>
+          <div class="eyebrow">پیش از شروع</div>
+          <h2>پرسش‌های رایج</h2>
+        </div>
+        <div>
+          <details>
+            <summary>برای جلسه‌ی اول باید راکت داشته باشم؟</summary>
+            <p>در برنامه‌ی آشنایی با پدل تجهیزات اولیه در باشگاه فراهم است.</p>
+          </details>
+          <details>
+            <summary>چطور جزئیات دلخواهم را آماده کنم؟</summary>
+            <p>
+              فرم پایین صفحه را تکمیل کن. یک فایل متنی از انتخاب و توضیحاتت
+              دریافت می‌کنی.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="section shell contact-grid">
+          <div>
+            <div class="eyebrow">باشگاه پدل</div>
+            <h2>برای بازی آماده‌ای؟</h2>
+            <p>
+              این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
+              فایل متنی دریافت می‌کنی.
+            </p>
+          </div>
+          <form>
+            <label
+              >نام<input name="visitor" autocomplete="name" required /></label
+            ><label>فعالیت دلخواه<input name="topic" required /></label
+            ><label class="full"
+              >توضیحات<textarea name="note" rows="3"></textarea></label
+            ><button class="btn" type="submit">
+              دریافت خلاصه‌ی درخواست <span>↓</span>
+            </button>
+            <p role="status" class="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="shell foot">
+      <span dir="ltr">Doppel</span><a href="#top">بازگشت به بالا ↑</a>
+    </footer>
+    <a
+      class="bitter-template-choose"
+      href="../../design.html?name=doppel#brief"
+      target="_top"
+      ><img src="../../bitter-mark.svg" alt="" />انتخاب این قالب</a
+    >
+  </body>
+</html>

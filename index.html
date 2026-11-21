@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f2f6">
+  <meta name="description" content="بیتر استودیو برای کسب‌وکارت سایت اختصاصی می‌سازه. طرح‌ها رو ببین، هزینه‌ها رو کنار هم بذار و از سایتی که توی ذهنت داری برامون بنویس.">
+  <title>بیتر استودیو | طراحی سایت اختصاصی</title>
+  <link rel="preload" href="Estedad-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="bitter-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="studio.css">
+  <link rel="stylesheet" href="identity.css">
+  <link rel="stylesheet" href="catalog.css">
+  <link rel="stylesheet" href="type.css">
+  <script src="illustrations.js" defer></script>
+  <script src="bitter-select.js" defer></script>
+  <script src="catalog.js" defer></script>
+  <script src="studio.js" defer></script>
+  <script src="experience.js" defer></script>
+  <script src="navigation.js" defer></script>
+  <link rel="stylesheet" href="secondary.css">
+  <link rel="stylesheet" href="panels-fidelity.css">
+  <link rel="stylesheet" href="hero-fidelity.css">
+  <link rel="stylesheet" href="offers.css">
+  <script src="preferences.js" defer></script>
+  <link rel="stylesheet" href="sculpture/object.css">
+  <script src="sculpture/loader.js" defer></script>
+  <link rel="stylesheet" href="bitter-select.css">
+  <link rel="stylesheet" href="brief.css">
+</head>
+<body>
+<a class="skip" href="#main">رفتن به محتوا</a>
+<header class="mast">
+  <div class="bar">
+    <a href="#main" class="wordmark" aria-label="Bitter، صفحهٔ اصلی"><img src="bitter-logo.svg" width="184" height="48" alt="Bitter"></a>
+    <button id="menub" class="menu-button" aria-controls="nav" aria-expanded="false"><span aria-hidden="true"><i class="menu-lines"></i></span> منو</button>
+    <nav id="nav" aria-label="منوی اصلی">
+      <a href="#work">طرح‌ها</a><a href="#process">مراحل</a><a href="#pricing">هزینه‌ها</a><a href="#faq">پرسش‌ها</a><a href="#game">بازی</a><a href="journal.html">مجله</a>
+    </nav>
+    <a class="pill primary nav-action" href="order.html"><i></i>ثبت سفارش</a>
+  </div>
+</header>
+<main id="main">
+  <section class="hero shell" aria-labelledby="headline">
+    <div class="intro">
+      <a class="eyetag" href="#process"><i></i> چهار قدم تا سایتت</a>
+      <h1 id="headline">یه سایت برای تو،<br>با امضای خودت.</h1>
+      <div class="actions"><a class="pill primary" href="#work"><i></i>بریم سراغ طرح‌ها</a><a class="pill ghost" href="#pricing">هزینهٔ طراحی</a></div>
+    </div>
+    <div class="deck" id="deck" role="group" aria-label="ورق زدن طرح‌ها"></div>
+    <p class="intro-note">یه کافه داری، محصول می‌سازی یا می‌خوای کارهات رو نشون بدی؟ از بین طرح‌ها یکی رو که دوست داری بردار. بعد با هم رنگ‌ها، عکس‌ها و صفحه‌هاش رو برای کار تو می‌چینیم.</p>
+    <div class="story">
+      <div id="indicators" aria-label="انتخاب مرحله"></div>
+      <div class="story-row"><span class="step-art" aria-hidden="true"></span><div><small id="step-count"></small><b id="step-name"></b><p id="step-copy"></p></div><button id="pause" aria-label="توقف ورق خوردن" title="توقف ورق خوردن">Ⅱ</button></div>
+    </div>
+  </section>
+  <section id="work" class="section shell">
+    <div class="section-head"><h2>طرح‌ها</h2><p>طرح‌ها رو باز کن و توی صفحه‌هاشون بچرخ. کدوم یکی بیشتر به حال‌وهوای کارت می‌خوره؟</p></div>
+    <div class="filters"><label class="search"><span class="lens" aria-hidden="true"></span><input id="search" type="search" aria-label="جست‌وجوی طرح" placeholder="جست‌وجو، مثلاً کافه، معماری یا آرام"></label>
+    <button id="reset" class="filter">همه <span>۸۷</span></button>
+    <select id="mood" aria-label="فیلتر حال‌وهوا"><option value="">حال‌وهوا</option></select>
+    <select id="field" aria-label="فیلتر زمینهٔ کاری"><option value="">زمینهٔ کاری</option></select></div>
+    <div id="gallery" class="gallery"></div><p id="empty" role="status" hidden>اینجا هنوز طرحی پیدا نکردیم. «همه» رو بزن یا یه کلمهٔ دیگه امتحان کن.</p>
+  <div class="catalog-more"><a class="pill primary" href="designs.html">دیدن همهٔ طرح‌ها <small>۸۷ طرح</small></a></div>
+  </section>
+  <aside class="sectors shell"><h3>دنبال طرحی برای چه کاری می‌گردی؟</h3><div id="sector-links"></div></aside>
+  <section id="why" class="section shell"><span class="panel-orb orb-1" style="--orb:#ff8046" aria-hidden="true"></span><span class="panel-orb orb-2" style="--orb:#c17aff" aria-hidden="true"></span><div class="section-head"><h2>چرا بیتر؟</h2><p>از اولین «سلام» تا روزی که لینک سایتت رو برای بقیه می‌فرستی، با خود تیم طراحی در تماسی.</p></div>
+  <div class="tiles why">
+    <article><div class="benefit-art" data-art="box"></div><h3>یه تیم کنارت هست</h3><p>همون آدم‌هایی که ایده‌ات رو می‌شنون، صفحه‌هاش رو هم می‌سازن.</p><ul class="benefit-points"><li>رنگ‌ها و نوشته‌های خودت</li><li>طراحی برای موبایل و دسکتاپ</li><li>هماهنگی صفحه‌های سایت با هم</li></ul></article>
+    <article><div class="benefit-art" data-art="devices"></div><h3>از شروع تا انتشار</h3><p>قبل از شروع، با هم مشخص می‌کنیم کی اولین نسخه رو می‌بینی و کی سایتت آماده می‌شه.</p><ul class="benefit-points"><li>ثبت نیازها در خلاصهٔ پروژه</li><li>دیدن نسخهٔ قابل بازبینی</li><li>اصلاح جزئیات پیش از انتشار</li></ul></article>
+    <article><div class="benefit-art" data-art="swatches"></div><h3>از سلیقه‌ات شروع کن</h3><p>رنگ یا ترکیبی چشمت رو گرفت؟ همون می‌تونه نقطهٔ شروع طراحی باشه.</p><ul class="benefit-points"><li>مقایسهٔ رنگ، عکس و تایپوگرافی</li><li>فیلتر طرح‌ها بر اساس حال‌وهوا</li><li>انتخاب رنگ‌های هماهنگ با لوگو</li></ul></article>
+    <article><div class="benefit-art" data-art="tag"></div><h3>بدون حدس زدن هزینه</h3><p>قبل از ساخت می‌دونی برای چه صفحه‌ها و چه امکاناتی هزینه می‌کنی.</p><ul class="benefit-points"><li>فهرست صفحه‌ها و امکانات</li><li>تعیین نیاز به فروشگاه یا رزرو</li><li>بررسی هزینهٔ تغییرات اضافه</li></ul></article>
+    <article><div class="benefit-art" data-art="window"></div><h3>راه رسیدن به کارت</h3><p>از عنوان صفحه تا دکمهٔ تماس رو طوری می‌چینیم که مشتری راحت‌تر چیزی رو که می‌خواد پیدا کنه.</p><ul class="benefit-points"><li>عنوان و توضیح مرتبط با صفحه</li><li>ساختار خوانا برای معرفی خدمات</li><li>چیدمان سبک برای نمایش روی گوشی</li></ul></article>
+    <article><div class="benefit-art" data-art="photos"></div><h3>بعد از انتشار</h3><p>اگه بعداً خواستی محصول اضافه کنی یا سایتت رو به‌روز نگه داری، درباره‌اش با هم حرف می‌زنیم.</p><ul class="benefit-points"><li>انتشار روی دامنهٔ خودت</li><li>بررسی امکانات موردنیاز سایت</li><li>برآورد جداگانه برای نگهداری</li></ul></article>
+  </div>
+    <aside class="studio-profile">
+      <div class="profile-lead"><img src="bitter-mark.svg" alt="" width="70" height="70"><div><h3>استودیو بیتر</h3><p>«بیتر» یعنی تلخ، مثل شکلات تلخ. اگه به وسط دونهٔ کاکائوی لوگومون نگاه کنی، یه نشانگر ماوس می‌بینی. این‌طوری اسممون و کاری که دوست داریم توی یه نشون جا شدن.</p></div></div>
+      <figure class="cacao-stage" id="bitter-object" data-renderer="poster" aria-label="مجسمهٔ سه‌بعدی نشان بیتر">
+        <div class="cacao-viewport" role="img" aria-label="دانهٔ کاکائوی صیقلی با برش نشانگر ماوس در مرکز آن">
+          <img class="cacao-poster" src="sculpture/cacao-poster.webp" alt="" width="856" height="489" loading="lazy" decoding="async">
+        </div>
+        <div class="cacao-controls" hidden>
+          <small>بگیر و بچرخون</small>
+          <div class="cacao-finishes" role="group" aria-label="جنس مجسمه">
+            <button type="button" data-finish="cacao" aria-label="لعاب کاکائویی" title="لعاب کاکائویی" aria-pressed="true"><i aria-hidden="true"></i></button>
+            <button type="button" data-finish="opal" aria-label="صدفی" title="صدفی" aria-pressed="false"><i aria-hidden="true"></i></button>
+            <button type="button" data-finish="silver" aria-label="کروم" title="کروم" aria-pressed="false"><i aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <span class="cacao-sr" id="cacao-keys">برای چرخاندن از کلیدهای جهت و برای بازگشت به نمای اول از کلید Home استفاده کنید.</span>
+      </figure>
+      <div class="profile-designs"><h3>شش حال‌وهوای استودیو</h3><p>روی هر رنگ بزن تا طرح‌هایی با همون حس ببینی.</p></div>
+      <div class="mood-rail"><a style="--tone:#dcefe4" href="designs.html?mood=تازه">تازه</a><a style="--tone:#e7d8fb" href="designs.html?mood=جسور">جسور</a><a style="--tone:#dceafd" href="designs.html?mood=آرام">آرام</a><a style="--tone:#ffe2d2" href="designs.html?mood=گرم">گرم</a><a style="--tone:#ffe0f0" href="designs.html?mood=بازیگوش">بازیگوش</a><a style="--tone:#eee6d5" href="designs.html?mood=ظریف">ظریف</a></div>
+    </aside></section>
+  <section id="process" class="section shell"><div class="process-pin"><div class="section-head"><h2>مراحل کار</h2><p>از یه طرح که چشمت رو گرفته شروع می‌کنیم. این چهار قدم رو با هم می‌ریم تا سایتت روی دامنهٔ خودت بالا بیاد.</p></div><div class="process-stage"><svg class="process-trail" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1240 204 C1035 244 1010 24 838 70 S600 223 437 139 S168 24 -40 92"/></svg><div id="steps" class="tiles four"></div></div></div></section>
+  <section id="pricing" class="section shell" aria-labelledby="pricing-title">
+    <span class="panel-orb orb-1" style="--orb:#5974ee" aria-hidden="true"></span>
+    <span class="panel-orb orb-2" style="--orb:#ff7938" aria-hidden="true"></span>
+    <div class="section-head"><h2 id="pricing-title">هزینهٔ طراحی</h2><p>ببین کدوم بسته به کارت می‌آد. اینجا قیمت شروع هر کدوم رو می‌بینی و پیش از ساخت، روی مبلغ نهایی با هم توافق می‌کنیم.</p></div>
+    <div class="tiles">
+      <article>
+        <div class="plan-art" data-art="window" aria-hidden="true"></div>
+        <h3>لندینگ پیج</h3>
+        <p class="offer-amount"><span>از</span> <strong>۲۵</strong> <span>میلیون تومان</span></p>
+        <p>وقتی یه محصول یا خدمت داری و می‌خوای همه‌چیز توی یه صفحه دیده بشه.</p>
+        <ul><li>یک صفحه با حداکثر شش بخش</li><li>طراحی اختصاصی موبایل و دسکتاپ</li><li>فرم تماس یا درخواست مشاوره</li></ul>
+        <a class="plan-link" href="order.html?plan=landing">سفارش لندینگ پیج</a>
+      </article>
+      <article>
+        <div class="plan-art" data-art="devices" aria-hidden="true"></div>
+        <h3>سایت شرکتی</h3>
+        <p class="offer-amount"><span>از</span> <strong>۵۵</strong> <span>میلیون تومان</span></p>
+        <p>جایی برای معرفی تیمت، نشون دادن کارهات و گرفتن درخواست همکاری.</p>
+        <ul><li>طراحی تا پنج صفحهٔ اصلی</li><li>بخش خدمات یا نمونه‌کار با محتوای قابل ویرایش</li><li>فرم درخواست همکاری</li></ul>
+        <a class="plan-link" href="order.html?plan=business">سفارش سایت شرکتی</a>
+      </article>
+      <article>
+        <div class="plan-art" data-art="shop" aria-hidden="true"></div>
+        <h3>فروشگاه آنلاین</h3>
+        <p class="offer-amount"><span>از</span> <strong>۹۵</strong> <span>میلیون تومان</span></p>
+        <p>برای وقتی که می‌خوای مشتری از دیدن محصول تا پرداخت، توی سایت خودت بمونه.</p>
+        <ul><li>کاتالوگ، دسته‌بندی و صفحهٔ محصول</li><li>سبد خرید و اتصال به یک درگاه پرداخت</li><li>پنل مدیریت محصول و سفارش</li></ul>
+        <a class="plan-link" href="order.html?plan=shop">سفارش فروشگاه</a>
+      </article>
+    </div>
+    <div class="offer-terms">
+      <p>این قیمت‌ها برای طراحی و ساخت سایته. هزینهٔ دامنه، میزبانی، تولید محتوا و سرویس‌های پولی جداست. اگه امکانات بیشتری بخوای، هزینه‌ش رو پیش از شروع بهت می‌گیم.</p>
+      <a class="text-action" href="order.html?plan=custom">برآورد پروژهٔ سفارشی</a>
+    </div>
+  </section>
+  <section id="faq" class="section shell"><span class="panel-orb orb-1" style="--orb:#ad8ded" aria-hidden="true"></span><div class="section-head"><h2>پرسش‌ها</h2><p>چیزی هنوز برات روشن نیست؟ توی <button class="text-action" type="button" data-question-brief>خلاصهٔ پروژه‌ات</button> ازمون بپرس. وقتی درخواستت رو بررسی می‌کنیم، درباره‌اش حرف می‌زنیم.</p></div><div class="faq-list">
+    <details name="bitter-questions" open><summary>طراحی سایتم چقدر هزینه داره؟</summary><div class="answer-inner"><p>قیمت پایهٔ صفحهٔ فرود ۲۵، سایت شرکتی ۵۵ و فروشگاه ۹۵ میلیون تومانه. اگه رزرو آنلاین، صفحهٔ بیشتر یا اتصال به نرم‌افزار دیگه‌ای لازم داری، توی درخواستت بنویس تا برآوردش کنیم.</p></div></details>
+    <details name="bitter-questions"><summary>کی می‌تونم سایتم رو ببینم؟</summary><div class="answer-inner"><p>وقتی بدونیم چند صفحه داری و عکس‌ها و متن‌ها کی آماده می‌شن، توی پیشنهاد پروژه زمان دیدن نسخهٔ اول و تحویل سایت رو مشخص می‌کنیم.</p></div></details>
+    <details name="bitter-questions"><summary>موقع ثبت درخواست باید پرداخت کنم؟</summary><div class="answer-inner"><p>ثبت درخواست و گرفتن کد پیگیری رایگانه. بعد از بررسی، مبلغ و مرحله‌های پرداخت رو توی پیشنهاد همکاری برات می‌فرستیم.</p></div></details>
+    <details name="bitter-questions"><summary>برای نگهداری سایت هم می‌تونم روی بیتر حساب کنم؟</summary><div class="answer-inner"><p>آره. اگه برای پشتیبان‌گیری، به‌روزرسانی یا تغییر محتوا کمک می‌خوای، توی درخواستت بنویس. هزینه و مدت نگهداری رو جدا با هم مشخص می‌کنیم.</p></div></details>
+    <details name="bitter-questions"><summary>بعداً خودم می‌تونم محتوا رو عوض کنم؟</summary><div class="answer-inner"><p>قبل از طراحی، با هم مشخص می‌کنیم کدوم متن‌ها، عکس‌ها یا محصول‌ها رو می‌خوای از پنل مدیریت تغییر بدی.</p></div></details>
+    <details name="bitter-questions"><summary>دامنه دارم. می‌شه از همون استفاده کنیم؟</summary><div class="answer-inner"><p>آره، سایتت رو روی همون دامنه بالا می‌آریم. موقع انتشار، تنظیمات دامنه رو به میزبان سایت وصل می‌کنیم.</p></div></details>
+    <details name="bitter-questions"><summary>سایتم کجا میزبانی می‌شه؟</summary><div class="answer-inner"><p>بستگی به امکانات سایتت داره. اگه از قبل میزبان داری، اسمش رو توی خلاصهٔ پروژه بنویس تا با هم بررسیش کنیم.</p></div></details>
+    <details name="bitter-questions"><summary>هنوز لوگو یا عکس ندارم. از کجا شروع کنم؟</summary><div class="answer-inner"><p>برای شروع، همین که بگی کارت چیه و سایت رو برای چی می‌خوای کافیه. هر وقت لوگو، عکس یا نوشته‌ات آماده شد، می‌تونیم طراحی رو با محتوای خودت ببینیم.</p></div></details>
+    <details name="bitter-questions"><summary>اگه چیزی که توی ذهنمه بین طرح‌ها نبود چی؟</summary><div class="answer-inner"><p>می‌تونی بدون انتخاب طرح درخواست بدی. اگه فقط رنگ یه طرح یا چیدمان یه طرح دیگه رو دوست داری، همون رو برامون بنویس.</p></div></details>
+    <details name="bitter-questions"><summary>از یه شهر دیگه هم می‌تونیم با هم کار کنیم؟</summary><div class="answer-inner"><p>آره. راه تماست رو توی فرم بذار و برامون از پروژه بگو. بعد از ثبت، یه کد می‌گیری که باهاش می‌تونی وضعیت درخواستت رو ببینی.</p></div></details>
+    <details name="bitter-questions"><summary>چطور طرحی پیدا کنم که به کارم بیاد؟</summary><div class="answer-inner"><p>توی گالری، «زمینهٔ کاری» رو باز کن و مثلاً کافه یا معماری رو انتخاب کن. بعد می‌تونی طرح‌ها رو با رنگ و حال‌وهوایی که دوست داری محدودتر کنی.</p></div></details>
+  </div></section>
+  <section id="game" class="section shell"><div class="section-head"><h2>رنگ‌ها را بگیر!</h2><p>یه دست بازی کنیم؟ سبد رو با انگشت، ماوس یا کلیدهای چپ و راست تکون بده. قبل از اینکه سه توپ بیفته، ۲۰ امتیاز بگیر. توپ‌های تیرهٔ «×۲» دوتا می‌ارزن.</p></div>
+    <div class="game-arena" data-game-state="ready">
+      <div class="game-orbits" aria-hidden="true"><i>رنگ</i><i>فرم</i><i>تصویر</i><i>حرف</i></div>
+      <div class="game-intro"><h3>آماده‌ای؟</h3><p>سبدت رو ببر زیر توپ‌ها. ببینیم چندتاش رو می‌گیری!</p></div>
+      <div class="playbox"><div class="playscore" hidden><span id="score">امتیاز ۰</span><span id="misses">از دست رفته ۰</span></div>
+      <canvas id="field-game" width="600" height="250" tabindex="0" hidden aria-label="زمین بازی، حرکت با کلیدهای چپ و راست"></canvas>
+      <div class="game-actions"><button id="play" class="pill primary"><i></i>شروع بازی</button><span id="result" role="status"></span></div></div>
+    </div></section>
+</main>
+<footer class="shell site-foot">
+  <div><a class="wordmark" href="#main"><img src="bitter-logo.svg" width="184" height="48" alt="Bitter"></a><p>اینجا برای کسب‌وکارت سایت اختصاصی می‌سازیم.</p></div>
+  <div><h3>خدمات</h3><a href="designs.html">همهٔ طرح‌ها</a><a href="services.html">خدمات طراحی</a><a href="hosting.html">میزبانی و نگهداری</a><a href="delivery.html">زمان تحویل</a></div>
+  <div><h3>بیتر</h3><a href="about.html">دربارهٔ استودیو</a><a href="guide.html">راهنمای شروع</a><a href="journal.html">مجلهٔ بیتر</a></div>
+  <div><h3>شروع پروژه</h3><a href="order.html">ثبت سفارش طراحی</a><a href="order.html#track">پیگیری درخواست</a><button class="text-action" data-brief>شخصی‌سازی پیش‌نمایش</button><a href="#faq">پرسش‌های رایج</a><a href="#game">بازی رنگ‌ها</a></div>
+  <div><h3>حریم خصوصی</h3><a href="privacy.html">حریم خصوصی سایت</a><button class="text-action" type="button" data-preferences>تنظیمات ذخیره‌سازی</button></div>
+  <div class="foot-base"><span dir="ltr">bitterstudio.ir</span><a href="#main">بازگشت به ابتدای صفحه</a></div>
+</footer>
+<button class="float" id="new-brief" aria-label="نوشتن خلاصهٔ پروژه" title="نوشتن خلاصهٔ پروژه"><i class="brief-icon" aria-hidden="true"></i></button>
+<dialog id="detail" aria-labelledby="case-name"><div id="detail-view"></div><div class="dialog-body"><button class="close" type="button" aria-label="بستن">×</button><small id="case-tag"></small><h2 id="case-name"></h2><p id="case-desc"></p><div class="case-palette" id="case-palette"></div><button class="pill primary" id="choose">شروع با این حال‌وهوا</button></div></dialog>
+<dialog id="brief" aria-labelledby="brief-heading"></dialog>
+</body></html>

@@ -1,0 +1,1600 @@
+@font-face {
+  font-family: Estedad;
+  src: url(../../Estedad-Variable.woff2) format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+body {
+  margin: 0;
+  font:
+    460 16px/1.75 Estedad,
+    Tahoma,
+    sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  --pad: clamp(20px, 3.6vw, 62px);
+  --round: 24px;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+button {
+  border: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+strong,
+.brand {
+  line-height: 1.32;
+}
+h1,
+h2 {
+  letter-spacing: -0.055em;
+}
+.skip {
+  position: fixed;
+  top: -6rem;
+  z-index: 12;
+}
+.skip:focus {
+  top: 0.5rem;
+  background: white;
+  color: black;
+}
+.btn,
+.ghost,
+.nav-cta,
+.choose,
+.x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 24px;
+  border-radius: 99px;
+  font-weight: 750;
+}
+.btn {
+  color: var(--on);
+  background: var(--a);
+}
+.ghost {
+  background: var(--card);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.skip:focus-visible,
+:is(a, button, input, textarea, summary):focus-visible {
+  outline: 3px solid #7a65d8;
+  outline-offset: 3px;
+}
+.hero {
+  position: relative;
+  min-height: 100svh;
+}
+.hero header {
+  z-index: 4;
+  position: relative;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 72px;
+}
+.brand {
+  font-size: 22px;
+  font-weight: 850;
+  margin-inline-end: auto;
+}
+.nav-inner nav,
+footer nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 40px);
+}
+.nav-inner nav a:hover,
+footer nav a:hover {
+  text-decoration: underline;
+}
+.nav-cta {
+  background: var(--ink);
+  color: var(--card);
+}
+.menut {
+  display: none;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 22px;
+  height: 44px;
+  width: 44px;
+}
+.hero header.stuck {
+  position: fixed;
+  inset: 10px var(--pad) auto;
+  z-index: 6;
+  border-radius: 28px;
+  padding-inline: 20px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 5px 20px #12121a1b;
+}
+.hero header.stuck .nav-inner {
+  min-height: 52px;
+}
+.choose {
+  position: fixed;
+  z-index: 7;
+  left: 10px;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  min-height: 36px;
+  padding: 6px 13px;
+  background: #272431;
+  color: white;
+  font-size: 12px;
+  box-shadow: 0 3px 8px #17151a22;
+}
+.section {
+  padding: clamp(52px, 7.5vw, 120px) var(--pad) clamp(30px, 5vw, 80px);
+  scroll-margin-top: 20px;
+}
+.section h2 {
+  font-size: clamp(32px, 4.2vw, 75px);
+  font-weight: 800;
+  margin-bottom: 26px;
+}
+.section p {
+  max-width: 60ch;
+}
+.offers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+.offer,
+.gallery button {
+  display: block;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: var(--card);
+  border-radius: var(--round);
+  text-align: start;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.offer img,
+.gallery img {
+  width: 100%;
+  height: clamp(140px, 15vw, 270px);
+  object-fit: cover;
+}
+.offer span {
+  display: grid;
+  padding: 18px;
+  gap: 7px;
+}
+.offer strong {
+  font-size: 22px;
+}
+.offer small {
+  opacity: 0.75;
+}
+.offer b {
+  font-size: 13px;
+}
+.profile {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 5vw;
+}
+.profile > img {
+  width: 100%;
+  height: clamp(190px, 24vw, 420px);
+  object-fit: cover;
+  border-radius: var(--round);
+}
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 22px;
+}
+.stats div {
+  display: grid;
+  gap: 2px;
+}
+.stats b {
+  font-size: 25px;
+}
+.rows {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.rows > div {
+  border-radius: var(--round);
+  background: var(--card);
+  padding: 22px;
+}
+.rows p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+.faq details {
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  padding: 16px 4px;
+}
+.faq summary {
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 650;
+}
+.faq details p {
+  padding: 12px 0;
+}
+form {
+  display: grid;
+  gap: 12px;
+}
+form label {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+form :is(input, textarea) {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  background: var(--card);
+  padding: 9px 12px;
+  border-radius: 12px;
+}
+.formpair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  align-items: start;
+  gap: 32px;
+}
+.contact .btn {
+  justify-self: start;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+.gallery img {
+  height: clamp(140px, 20vw, 340px);
+}
+.map {
+  position: relative;
+  margin: 30px var(--pad);
+  padding: 40px;
+  min-height: 290px;
+  overflow: hidden;
+  border-radius: var(--round);
+  display: grid;
+  align-items: end;
+}
+.map-art {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      28deg,
+      transparent 0 64px,
+      #f7f3da 65px 78px,
+      transparent 80px 110px
+    ),
+    repeating-linear-gradient(
+      -49deg,
+      #ccdabf 0 55px,
+      #f5f0d5 56px 68px,
+      #e0dec8 69px 125px
+    );
+  transition: transform 0.4s;
+}
+.map.open .map-art {
+  transform: scale(1.1);
+}
+.map.open .map-art:after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  left: 23%;
+  width: 37%;
+  height: 42%;
+  border: 5px dashed #56749a;
+  border-inline-end: 0;
+  border-bottom: 0;
+  border-radius: 30px;
+}
+.addr {
+  position: relative;
+  background: var(--card);
+  padding: 18px;
+  border-radius: 18px;
+  max-width: 360px;
+}
+.addr p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+.addr button {
+  font-size: 12px;
+}
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--card);
+  padding: 60px var(--pad);
+}
+footer .footer-start {
+  text-decoration: underline;
+}
+dialog {
+  width: min(450px, calc(100% - 30px));
+  border: 0;
+  border-radius: 24px;
+  padding: 20px;
+  background: var(--card);
+  color: var(--ink);
+}
+dialog::backdrop {
+  background: #161726a8;
+  backdrop-filter: blur(3px);
+}
+dialog .x {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 40px;
+  min-height: 40px;
+  padding: 0;
+  font-size: 24px;
+  color: #202025;
+  background: white;
+}
+.dialog-art img {
+  width: 100%;
+  border-radius: 17px;
+  max-height: 240px;
+  object-fit: cover;
+}
+dialog h2 {
+  margin: 14px 0 5px;
+}
+dialog .btn {
+  margin-top: 18px;
+}
+#mobile-links[hidden] {
+  display: none;
+}
+#mobile-links {
+  position: absolute;
+  inset: 100% 0 auto;
+  display: grid;
+  padding: 9px;
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: 0 12px 26px #26203322;
+}
+#mobile-links a {
+  padding: 9px 15px;
+}
+.flausch {
+  --bg: #fff3f6;
+  --card: #fffdfd;
+  --ink: #34202a;
+  --a: #ea84aa;
+  --on: #33212a;
+}
+.flausch .hero {
+  padding: 16px var(--pad) 80px;
+  display: flex;
+  flex-direction: column;
+}
+.flausch header {
+  background: var(--card);
+  border-radius: 99px;
+  margin: 0 -12px;
+  padding-inline: 24px;
+  box-shadow: 0 8px 24px #7b4b5c13;
+}
+.flausch .brand:before,
+.flausch .chips a:before {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-inline-end: 0.45em;
+  border-radius: 50%;
+  background: var(--a);
+}
+.fpanel {
+  position: relative;
+  flex: 1;
+  margin-top: 30px;
+  border-radius: 38px;
+  background: var(--card);
+  padding: clamp(26px, 3vw, 58px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
+  align-items: center;
+  box-shadow: 0 17px 45px -28px #73425d56;
+}
+.fpanel > img {
+  width: 100%;
+  border-radius: 35px;
+  box-shadow: 0 15px 36px -27px #3d2538;
+}
+.fpanel .eyebrow {
+  display: inline-block;
+  background: #fdf1f5;
+  font-weight: 700;
+  padding: 6px 13px;
+  border-radius: 99px;
+}
+.fpanel h1 {
+  font-size: clamp(55px, 5.1vw, 98px);
+  max-width: 13ch;
+  margin: 18px 0;
+}
+.fpanel .actions {
+  margin-top: 22px;
+}
+.fpanel .ghost,
+.flausch .chips a,
+.flausch .offer {
+  box-shadow: 0 6px 15px #68465214;
+}
+.flausch .chips {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.chips a {
+  white-space: nowrap;
+  padding: 10px 18px;
+  border-radius: 88px;
+  background: var(--card);
+  font-size: 14px;
+  font-weight: 650;
+}
+.flausch .profile,
+.flausch .contact {
+  background: #fffafb;
+}
+.flausch #studio {
+  min-height: 42vw;
+}
+.kumo {
+  --bg: #1c2543;
+  --card: #28324f;
+  --ink: #f1a4ba;
+  --a: #efa8bd;
+  --on: #1c2543;
+  --round: 0;
+}
+.kumo .hero {
+  min-height: 100svh;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  overflow: clip;
+  background: #07122a;
+}
+.kumo .hero .bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kumo .hero header {
+  position: absolute;
+  inset: 20px var(--pad) auto;
+}
+.kumo .brand {
+  font-size: clamp(48px, 6vw, 98px);
+  font-family: Georgia, Estedad, serif;
+  font-style: italic;
+}
+.kumo .nav-inner nav,
+.kumo .nav-cta,
+.kfoot,
+.tape {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.kumo .nav-inner nav a:hover {
+  color: white;
+}
+.kumo .nav-cta {
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  background: transparent;
+}
+.kumo h1 {
+  position: relative;
+  font-size: clamp(34px, 4.2vw, 74px);
+  letter-spacing: 0.005em;
+  text-shadow: 0 2px 18px #191322;
+  line-height: 1.65;
+}
+.kumo h1 em {
+  display: block;
+  font: 550 0.83em/1.5 sans-serif;
+  letter-spacing: 0.14em;
+}
+.kfoot {
+  position: absolute;
+  inset: auto var(--pad) 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.kumo .choose {
+  bottom: 7px;
+}
+.kumo .tape {
+  white-space: nowrap;
+  overflow: hidden;
+  background: var(--a);
+  color: var(--bg);
+  font-size: 24px;
+  padding: 20px 0;
+}
+.kumo .profile {
+  min-height: 39vw;
+  align-items: center;
+}
+.kumo #about {
+  padding-top: 15vw;
+}
+.kumo .offer {
+  background: transparent;
+  border-bottom: 1px solid #d798ad6b;
+}
+.kumo #hours .rows,
+.kumo #catering .rows {
+  grid-template-columns: 1fr;
+}
+.kumo .rows > div {
+  border-top: 1px solid #d798ad75;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.widepic {
+  height: 38vw;
+  overflow: hidden;
+}
+.widepic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kumo .gallery {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+.kumo .gallery img {
+  height: 32vw;
+}
+.kumo .contact {
+  background: #242c4a;
+}
+.kreisel {
+  --bg: #fff;
+  --card: #e9f6f1;
+  --ink: #112c29;
+  --a: #f28c40;
+  --on: #1c302b;
+  --round: 26px;
+}
+.kreisel .hero {
+  margin: 16px;
+  min-height: calc(100svh - 32px);
+  border-radius: 36px;
+  background: #d5eee7;
+  display: flex;
+  flex-direction: column;
+}
+.kreisel header {
+  padding: 0 20px;
+}
+.kreisel .nav-inner {
+  min-height: 94px;
+}
+.kreisel .brand {
+  padding: 15px 22px;
+  background: white;
+  border-radius: 0 20px 22px 20px;
+  align-self: start;
+}
+.kreisel .brand:before {
+  content: "●";
+  color: var(--a);
+  margin-inline-end: 8px;
+}
+.kreisel .lake-ui {
+  position: relative;
+  flex: 1;
+  margin: 26px;
+}
+.lakeimg {
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  overflow: hidden;
+}
+.lakeimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lake-intro {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 34%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 10px 8px 26px;
+  background: #d5eee7;
+  border-radius: 0 0 0 30px;
+}
+.lake-intro h1 {
+  font-size: clamp(46px, 3.8vw, 82px);
+  max-width: 12ch;
+}
+.lake-intro p {
+  margin-top: auto;
+}
+.lake-intro .actions {
+  margin-top: auto;
+  display: grid;
+  gap: 8px;
+}
+.kreisel .ghost {
+  background: #197f76;
+  color: white;
+}
+.picker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 22%;
+  background: #d5eee7;
+  border-radius: 22px 22px 0 0;
+  padding: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.picker > div {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 3px 9px;
+}
+.picker small,
+.picker b {
+  display: block;
+}
+.picker small {
+  font-size: 11px;
+}
+.picker button {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  background: var(--a);
+}
+.picker img {
+  width: 100%;
+  height: 13vw;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.kreisel .offers .offer {
+  background: #f2f8f5;
+}
+.kreisel .nav-cta {
+  background: var(--card);
+  color: var(--ink);
+}
+@media (hover: hover) {
+  .offer:hover,
+  .gallery button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #2823311b;
+  }
+  .btn:hover,
+  .ghost:hover,
+  .choose:hover {
+    filter: brightness(0.94);
+  }
+}
+@media (max-width: 700px) {
+  body {
+    --pad: 20px;
+    font-size: 15px;
+  }
+  .nav-inner nav,
+  .nav-cta {
+    display: none;
+  }
+  .nav-inner {
+    min-height: 50px;
+  }
+  .brand {
+    font-size: 17px;
+  }
+  .menut {
+    display: inline-grid;
+    place-items: center;
+  }
+  .section {
+    padding: clamp(45px, 13vw, 75px) var(--pad) 24px;
+  }
+  .section h2 {
+    font-size: 34px;
+    margin-bottom: 19px;
+  }
+  .offers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .offer img {
+    height: 28vw;
+  }
+  .offer span {
+    padding: 10px;
+  }
+  .offer strong {
+    font-size: 17px;
+  }
+  .offer small,
+  .offer b {
+    font-size: 12px;
+  }
+  .profile,
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .profile > img {
+    height: 170px;
+  }
+  .stats {
+    margin-top: 12px;
+    gap: 14px;
+  }
+  .stats b {
+    font-size: 21px;
+  }
+  .rows {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .rows > div {
+    padding: 15px;
+  }
+  .map {
+    margin: 20px var(--pad);
+    min-height: 245px;
+    padding: 16px;
+  }
+  .formpair {
+    grid-template-columns: 1fr;
+  }
+  .gallery {
+    gap: 7px;
+  }
+  .gallery img {
+    height: 25vw;
+  }
+  footer {
+    padding: 50px 20px;
+    display: grid;
+  }
+  footer nav {
+    flex-wrap: wrap;
+  }
+  .flausch .hero {
+    padding: 12px 20px 86px;
+    min-height: 100svh;
+  }
+  .flausch header {
+    padding-inline: 13px;
+    margin: 0 -4px;
+  }
+  .fpanel {
+    margin-top: 17px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 30px 19px;
+  }
+  .fpanel h1 {
+    font-size: clamp(40px, 9.5vw, 62px);
+    margin: 14px 0;
+    max-width: 11ch;
+  }
+  .fpanel > img {
+    height: clamp(185px, 60vw, 295px);
+    object-fit: cover;
+    border-radius: 22px;
+  }
+  .fpanel .actions {
+    margin-top: 16px;
+  }
+  .flausch .chips {
+    top: 100%;
+    bottom: auto;
+    width: 100%;
+    transform: translateX(-50%);
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: start;
+    padding-top: 12px;
+  }
+  .chips a {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  .kumo .hero header {
+    inset: 14px var(--pad) auto;
+  }
+  .kumo .brand {
+    font-size: 48px;
+  }
+  .kumo h1 {
+    font-size: 32px;
+    max-width: 90%;
+    letter-spacing: 0.035em;
+  }
+  .kfoot {
+    inset: auto 20px 16px;
+    gap: 16px;
+    align-items: start;
+    flex-direction: column;
+  }
+  .kumo .tape {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+  .kumo #about {
+    padding-top: 55px;
+  }
+  .kumo .widepic {
+    height: 60vw;
+  }
+  .kumo .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .kumo .gallery button:first-child {
+    grid-column: 1/-1;
+  }
+  .kumo .gallery img {
+    height: 33vw;
+  }
+  .kumo .gallery button:first-child img {
+    height: 51vw;
+  }
+  .kreisel .hero {
+    margin: 12px;
+    min-height: 0;
+    border-radius: 24px;
+  }
+  .kreisel header {
+    padding-inline: 8px;
+  }
+  .kreisel .nav-inner {
+    min-height: 62px;
+  }
+  .kreisel .brand {
+    padding: 12px 10px;
+  }
+  .kreisel .lake-ui {
+    display: flex;
+    flex-direction: column;
+    margin: 0 18px 18px;
+    gap: 13px;
+  }
+  .lake-intro {
+    position: static;
+    width: auto;
+    border-radius: 0;
+    gap: 13px;
+    padding: 12px 0 4px;
+  }
+  .lake-intro h1 {
+    font-size: clamp(36px, 8.7vw, 52px);
+  }
+  .lake-intro .actions {
+    display: flex;
+  }
+  .lakeimg {
+    position: static;
+    order: 1;
+    height: 70vw;
+    border-radius: 18px;
+  }
+  .picker {
+    position: static;
+    order: 2;
+    width: auto;
+    min-height: 136px;
+    padding: 7px;
+    border-radius: 20px;
+    background: white;
+  }
+  .picker img {
+    height: 112px;
+  }
+  .picker button {
+    width: 32px;
+    height: 32px;
+  }
+  .kumo .hero header.stuck,
+  .hero header.stuck {
+    position: fixed;
+    inset: 8px 12px auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+.rail-head,
+.rail-arrows {
+  display: flex;
+  align-items: center;
+}
+.rail-head {
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.rail-head h2 {
+  margin: 0;
+}
+.rail-arrows {
+  gap: 5px;
+}
+.rail-arrows button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 750;
+}
+.rail-arrows button:disabled {
+  opacity: 0.22;
+  cursor: default;
+}
+.offers {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  padding: 3px 0 12px;
+}
+.offers::-webkit-scrollbar {
+  display: none;
+}
+.offer {
+  flex: 1 0 21%;
+  scroll-snap-align: start;
+}
+.picture-duo {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.picture-duo img {
+  width: 100%;
+  height: 29vw;
+  object-fit: cover;
+  border-radius: 26px;
+}
+.picture-duo img:nth-child(2) {
+  height: 22vw;
+}
+.kreisel #hours {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  align-items: center;
+  gap: 4vw;
+}
+.hours-info .rows {
+  display: block;
+}
+.hours-info .rows > div {
+  border-radius: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  background: transparent;
+  border-top: 1px solid #d9e3df;
+}
+.dock-address {
+  background: var(--card);
+  border-radius: 24px;
+  overflow: hidden;
+}
+.dock-address img {
+  width: 100%;
+  height: 19vw;
+  object-fit: cover;
+}
+.dock-address strong {
+  display: block;
+  padding: 16px;
+}
+.kumo .hero header.stuck {
+  position: fixed;
+  inset: 10px var(--pad) auto;
+}
+.kumo .hero header.stuck .brand {
+  font-size: 32px;
+}
+.kumo .brand {
+  font-family: Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.08em;
+}
+.kumo .hero h1 {
+  font-weight: 800;
+  line-height: 1.5;
+}
+.kumo #about.foodband {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding-top: 6vw;
+}
+.foodband > img {
+  width: 100%;
+  height: 29vw;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+.foodband h2 {
+  margin-top: -1.8em;
+  position: relative;
+  padding-inline: 20px;
+  color: #fff3ec;
+  text-shadow: 0 2px 15px #161c26;
+}
+.foodband p {
+  margin-top: 25px;
+}
+.kumo .widepic {
+  margin-inline: var(--pad);
+  height: 34vw;
+}
+.kumo .branches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.branch-map {
+  position: relative;
+  isolation: isolate;
+  min-height: 24vw;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px;
+  background: #354d50;
+  border-radius: 16px;
+}
+.branch-map:before {
+  content: "";
+  position: absolute;
+  inset: 9% 8% 17%;
+  background: repeating-linear-gradient(30deg, #ac6e60 0 3px, #975f5a 4px 15px);
+  clip-path: polygon(
+    0 55%,
+    20% 34%,
+    43% 29%,
+    59% 4%,
+    100% 24%,
+    92% 64%,
+    70% 73%,
+    57% 98%,
+    32% 83%,
+    7% 74%
+  );
+  z-index: -1;
+}
+.branch-map:after {
+  content: "●";
+  color: #ffc5d1;
+  position: absolute;
+  left: 30%;
+  top: 42%;
+  font-size: 29px;
+  text-shadow: 0 2px 9px #743e49;
+  transition: transform 0.3s;
+  z-index: -1;
+}
+.branch-map.alternate:after {
+  transform: translate(9vw, -4vw);
+}
+.branch-map button,
+.branch-map output {
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: var(--card);
+  color: var(--ink);
+}
+.branch-map button[aria-pressed="true"] {
+  background: var(--a);
+  color: var(--on);
+}
+.kumo #catering .rows {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.kumo #catering .rows > div {
+  display: block;
+}
+.kumo .gallery img {
+  height: 29vw;
+}
+@media (min-width: 701px) {
+  .lakeimg {
+    inset: 0 22% 0 0;
+  }
+  .lake-intro {
+    background: transparent;
+    width: 36%;
+    padding: 18px 0;
+  }
+  .lake-intro:before {
+    content: "";
+    position: absolute;
+    inset: -1px -1px auto 0;
+    background: #d5eee7;
+    height: 48%;
+    border-radius: 0 0 0 28px;
+  }
+  .lake-intro > * {
+    position: relative;
+  }
+  .lake-intro p {
+    width: 53%;
+  }
+  .kfoot {
+    bottom: 38px;
+  }
+  .kumo .hero h1 {
+    transform: translateY(-12px);
+  }
+  .kumo .offer img {
+    height: 12vw;
+  }
+  .flausch .offer img,
+  .kreisel .offer img {
+    height: 13vw;
+  }
+  .flausch .section,
+  .kreisel .section {
+    padding-top: 7vw;
+  }
+  .flausch .section h2,
+  .kreisel .section h2 {
+    font-size: 3.1vw;
+  }
+  .flausch .picture-duo {
+    min-height: 42vw;
+  }
+}
+@media (max-width: 700px) {
+  .rail-head {
+    margin-bottom: 12px;
+  }
+  .rail-arrows button {
+    width: 34px;
+    height: 34px;
+  }
+  .offers {
+    margin-inline-end: calc(-1 * var(--pad));
+    padding-inline-end: var(--pad);
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .offer {
+    flex: 0 0 72%;
+    border-radius: 16px;
+  }
+  .offer img {
+    height: 44vw;
+  }
+  .offer span {
+    padding: 15px 12px;
+  }
+  .picture-duo {
+    gap: 8px;
+  }
+  .picture-duo img,
+  .picture-duo img:nth-child(2) {
+    height: 44vw;
+  }
+  .flausch .fpanel {
+    padding-bottom: 28px;
+  }
+  .flausch .hero {
+    padding-bottom: 120px;
+  }
+  .flausch .chips {
+    gap: 7px;
+    justify-content: center;
+  }
+  .flausch .chips a {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+  .flausch #about img,
+  .kreisel #about img {
+    height: 56vw;
+  }
+  .flausch #steps .rows {
+    gap: 12px;
+  }
+  .flausch #steps .rows > div {
+    padding: 21px;
+  }
+  .kreisel .picker img {
+    height: 33vw;
+  }
+  .kreisel .lake-intro {
+    padding-block: 21px 4px;
+    gap: 16px;
+  }
+  .kreisel .lakeimg {
+    height: 72vw;
+  }
+  .kreisel #hours {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .hours-info .rows > div {
+    display: grid;
+    gap: 3px;
+    padding: 14px 0;
+  }
+  .dock-address img {
+    height: 60vw;
+  }
+  .kumo .hero h1 {
+    max-width: 68%;
+    font-size: 38px;
+    transform: translateY(-24px);
+  }
+  .kumo .hero .brand {
+    font-size: 60px;
+  }
+  .kumo .hero header.stuck .brand {
+    font-size: 30px;
+  }
+  .kumo #about.foodband {
+    padding-top: 50px;
+  }
+  .foodband > img {
+    height: 66vw;
+  }
+  .foodband h2 {
+    font-size: 29px;
+  }
+  .kumo .widepic {
+    height: 88vw;
+  }
+  .kumo .branches {
+    grid-template-columns: 1fr;
+  }
+  .branch-map {
+    min-height: 74vw;
+  }
+  .kumo #catering .rows {
+    grid-template-columns: 1fr;
+  }
+  .kumo #catering .rows > div {
+    padding: 20px 12px;
+  }
+  .kumo .gallery img,
+  .kumo .gallery button:first-child img {
+    height: 60vw;
+  }
+}
+
+footer {
+  margin: 28px var(--pad) 14px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--round);
+  min-height: 300px;
+}
+.foot-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 1fr;
+  gap: clamp(16px, 4vw, 60px);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  padding-bottom: 32px;
+}
+.foot-grid strong {
+  font-size: 25px;
+}
+.foot-grid p {
+  font-size: 14px;
+  margin-block: 9px;
+}
+.foot-grid nav {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
+.foot-grid a {
+  font-size: 14px;
+}
+.section.entering {
+  animation: settle-in 0.58s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes settle-in {
+  from {
+    transform: translateY(14px);
+    opacity: 0.52;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (min-width: 701px) {
+  .flausch #courses {
+    padding-bottom: 2vw;
+  }
+  .flausch #courses .offer span {
+    padding: 9px 16px;
+  }
+  .flausch #courses .offer img {
+    height: 10.5vw;
+  }
+  .flausch .picture-duo {
+    min-height: 53vw;
+  }
+  .flausch .picture-duo img {
+    height: 38vw;
+  }
+  .flausch .picture-duo img:nth-child(2) {
+    height: 31vw;
+  }
+  .map {
+    min-height: 24vw;
+  }
+  .kumo .tape {
+    margin-block: 4vw;
+    padding-block: 24px;
+  }
+  .kumo #about.foodband {
+    padding-top: 0;
+  }
+  .kumo .foodband > img {
+    height: 24vw;
+  }
+  .kumo #menu,
+  .kumo #hours {
+    padding-bottom: 2vw;
+    padding-top: 4vw;
+  }
+  .kumo .widepic {
+    height: 40vw;
+  }
+  .kumo .branches + .widepic {
+    height: 44vw;
+  }
+  .kreisel .hero {
+    margin-bottom: 3.2vw;
+  }
+}
+@media (max-width: 700px) {
+  footer {
+    min-height: 370px;
+    margin: 20px 14px 12px;
+    gap: 14px;
+    display: flex;
+    padding: 24px;
+  }
+  .foot-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding-block: 18px;
+  }
+  .foot-grid > div:first-child {
+    grid-column: 1/-1;
+  }
+  .map {
+    min-height: 91vw;
+  }
+  .flausch #about,
+  .kreisel #about {
+    min-height: 154vw;
+    align-content: center;
+  }
+  .flausch #steps .rows > div {
+    padding: 26px 18px;
+    min-height: 121px;
+  }
+  .flausch .picture-duo {
+    min-height: 68vw;
+  }
+  .kumo .tape {
+    margin-block: 32px;
+    padding-block: 15px;
+  }
+  .kumo #menu .offer img {
+    height: 35vw;
+  }
+  .kumo .branches {
+    min-height: 144vw;
+  }
+  .kumo #catering {
+    padding-bottom: 48px;
+  }
+  .kumo #catering .rows > div {
+    min-height: 111px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+  .kumo .gallery img,
+  .kumo .gallery button:first-child img {
+    height: 73vw;
+  }
+  .kumo #reserve {
+    min-height: 82vw;
+  }
+  .kumo .contact {
+    padding-top: 76px;
+  }
+  .kreisel .picker img {
+    height: 49vw;
+  }
+  .kreisel .lake-ui {
+    margin-bottom: 22px;
+  }
+  .kreisel #views .gallery img {
+    height: 41vw;
+  }
+}
+
+.flausch .hero:has(header.stuck)::before,
+.kreisel .hero:has(header.stuck)::before {
+  content: "";
+  display: block;
+  flex: 0 0 var(--header-space);
+}
+.flausch {
+  --header-space: 72px;
+}
+.kreisel {
+  --header-space: 94px;
+}
+@media (min-width: 701px) {
+  .flausch #studio.picture-duo {
+    min-height: 56vw;
+  }
+  .flausch .contact {
+    margin-block: 2vw;
+  }
+  .kumo #album {
+    padding-block: 5vw 3vw;
+  }
+}
+@media (max-width: 700px) {
+  .flausch {
+    --header-space: 50px;
+  }
+  .kreisel {
+    --header-space: 62px;
+  }
+  .flausch #studio.picture-duo {
+    min-height: 70vw;
+  }
+  .flausch .contact,
+  .kumo .contact {
+    margin-block: 6vw;
+  }
+  .flausch footer,
+  .kumo footer {
+    min-height: 105vw;
+  }
+  .flausch #steps .rows > div {
+    min-height: 131px;
+  }
+  .kumo #catering .rows > div {
+    min-height: 119px;
+  }
+  .kumo #reserve {
+    min-height: 88vw;
+  }
+}

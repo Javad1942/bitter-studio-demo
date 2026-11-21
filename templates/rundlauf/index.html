@@ -1,0 +1,259 @@
+<!doctype html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#141522" />
+    <title>سینما نور | طرح بیتر استودیو</title>
+    <link rel="icon" href="../../bitter-mark.svg" />
+    <link rel="stylesheet" href="../series-h-c/site.css" />
+    <script src="../series-h-c/site.js" defer></script>
+  </head>
+  <body class="rundlauf">
+    <a class="skip" href="#content">رفتن به محتوا</a>
+    <header class="topbar">
+      <a class="brand" href="#home"
+        ><i aria-hidden="true"></i><b data-template-brand>سینما نور</b></a
+      >
+      <nav aria-label="بخش‌های صفحه">
+        <a href="#schedule">برنامهٔ اکران</a><a href="#events">رویدادها</a
+        ><a href="#tickets">بلیط‌ها</a><a href="#about">سینما</a
+        ><a href="#contact">تماس</a>
+      </nav>
+      <a class="headcta" href="#contact">تماس ←</a
+      ><button
+        class="menutoggle"
+        type="button"
+        aria-label="باز کردن فهرست"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <i></i><i></i>
+      </button>
+    </header>
+    <nav class="menupanel" id="mobile-menu" aria-label="فهرست موبایل" hidden>
+      <a href="#schedule">برنامهٔ اکران</a><a href="#events">رویدادها</a
+      ><a href="#tickets">بلیط‌ها</a><a href="#about">سینما</a
+      ><a href="#contact">تماس</a>
+    </nav>
+    <main id="content">
+      <section id="home" class="filmhero hero">
+        <div class="cinemaIntro">
+          <span class="eyebrow">میدان فردوسی، تهران</span>
+          <h1 data-template-title><em>به سینما نور</em><br />خوش آمدی.</h1>
+          <p>
+            سینمای هنری، فیلم‌های کلاسیک و اولین نمایش‌ها، در سالنی که خاطره‌ها
+            رو نگه می‌داره.
+          </p>
+          <a class="button yellow" href="#schedule"
+            >برنامهٔ اکران <span>←</span></a
+          ><a class="button pink" href="#contact">تماس <span>←</span></a>
+        </div>
+        <div class="screen">
+          <img
+            src="film-0.svg"
+            alt="نمایی از پردهٔ سینما و صندلی‌های قرمز"
+            data-template-cover
+            fetchpriority="high"
+          />
+          <div class="screencontrols">
+            <span
+              ><small class="filmnumber">۱ از ۳</small
+              ><b class="filmname" aria-live="polite">ظهر تابستان</b></span
+            ><button class="prevfilm" aria-label="فیلم قبلی">→</button
+            ><button class="nextfilm" aria-label="فیلم بعدی">←</button>
+          </div>
+        </div>
+        <div class="popcorn" aria-hidden="true"><i>🍿</i></div>
+      </section>
+      <section id="schedule" class="block scheduleblock">
+        <h2>روی پرده</h2>
+        <div class="days" role="group" aria-label="روز نمایش">
+          <button data-day="امروز" aria-pressed="true">امروز</button
+          ><button data-day="فردا" aria-pressed="false">فردا</button
+          ><button data-day="پس‌فردا" aria-pressed="false">پس‌فردا</button>
+        </div>
+        <div class="schedule">
+          <article data-show="امروز">
+            <b>۱۶:۰۰</b>
+            <h3>ظهر تابستان</h3>
+            <button
+              class="button"
+              data-ticket="ظهر تابستان"
+              data-time="امروز، ۱۶:۰۰"
+            >
+              انتخاب سانس ←
+            </button>
+          </article>
+          <article data-show="امروز">
+            <b>۱۹:۳۰</b>
+            <h3>بعد از غروب</h3>
+            <button
+              class="button"
+              data-ticket="بعد از غروب"
+              data-time="امروز، ۱۹:۳۰"
+            >
+              انتخاب سانس ←
+            </button>
+          </article>
+          <article data-show="فردا" hidden>
+            <b>۱۷:۰۰</b>
+            <h3>مسافر آبی</h3>
+            <button
+              class="button"
+              data-ticket="مسافر آبی"
+              data-time="فردا، ۱۷:۰۰"
+            >
+              انتخاب سانس ←
+            </button>
+          </article>
+          <article data-show="فردا" hidden>
+            <b>۲۰:۰۰</b>
+            <h3>ظهر تابستان</h3>
+            <button
+              class="button"
+              data-ticket="ظهر تابستان"
+              data-time="فردا، ۲۰:۰۰"
+            >
+              انتخاب سانس ←
+            </button>
+          </article>
+          <article data-show="پس‌فردا" hidden>
+            <b>۱۸:۳۰</b>
+            <h3>بعد از غروب</h3>
+            <button
+              class="button"
+              data-ticket="بعد از غروب"
+              data-time="پس‌فردا، ۱۸:۳۰"
+            >
+              انتخاب سانس ←
+            </button>
+          </article>
+        </div>
+      </section>
+      <section class="picture wideart">
+        <button
+          class="artbutton"
+          data-view
+          data-caption="پوستر سینما و بوفهٔ سالن"
+        >
+          <img src="lobby.svg" alt="پوستر سینما و بوفهٔ سالن" loading="lazy" />
+        </button>
+      </section>
+      <section id="events" class="block events">
+        <h2>شب‌های سینما</h2>
+        <div class="three">
+          <article>
+            <h3>شب فیلم کوتاه</h3>
+            <p>سه فیلم، یک گفت‌وگو و فرصت دیدن جهان از زاویه‌های مختلف.</p>
+          </article>
+          <article>
+            <h3>صبح خانواده</h3>
+            <p>نمایش آخر هفته برای بچه‌ها و همراه‌ها با نور ملایم‌تر سالن.</p>
+          </article>
+          <article>
+            <h3>پشت قاب</h3>
+            <p>بعد از نمایش دربارهٔ تصویر، موسیقی و تدوین فیلم حرف می‌زنیم.</p>
+          </article>
+        </div>
+      </section>
+      <section id="tickets" class="block tickets">
+        <h2>بلیط و عضویت</h2>
+        <div class="three pricing">
+          <article>
+            <h3>بلیط عادی</h3>
+            <p>یک صندلی برای یکی از سانس‌های برنامه.</p>
+            <button class="button" data-topic="بلیط عادی">انتخاب ←</button>
+          </article>
+          <article>
+            <h3>بلیط دانشجویی</h3>
+            <p>سانس‌های منتخب وسط هفته برای دانشجوها.</p>
+            <button class="button" data-topic="بلیط دانشجویی">انتخاب ←</button>
+          </article>
+          <article>
+            <h3>باشگاه سینما</h3>
+            <p>برای دوست‌دارهای نمایش‌های کلاسیک و نشست‌های فیلم.</p>
+            <button class="button" data-topic="باشگاه سینما">انتخاب ←</button>
+          </article>
+        </div>
+      </section>
+      <section class="block cinemabout" id="about">
+        <button class="artbutton" data-view data-caption="داخل سالن سینما نور">
+          <img src="film-2.svg" alt="داخل سالن سینما نور" loading="lazy" />
+        </button>
+        <div>
+          <h2>خاطره‌ها روی پرده می‌مونن.</h2>
+          <p>
+            از سطر اول تا چراغ آخر سالن، سینما برای ما تجربهٔ جمعیه. برنامه رو
+            طوری می‌چینیم که هم برای کشف یه فیلم تازه جا باشه هم برای برگشتن به
+            یه محبوب قدیمی.
+          </p>
+        </div>
+      </section>
+      <section class="contact block" id="contact">
+        <div>
+          <span class="eyebrow">تماس با سینما نور</span>
+          <h2>می‌بینیمت توی سالن.</h2>
+          <p>
+            سانس یا موضوعت رو انتخاب کن و خلاصهٔ درخواستت رو همراه داشته باش.
+          </p>
+        </div>
+        <form class="brief">
+          <label
+            >نام شما<input
+              name="name"
+              autocomplete="given-name"
+              required
+              maxlength="80" /></label
+          ><label
+            >موضوع<select name="topic">
+              <option>بلیط عادی</option>
+              <option>بلیط دانشجویی</option>
+              <option>باشگاه سینما</option>
+              <option>ظهر تابستان</option>
+              <option>بعد از غروب</option>
+              <option>مسافر آبی</option>
+            </select></label
+          ><label
+            >یادداشت<textarea
+              name="message"
+              rows="2"
+              maxlength="1200"
+            ></textarea></label
+          ><button class="button solid" type="submit">
+            دریافت خلاصهٔ درخواست <span>↓</span></button
+          ><output aria-live="polite"></output>
+        </form>
+      </section>
+      <section class="mapblock">
+        <div class="mapmark"><i>●</i> محلهٔ ما</div>
+        <div>
+          <h2>مسیر دسترسی</h2>
+          <p>تهران، خیابان انقلاب، نزدیک ایستگاه مترو</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#home"
+        ><i aria-hidden="true"></i><b data-template-brand>سینما نور</b></a
+      >
+      <div class="footnav">
+        <a href="#schedule">برنامهٔ اکران</a><a href="#events">رویدادها</a
+        ><a href="#tickets">بلیط‌ها</a><a href="#about">سینما</a
+        ><a href="#contact">تماس</a>
+      </div>
+      <a
+        class="choose"
+        href="../../design.html?name=rundlauf#brief"
+        target="_top"
+        >انتخاب این طرح در بیتر <span>↗</span></a
+      ><a href="#home" class="backtop">بازگشت به بالا ↑</a>
+    </footer>
+    <dialog class="lightbox">
+      <form method="dialog"><button aria-label="بستن پنجره">×</button></form>
+      <img alt="" />
+      <h2></h2>
+      <p></p>
+    </dialog>
+  </body>
+</html>

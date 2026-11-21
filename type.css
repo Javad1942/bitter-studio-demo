@@ -1,0 +1,62 @@
+/* Estedad 8.5 by Amin Abedi. The accompanying license is Estedad-OFL.txt. */
+@font-face {
+  font-family: Estedad;
+  src: url("Estedad-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root:lang(fa) {
+  font-family: Estedad, Tahoma, sans-serif;
+  font-weight: 420;
+}
+
+/* Joined Persian letters retain their natural spacing even at display sizes. */
+:lang(fa) :is(h1, h2, h3, .face-title) {
+  letter-spacing: normal;
+}
+
+.intro h1,
+.journal-main h1,
+.section-head h2 {
+  font-weight: 530;
+  line-height: 1.38;
+}
+
+.intro h1 {
+  font-size: clamp(2.45rem, 4.15vw, 5rem);
+}
+
+.section-head h2 {
+  font-size: clamp(3rem, 6.6vw, 6.8rem);
+}
+
+.card-foot strong,
+.tiles h3,
+.story b,
+.journal-main article h2 {
+  font-weight: 640;
+}
+
+.pill,
+.menu-button,
+.filters,
+.eyetag,
+.bar nav,
+.mood-label {
+  font-weight: 520;
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .intro h1 {
+    font-size: 4.4vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .intro h1 {
+    font-size: clamp(1.87rem, 8.85vw, 3.18rem);
+    line-height: 1.45;
+  }
+}

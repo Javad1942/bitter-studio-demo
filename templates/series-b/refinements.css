@@ -1,0 +1,509 @@
+﻿/* Catalogue-specific poster proportions. */
+@media (min-width: 761px) {
+  .mosaik .m-banner {
+    min-height: 0;
+    padding: clamp(25px, 3vw, 50px);
+  }
+  .m-banner .eyebrow {
+    display: none;
+  }
+  .mosaik .m-banner h1 {
+    font-size: clamp(50px, 5.1vw, 86px);
+    line-height: 1.26;
+    max-width: 780px;
+  }
+  .mosaik .m-screen {
+    aspect-ratio: 3.35;
+  }
+  .mosaik .m-grid {
+    grid-template-columns: 2.15fr 1fr;
+  }
+  .m-stat {
+    background: #18b379;
+  }
+  .m-stat strong {
+    font-size: clamp(42px, 6vw, 92px);
+  }
+  .mosaik .m-banner {
+    background: #d3f1df;
+  }
+  .sonnseite .hero,
+  .groschen .hero {
+    min-height: calc(100svh - 82px);
+    gap: 2vw;
+  }
+  .sonnseite .hero {
+    padding-right: 1.4vw;
+  }
+  .sonnseite .hero-window {
+    border-radius: 15px;
+  }
+  .groschen .hero-window {
+    margin-block: 5px 14px;
+  }
+  .sonnseite .intro h1,
+  .groschen .intro h1 {
+    font-size: clamp(44px, 5.2vw, 84px);
+    font-weight: 610;
+  }
+  .bleibe .scene-copy h1,
+  .doppel .scene-copy h1 {
+    font-weight: 550;
+    font-size: clamp(48px, 6.1vw, 96px);
+  }
+  .bleibe .scene-copy {
+    width: 46%;
+  }
+  .bleibe .hero-art {
+    object-fit: fill;
+  }
+  .bogen .hero {
+    min-height: calc(100svh - 96px);
+  }
+  .bogen .intro {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: left;
+  }
+  .bogen .intro h1 {
+    font-size: clamp(44px, 5vw, 78px);
+    width: 100%;
+    font-weight: 670;
+  }
+  .bogen .intro > .btn {
+    margin-top: auto;
+    margin-bottom: 18px;
+  }
+  .radlwerk .bike-show {
+    height: clamp(330px, 44vw, 68svh);
+  }
+  .bike-word {
+    top: 50%;
+    transform: translateY(-55%);
+    font-size: clamp(65px, 15.1vw, 247px);
+    font-weight: 1000;
+    letter-spacing: -0.079em;
+  }
+  .bike-show .hero-art {
+    width: 61%;
+    height: 85%;
+    top: 8%;
+    bottom: auto;
+  }
+  .hero-micro {
+    inset: 28px 32px auto;
+  }
+  .hero-micro span {
+    display: inline-block;
+    transform: rotate(-8deg);
+    padding: 8px 14px;
+    background: #fafaf5;
+    box-shadow: 0 5px 13px #23282215;
+    border-radius: 8px;
+  }
+  .hero-micro span + span {
+    transform: rotate(7deg);
+  }
+  .zack .hero {
+    min-height: calc(100svh - 80px);
+    display: flex;
+    flex-direction: column;
+  }
+  .z-head {
+    flex: 1;
+    align-items: end;
+    grid-template-columns: 1.7fr 0.76fr;
+    margin-block: 12px 15px;
+  }
+  .z-head h1 {
+    align-self: end;
+    max-width: 9.8ch;
+    font-size: clamp(70px, 9.9vw, 173px);
+    font-weight: 950;
+    line-height: 1.2;
+    letter-spacing: -0.083em;
+  }
+  .z-head aside {
+    background: #1d7954;
+    color: white;
+    width: 100%;
+    padding: clamp(16px, 2vw, 40px);
+  }
+  .z-head aside .online i {
+    background: #b8e878;
+  }
+  .z-head aside p {
+    color: #d3eedd;
+  }
+  .z-head aside strong {
+    font-size: clamp(26px, 3vw, 57px);
+    line-height: 1.35;
+  }
+  .z-head aside .btn {
+    background: #f6f8f2;
+    color: #182e23;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .trades {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    min-height: clamp(125px, 19vh, 200px);
+    direction: ltr;
+  }
+  .trades a {
+    min-width: 0;
+    direction: rtl;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    gap: 0;
+    border: 1px solid var(--line);
+    padding: 15px;
+  }
+  .trades a b {
+    margin-bottom: auto;
+  }
+  .trades a:last-child {
+    background: #17271d;
+    color: white;
+  }
+  .trades a strong {
+    font-size: clamp(18px, 2.1vw, 33px);
+    font-weight: 860;
+  }
+  .trades a span {
+    font-size: 12px;
+  }
+  .trades a b,
+  .trades a:last-child b {
+    background: #237b55;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 9px;
+  }
+  .cityline {
+    margin-top: 18px;
+    height: clamp(36px, 6.5vh, 90px);
+  }
+  .cityline .hero-art {
+    object-position: center 55%;
+  }
+  .trade-caption {
+    font-size: 12px;
+    margin: 0 0 8px;
+    font-weight: 730;
+    text-align: left;
+  }
+  .lot .hero {
+    width: 100%;
+    height: 100svh;
+    min-height: 570px;
+    padding: 0 3%;
+    grid-template-columns: 1.09fr 0.35fr 0.72fr;
+    gap: 1.2vw;
+  }
+  .lot .hero figure {
+    width: 100%;
+    height: 100%;
+    align-self: stretch;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .lot .mast {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 3;
+    background: transparent;
+  }
+  .lot .mast nav {
+    background: #eae7dfc7;
+    padding: 5px 10px;
+  }
+  .lot .hero figure figcaption {
+    display: none;
+  }
+  .lot-title {
+    align-self: end;
+    padding-bottom: 12vh;
+  }
+  .lot-title h1 {
+    max-width: 8em;
+    font-size: clamp(50px, 5.3vw, 89px);
+    font-weight: 340;
+  }
+  .lot-index,
+  .lot-note {
+    grid-column: 3;
+    grid-row: 1;
+    direction: rtl;
+    text-align: left;
+  }
+  .lot-note {
+    align-self: start;
+    margin-top: 15vh;
+    padding: 0;
+    max-width: 37ch;
+  }
+  .lot-note .btn,
+  .lot-title .eyebrow {
+    display: none;
+  }
+  .lot-index {
+    align-self: end;
+    border-top: 1px solid var(--line);
+    padding-block: 10px 19px;
+  }
+  .lot-index p {
+    font-size: 20px;
+    color: var(--ink);
+  }
+  .lot-index a {
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 760px) {
+  .mosaik .m-grid {
+    grid-template-columns: 1fr;
+  }
+  .mosaic .m-screen,
+  .mosaik .m-screen {
+    aspect-ratio: 2;
+  }
+  .mosaik .m-stat {
+    min-height: 100px;
+    position: relative;
+    display: block;
+  }
+  .m-stat strong {
+    font-size: 32px;
+  }
+  .m-stat p {
+    font-size: 12px;
+  }
+  .m-stat .eyebrow {
+    display: none;
+  }
+  .mosaik .m-banner {
+    background: #d3f1df;
+  }
+  .bike-show .hero-art {
+    inset: auto 0 7%;
+    width: 92%;
+    height: 51%;
+    object-fit: contain;
+  }
+  .radlwerk .bike-show {
+    height: clamp(365px, 125vw, 620px);
+  }
+  .bike-word {
+    top: 34%;
+    font-size: 15.2vw;
+    letter-spacing: -0.075em;
+  }
+  .hero-micro span {
+    background: #fffb;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transform: rotate(-6deg);
+    line-height: 1.45;
+  }
+  .hero-micro span + span {
+    transform: rotate(6deg);
+  }
+  .swatch {
+    bottom: 13px;
+  }
+  .z-head h1 {
+    max-width: 11ch;
+    font-weight: 910;
+    line-height: 1.24;
+  }
+  .z-head aside {
+    background: #1d7954;
+    color: white;
+  }
+  .z-head aside > p {
+    color: #dceee2;
+  }
+  .z-head aside .btn {
+    width: 100%;
+    background: #f0f4eb;
+    color: #243427;
+    justify-content: space-between;
+  }
+  .trade-caption {
+    font-size: 12px;
+    font-weight: 720;
+    margin: 13px 0 7px;
+  }
+  .trades a {
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    gap: 0;
+  }
+  .trades a b {
+    color: #fff;
+    background: #257e56;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: auto;
+  }
+  .trades a strong {
+    font-size: 18px;
+  }
+  .trades a span {
+    font-size: 11px;
+  }
+  .trades a:last-child {
+    background: #16261c;
+    color: white;
+  }
+  .cityline {
+    height: 42px;
+  }
+  .lot .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 0;
+    direction: ltr;
+  }
+  .lot-title {
+    grid-column: 1/-1;
+  }
+  .lot-title .eyebrow {
+    display: none;
+  }
+  .lot .hero h1 {
+    font-size: clamp(42px, 10.5vw, 66px);
+    font-weight: 410;
+  }
+  .lot .hero figure {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: clamp(310px, 95vw, 510px);
+  }
+  .lot figure figcaption {
+    display: none;
+  }
+  .lot-index {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    border-top: 1px solid var(--line);
+    margin-right: 6px;
+    padding-bottom: 10px;
+  }
+  .lot-index a {
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+  }
+  .lot-note {
+    grid-column: 1/-1;
+  }
+  .bleibe .hero {
+    background: linear-gradient(
+      #a7b9b9 0%,
+      #829356 45%,
+      #77864c 65%,
+      #617342 100%
+    );
+  }
+  .bleibe .hero-art {
+    width: 136%;
+    max-width: none;
+    height: 51%;
+    left: -18%;
+    top: 2%;
+    object-fit: fill;
+    mask-image: linear-gradient(to bottom, #000 85%, transparent);
+  }
+  .bleibe .hero:before {
+    background: linear-gradient(0deg, #20301d55, transparent 65%);
+  }
+  .bleibe .scene-copy h1,
+  .doppel .scene-copy h1 {
+    font-size: clamp(46px, 11vw, 74px);
+    font-weight: 580;
+  }
+  .bleibe .scene-copy {
+    bottom: 18%;
+  }
+  .blende .hero {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    background: linear-gradient(120deg, #54311c, #2b1d16 62%, #251b16);
+  }
+  .blende .hero .hero-art {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    height: 44%;
+    width: 100%;
+    object-fit: fill;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 23%);
+  }
+  .blende .hero:after {
+    inset: 0 auto 0 50%;
+    width: 3px;
+    background: #171311;
+    z-index: -1;
+  }
+  .film-half {
+    padding: 0;
+    display: block;
+  }
+  .film-half .eyebrow {
+    display: none;
+  }
+  .film-half.first > div {
+    position: absolute;
+    top: 12%;
+    left: 13px;
+    width: 65%;
+    text-align: left;
+  }
+  .film-half.second > div {
+    position: absolute;
+    bottom: 10%;
+    right: 13px;
+    width: 90%;
+    text-align: right;
+  }
+  .film-half h1,
+  .film-half h2 {
+    font-size: clamp(30px, 8vw, 53px);
+    line-height: 1.27;
+  }
+  .film-half .btn {
+    position: absolute;
+    bottom: 22px;
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+  .film-half.first .btn {
+    left: 13px;
+  }
+  .film-half.second .btn {
+    right: 13px;
+  }
+  .film-half.first {
+    padding: 0;
+  }
+}

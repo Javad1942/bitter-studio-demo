@@ -1,0 +1,14 @@
+@font-face { font-family: Estedad; src: url(../../Estedad-Variable.woff2); font-display: swap; }
+* { box-sizing: border-box; }
+body { margin: 0 auto; padding: clamp(16px,4vw,58px); max-width: 1560px; background: #f4f3f0; color: #231e24; font: 16px/1.7 Estedad,Tahoma,sans-serif; }
+header, form, footer { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+header { justify-content: space-between; border-bottom: 1px solid #c9c3c7; padding-block-end: 16px; }
+h1 { margin: 0; font-size: clamp(21px,3vw,38px); }
+form { margin-block: 20px; }
+label { display: inline-flex; align-items: center; gap: 8px; }
+select { font: inherit; padding: 4px 10px; border: 1px solid #b7adb4; border-radius: 10px; background: white; color: inherit; }
+figure { margin: 0; background: #e8e5e7; border: 1px solid #c9c3c7; border-radius: 14px; overflow: hidden; }
+figure img { width: 100%; display: block; }
+figcaption { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); text-align: center; font-weight: 700; padding-block: 7px; }
+footer { margin-block: 18px; justify-content: space-between; }
+a { color: inherit; text-underline-offset: .25em; }

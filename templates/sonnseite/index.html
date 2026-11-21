@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../../bitter-mark.svg" />
+    <meta name="theme-color" content="#eee" />
+    <title>سان‌سایت | انرژی محلی</title>
+    <meta
+      name="description"
+      content="برق خانه‌ات را از خورشید و باد بگیر. مصرف، هزینه و منبع انرژی را هر ماه شفاف ببین."
+    />
+    <link rel="stylesheet" href="../series-b/base.css" />
+    <link rel="stylesheet" href="../series-b/scenes.css" />
+    <link rel="stylesheet" href="../series-b/refinements.css" />
+    <link rel="stylesheet" href="../series-b/notes.css" />
+    <link rel="stylesheet" href="../choose.css" />
+    <script defer src="../series-b/interact.js"></script>
+    <script defer src="../series-b/notes.js"></script>
+  </head>
+  <body class="sonnseite" id="top">
+    <a class="skip" href="#main">رفتن به محتوا</a>
+    <header class="mast">
+      <div class="shell mast-inner">
+        <a href="#top" class="brand"
+          ><span class="mark" aria-hidden="true">☼</span
+          ><span data-template-brand>Sonnseite</span></a
+        ><button class="menu" aria-expanded="false" aria-controls="nav">
+          منو <b aria-hidden="true">☰</b>
+        </button>
+        <nav id="nav">
+          <a href="#work">راه‌های همراهی</a
+          ><a href="#about">مسیر رسیدن به برق پاک</a><a href="#faq">پرسش‌ها</a
+          ><a class="btn small" href="#contact"
+            >تماس<span aria-hidden="true">↙</span></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero shell">
+        <div class="intro">
+          <div class="eyebrow">همراه انرژی‌های نو</div>
+          <h1 data-template-title>انرژی پاک، برای همه.</h1>
+          <p>
+            برق خانه‌ات را از خورشید و باد بگیر. مصرف، هزینه و منبع انرژی را هر
+            ماه شفاف ببین.
+          </p>
+          <a class="btn" href="#estimate"
+            >برآورد مصرف من<span aria-hidden="true">↙</span></a
+          >
+          <div class="meter">
+            <i></i><span>خورشید، باد و یک انتخاب روشن</span>
+          </div>
+        </div>
+        <figure class="hero-window">
+          <img
+            class="hero-art"
+            data-template-cover
+            src="hero.svg"
+            width="1000"
+            height="580"
+            alt="برق خانگی؛ تصویرسازی سان‌سایت"
+            fetchpriority="high"
+          />
+          <figcaption>نیروگاه محلی · برق تجدیدپذیر</figcaption>
+        </figure>
+      </section>
+      <section class="section shell" id="work">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">انرژی محلی</div>
+            <h2>راه‌های همراهی</h2>
+          </div>
+          <p>از پنل روی پشت‌بام تا سهمی از یک نیروگاه محلی.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card" data-category="پشت‌بام">
+            <div class="media">
+              <img
+                src="work-1.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="خورشید روی سقف"
+              />
+            </div>
+            <div class="caption">
+              <small>پشت‌بام</small>
+              <h3>خورشید روی سقف</h3>
+              <p>بررسی جهت سقف، سایه‌ها و ظرفیت نصب پنل.</p>
+              <button class="text-action" data-pick="خورشید روی سقف">
+                بررسی این طرح ↙
+              </button>
+            </div>
+          </article>
+          <article class="work-card" data-category="انرژی محله">
+            <div class="media">
+              <img
+                src="work-2.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="برق باد اشتراکی"
+              />
+            </div>
+            <div class="caption">
+              <small>انرژی محله</small>
+              <h3>برق باد اشتراکی</h3>
+              <p>دریافت سهم تولید یک توربین بدون نیاز به نصب شخصی.</p>
+              <button class="text-action" data-pick="برق باد اشتراکی">
+                بررسی این طرح ↙
+              </button>
+            </div>
+          </article>
+          <article class="work-card" data-category="مصرف خانگی">
+            <div class="media">
+              <img
+                src="work-3.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="اندازه‌گیری هوشمند"
+              />
+            </div>
+            <div class="caption">
+              <small>مصرف خانگی</small>
+              <h3>اندازه‌گیری هوشمند</h3>
+              <p>پایش روند مصرف در ساعت‌های مختلف روز.</p>
+              <button class="text-action" data-pick="اندازه‌گیری هوشمند">
+                بررسی این طرح ↙
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section shell calc" id="estimate">
+        <div>
+          <h2>برآورد مصرف خانه</h2>
+          <p>مصرف ماهانه را جابه‌جا کن تا میانگین مصرف روزانه را ببینی.</p>
+        </div>
+        <div class="calc-box">
+          <label for="range"
+            >مصرف ماهانه (کیلووات‌ساعت)
+            <output id="input-sum">۳۰۰</output></label
+          ><input
+            type="range"
+            id="range"
+            min="90"
+            max="1200"
+            value="300"
+            step="30"
+            data-calc="sonnseite"
+          /><output class="result" id="calc-value"
+            >روزانه <b>۱۰</b> کیلووات‌ساعت</output
+          >
+        </div>
+      </section>
+      <section class="band" id="about">
+        <div class="section shell">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">سان‌سایت</div>
+              <h2>مسیر رسیدن به برق پاک</h2>
+            </div>
+          </div>
+          <div class="steps">
+            <article>
+              <span>۰۱</span>
+              <h3>بررسی خانه</h3>
+              <p>قبض و موقعیت ساختمان را کنار هم بررسی می‌کنیم.</p>
+            </article>
+            <article>
+              <span>۰۲</span>
+              <h3>پیشنهاد اختصاصی</h3>
+              <p>اثر هر گزینه را روی هزینه و مصرف سالانه می‌بینی.</p>
+            </article>
+            <article>
+              <span>۰۳</span>
+              <h3>همراهی بلندمدت</h3>
+              <p>بعد از اجرا هم وضعیت تولید را پیگیری می‌کنیم.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="field-note" aria-labelledby="field-title">
+        <div class="shell note-layout">
+          <figure>
+            <img
+              src="work-2.svg"
+              width="1000"
+              height="580"
+              loading="lazy"
+              alt="از محله نیرو از همان نزدیکی می‌آید."
+            />
+          </figure>
+          <div class="note-copy">
+            <div class="eyebrow">از محله</div>
+            <h2 id="field-title">نیرو از همان نزدیکی می‌آید.</h2>
+            <p>
+              تولید محلی در ساعت‌ها و فصل‌های مختلف تغییر می‌کند. ببین هر منبع
+              چه زمانی بیشترین سهم را دارد.
+            </p>
+            <div class="note-options" aria-label="نیرو از همان نزدیکی می‌آید.">
+              <button type="button" data-note="0" aria-pressed="true">
+                خورشید</button
+              ><button type="button" data-note="1" aria-pressed="false">
+                باد</button
+              ><button type="button" data-note="2" aria-pressed="false">
+                شبکه
+              </button>
+            </div>
+            <p class="note-answer" data-answer="0">
+              تولید پنل‌های خورشیدی در ساعت‌های روشن و حوالی ظهر به اوج می‌رسد.
+            </p>
+            <p class="note-answer" data-answer="1" hidden>
+              توربین در شب هم با جریان مناسب هوا برق تولید می‌کند.
+            </p>
+            <p class="note-answer" data-answer="2" hidden>
+              شبکه، اختلاف لحظه‌ای میان تولید محلی و مصرف خانه را پوشش می‌دهد.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section shell faq" id="faq">
+        <div>
+          <div class="eyebrow">پیش از شروع</div>
+          <h2>پرسش‌های رایج</h2>
+        </div>
+        <div>
+          <details>
+            <summary>اگر سقف مناسبی نداشته باشم چطور؟</summary>
+            <p>می‌توانی طرح مشارکت در تولید محلی را بررسی کنی.</p>
+          </details>
+          <details>
+            <summary>چطور جزئیات دلخواهم را آماده کنم؟</summary>
+            <p>
+              فرم پایین صفحه را تکمیل کن. یک فایل متنی از انتخاب و توضیحاتت
+              دریافت می‌کنی.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="section shell contact-grid">
+          <div>
+            <div class="eyebrow">انرژی محلی</div>
+            <h2>از خانه‌ات بگو.</h2>
+            <p>
+              این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
+              فایل متنی دریافت می‌کنی.
+            </p>
+          </div>
+          <form>
+            <label
+              >نام<input name="visitor" autocomplete="name" required /></label
+            ><label>نوع طرح<input name="topic" required /></label
+            ><label class="full"
+              >توضیحات<textarea name="note" rows="3"></textarea></label
+            ><button class="btn" type="submit">
+              دریافت خلاصه‌ی درخواست <span>↓</span>
+            </button>
+            <p role="status" class="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="shell foot">
+      <span dir="ltr">Sonnseite</span><a href="#top">بازگشت به بالا ↑</a>
+    </footer>
+    <a
+      class="bitter-template-choose"
+      href="../../design.html?name=sonnseite#brief"
+      target="_top"
+      ><img src="../../bitter-mark.svg" alt="" />انتخاب این قالب</a
+    >
+  </body>
+</html>

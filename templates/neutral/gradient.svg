@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<defs><radialGradient id="orb"><stop offset="0.15" stop-color="#41413e"/><stop offset=".35" stop-color="#737370"/><stop offset=".84" stop-color="#c4c4c1"/><stop offset="1" stop-color="#d0d0cc"/></radialGradient></defs><rect x="0" y="0" width="400" height="300" rx="0" fill="url(#orb)"/>
+</svg>

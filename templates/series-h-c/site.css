@@ -1,0 +1,1616 @@
+@font-face {
+  font-family: Estedad;
+  src: url("../../Estedad-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+body {
+  --bg: white;
+  --ink: #151515;
+  --accent: #ff604b;
+  --line: #dadbd8;
+  --panel: #f4f2eb;
+  --g: clamp(20px, 4vw, 64px);
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    450 clamp(14px, 1.05vw, 18px) / 1.85 Estedad,
+    Tahoma,
+    sans-serif;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #5396e7;
+  outline-offset: 3px;
+}
+[hidden] {
+  display: none !important;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  z-index: 12;
+  background: #fff;
+  padding: 8px;
+}
+.skip:focus {
+  top: 5px;
+}
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.45;
+  text-wrap: balance;
+}
+h1 {
+  font-size: clamp(45px, 5.3vw, 85px);
+  font-weight: 790;
+  line-height: 1.35;
+  letter-spacing: -0.06em;
+}
+h2 {
+  font-size: clamp(29px, 3.3vw, 55px);
+  letter-spacing: -0.045em;
+}
+h3 {
+  font-size: clamp(21px, 1.8vw, 32px);
+}
+p {
+  line-height: 1.95;
+  max-width: 58ch;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+em {
+  font-style: normal;
+}
+.button,
+.headcta {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: 0;
+  border-radius: 0.55em;
+  background: var(--panel);
+  padding: 0.65em 1.3em;
+  font-weight: 700;
+  font-size: 0.88em;
+  transition:
+    transform 0.24s,
+    filter 0.24s;
+}
+.button + .button {
+  margin-inline-start: 0.55em;
+}
+.button:hover,
+.headcta:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.94);
+}
+.solid {
+  background: var(--ink);
+  color: var(--bg);
+}
+.topbar {
+  height: 70px;
+  position: absolute;
+  z-index: 7;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--g);
+  gap: 2rem;
+}
+.topbar.stuck {
+  position: fixed;
+  height: 58px;
+  background: var(--bg);
+  box-shadow: 0 1px 0 var(--line);
+  animation: drop 0.25s ease-out;
+}
+@keyframes drop {
+  from {
+    transform: translateY(-100%);
+  }
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  white-space: nowrap;
+  font-size: 1.22em;
+}
+.brand i {
+  width: 1.02em;
+  aspect-ratio: 1;
+  display: inline-block;
+  background: var(--accent);
+  border-radius: 22%;
+}
+.topbar nav,
+.footnav {
+  display: flex;
+  gap: 1.35em;
+  align-items: center;
+}
+.topbar nav a,
+.footnav a {
+  font-size: 0.86em;
+  font-weight: 650;
+}
+.topbar nav a:hover,
+.footnav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+.menutoggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+}
+.menutoggle i {
+  width: 21px;
+  height: 2px;
+  background: currentColor;
+}
+.menupanel {
+  position: fixed;
+  z-index: 8;
+  top: 58px;
+  inset-inline: 10px;
+  display: grid;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 15px 35px #0002;
+}
+.menupanel a {
+  padding: 0.6em;
+}
+.hero {
+  position: relative;
+}
+.block {
+  padding: clamp(42px, 5vw, 85px) var(--g);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 42px);
+}
+.three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(15px, 2vw, 30px);
+}
+.three article {
+  padding: clamp(20px, 2.1vw, 35px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  border: 1px solid var(--line);
+}
+.three article .button {
+  margin-top: auto;
+}
+.three article p {
+  opacity: 0.82;
+}
+.eyebrow {
+  font-size: 0.81em;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+}
+.artbutton {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+.artbutton img {
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.artbutton:hover img {
+  transform: scale(1.035);
+}
+.picture {
+  margin: 0 var(--g);
+  height: 44.8vw;
+  overflow: hidden;
+}
+.picture.wideart {
+  height: 53vw;
+}
+.split,
+.contact,
+.archabout,
+.orbabout,
+.workflow,
+.cinemabout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 7vw;
+}
+.faqs details {
+  border-bottom: 1px solid var(--line);
+  padding: 15px 0;
+}
+.faqs summary {
+  cursor: pointer;
+  font-weight: 720;
+}
+.faqs p {
+  margin: 0.7em 0;
+}
+.contact {
+  background: var(--panel);
+  margin: 3.6vw var(--g) 0.4vw;
+  min-height: 454px;
+  padding: clamp(32px, 4vw, 62px);
+}
+.contact p,
+.orbabout p,
+.cinemabout p,
+.archabout p,
+.workflow p {
+  margin: 1em 0;
+}
+.brief,
+.flowpanel {
+  display: grid;
+  gap: 0.75em;
+}
+.brief label,
+.flowpanel label {
+  display: grid;
+  gap: 0.3em;
+  font-size: 0.87em;
+  font-weight: 650;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6em 0.8em;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 0.4em;
+}
+textarea {
+  resize: vertical;
+}
+.brief .button {
+  justify-self: start;
+}
+.brief output,
+.flowstatus {
+  font-size: 0.9em;
+}
+.brief output:empty,
+.flowstatus:empty {
+  display: none;
+}
+footer {
+  min-height: 325px;
+  padding: clamp(32px, 5vw, 75px) var(--g);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+}
+footer .brand {
+  font-size: clamp(27px, 3.6vw, 54px);
+}
+.choose,
+.backtop {
+  font-size: 0.9em;
+  font-weight: 650;
+}
+.choose {
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 30px;
+  padding: 0.8em 1.25em;
+  width: max-content;
+}
+.lightbox {
+  background: var(--bg);
+  color: var(--ink);
+  max-width: min(860px, 92vw);
+  width: 100%;
+  border: 0;
+  padding: 14px;
+  border-radius: 15px;
+}
+.lightbox::backdrop {
+  background: #050609cf;
+}
+.lightbox img {
+  max-height: 68svh;
+  object-fit: contain;
+}
+.lightbox h2 {
+  font-size: 1.2em;
+  margin-top: 0.8em;
+}
+.lightbox form {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.lightbox form button {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 100%;
+  background: #fff;
+  color: #161616;
+  font-size: 24px;
+}
+.mapblock {
+  height: 346px;
+  margin: 3.6vw var(--g) 0.4vw;
+  padding: var(--g);
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd9cc;
+  background-image:
+    repeating-linear-gradient(
+      36deg,
+      transparent 0 56px,
+      #faf6ea 57px 65px,
+      transparent 66px 138px
+    ),
+    repeating-linear-gradient(
+      126deg,
+      transparent 0 53px,
+      #fbf8e9 54px 62px,
+      transparent 63px 90px
+    );
+  color: #1a1918;
+}
+.mapblock > div:last-child {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #faf9ee;
+  padding: 12px 20px;
+}
+.mapblock h2 {
+  font-size: 1.5em;
+}
+.mapmark {
+  position: absolute;
+  left: 36%;
+  top: 40%;
+  background: #252527;
+  color: white;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+.mapmark i {
+  color: #ff6442;
+}
+.intro {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.intro p {
+  margin: 0.6em auto 1em;
+  max-width: 50ch;
+  color: #535450;
+}
+.intro h1 em {
+  background: linear-gradient(100deg, #e8eef4, #f1d8dc);
+  border-radius: 0.1em;
+  padding: 0 0.08em;
+}
+.sichtbar {
+  --panel: #f5f1e8;
+}
+.sichtbar .topbar nav {
+  background: #f6f6f3;
+  border-radius: 99px;
+  padding: 0.5em 1.5em;
+}
+.storyhero {
+  height: max(790px, 100svh);
+  overflow: hidden;
+  padding: clamp(90px, 9vh, 135px) 0 0;
+}
+.storyhero .intro {
+  padding-inline: 15px;
+}
+.storywall {
+  position: absolute;
+  inset: 40% 0 0;
+  display: grid;
+  place-items: center;
+}
+.story {
+  position: relative;
+  width: min(28vh, 23vw);
+  height: 90%;
+  max-height: 49vh;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 9px 25px #24231e26;
+  isolation: isolate;
+}
+.story img {
+  position: absolute;
+  inset: 0;
+}
+.storytime,
+.reelbar {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72em;
+}
+.storytime {
+  top: 12px;
+  inset-inline-start: 12px;
+  background: white;
+  border-radius: 6px;
+  padding: 2px 7px;
+}
+.reelbar {
+  inset: auto 9px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-weight: 700;
+}
+.reelbar button {
+  border: 0;
+  background: white;
+  color: #333;
+  border-radius: 6px;
+  padding: 0.33em 0.65em;
+}
+.story:after {
+  content: "";
+  position: absolute;
+  inset: 75% 0 0;
+  background: linear-gradient(transparent, #0007);
+}
+.storyprogress {
+  position: absolute;
+  z-index: 2;
+  top: 2px;
+  inset-inline-start: 0;
+  height: 3px;
+  background: #fff;
+  width: 100%;
+  transform-origin: right;
+  animation: reeltime 8s linear infinite;
+}
+.story.paused .storyprogress {
+  animation-play-state: paused;
+}
+@keyframes reeltime {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.reelstrip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: absolute;
+  inset-inline: 0;
+  top: 38%;
+  height: 32%;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 13%,
+    #000 87%,
+    transparent
+  );
+}
+.reelstrip img {
+  width: calc(17.4% - 10px);
+  height: 100%;
+  border-radius: 14px;
+}
+.sichtbar main > .block:nth-child(2),
+.achse main > .block:nth-child(2),
+.orbit main > .block:nth-child(2) {
+  margin-top: 3.2vw;
+}
+.sichtbar .three article,
+.sichtbar .contact,
+.sichtbar .picture {
+  border-radius: 22px;
+}
+.workshop img {
+  height: clamp(95px, 9vw, 145px);
+  border-radius: 12px;
+}
+.workshop article,
+.pricing article {
+  background: var(--panel);
+}
+.sichtbar .cards {
+  min-height: 525px;
+}
+.sichtbar .steps {
+  min-height: 351px;
+}
+.sichtbar .prices {
+  min-height: 507px;
+}
+.sichtbar .wideart {
+  height: 56.5vw;
+}
+.sichtbar .split {
+  min-height: 356px;
+}
+.achse {
+  --bg: #eeeee8;
+  --ink: #181917;
+  --panel: #deded4;
+  --accent: #e55d37;
+  --line: #b9bbb1;
+  --g: clamp(14px, 3.6vw, 64px);
+}
+.achse .brand i {
+  background: var(--ink);
+  border-radius: 0;
+}
+.achse .headcta,
+.achse .button,
+.achse .choose {
+  background: var(--accent);
+  color: #191816;
+  border-radius: 0;
+}
+.archhero {
+  height: max(730px, 100svh);
+  margin-inline: 12px;
+  border-inline: 1px solid var(--line);
+  overflow: hidden;
+}
+.archmain,
+.archdetail {
+  position: absolute;
+  top: 9%;
+  overflow: hidden;
+}
+.archmain {
+  inset-inline-start: 0;
+  width: 58%;
+  height: 89%;
+  border-inline-end: 3px solid var(--accent);
+}
+.archmain > span {
+  position: absolute;
+  bottom: 12px;
+  inset-inline-start: 14px;
+  font-size: 0.75em;
+  background: var(--bg);
+  padding: 3px 8px;
+}
+.archdetail {
+  inset-inline-end: 0;
+  width: 40%;
+  height: 30%;
+}
+.archdetail img {
+  object-position: 50% 23%;
+  transform: scale(1.13);
+}
+.archhero h1 {
+  position: absolute;
+  top: 40%;
+  inset-inline: 0;
+  background: var(--bg);
+  font-weight: 900;
+  font-size: clamp(58px, 8.6vw, 150px);
+  line-height: 1.32;
+  letter-spacing: -0.065em;
+  padding: 0 0.12em;
+}
+.archstat {
+  position: absolute;
+  inset-inline-end: 2%;
+  width: 36%;
+  bottom: 6%;
+}
+.archstat strong {
+  font-weight: 900;
+  font-size: clamp(42px, 4vw, 78px);
+  line-height: 1;
+}
+.archstat p {
+  margin: 0.65em 0 1.15em;
+}
+.achse .block {
+  border-block-start: 1px solid var(--line);
+}
+.achse .three {
+  gap: 0;
+  border-block: 1px solid var(--line);
+}
+.achse .three article {
+  border: 0;
+  border-inline-end: 1px solid var(--line);
+}
+.achse .services {
+  min-height: 243px;
+  padding-block: 24px;
+}
+.achse .services h2 {
+  font-size: 1.4em;
+}
+.archabout {
+  min-height: 490px;
+}
+.archabout .artbutton,
+.cinemabout .artbutton {
+  height: clamp(200px, 25vw, 400px);
+}
+.achse .projects {
+  min-height: 92.6vw;
+}
+.projectgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3vw 1.5vw;
+}
+.projectgrid figure:first-child {
+  grid-column: 1/-1;
+}
+.projectgrid .artbutton {
+  aspect-ratio: 2.35;
+  height: auto;
+}
+.projectgrid figure:not(:first-child) .artbutton {
+  aspect-ratio: 1.5;
+}
+.projectgrid figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 8px;
+  font-size: 0.9em;
+}
+.achse .research {
+  min-height: 329px;
+}
+.achse footer {
+  min-height: 472px;
+}
+.orbit {
+  --panel: #f8ece3;
+  --accent: #ff9528;
+}
+.orbit .brand i {
+  border-radius: 40%;
+  background: radial-gradient(at 35% 27%, #ffc975, #ed7f17);
+}
+.orbhero {
+  height: max(800px, 100svh);
+  background:
+    radial-gradient(
+      ellipse 88px 80px at 13% 27%,
+      transparent 95%,
+      #f3f3f1 96%,
+      transparent 99%
+    ),
+    radial-gradient(
+      ellipse 200px 190px at 52% 16%,
+      transparent 97.5%,
+      #f1f1ef 98%,
+      transparent 99.5%
+    ),
+    radial-gradient(
+      ellipse 87px 78px at 87% 29%,
+      transparent 96%,
+      #f3f3f1 97%,
+      transparent 100%
+    );
+  padding-top: clamp(95px, 14vh, 165px);
+}
+.orbhero .intro p {
+  margin-bottom: 0.75em;
+}
+.orbit .button,
+.orbit .headcta {
+  border-radius: 100px;
+}
+.bento {
+  position: absolute;
+  inset: 54.6% 1.35% 1%;
+  display: grid;
+  grid-template: 1fr 1fr / 1.24fr 1fr 0.9fr;
+  gap: 11px;
+}
+.bento > *,
+.orbgraphic,
+.flowpanel,
+.orbitposter {
+  border-radius: 26px;
+  overflow: hidden;
+}
+.robot,
+.chart,
+.sun,
+.ringcard {
+  position: relative;
+}
+.robot {
+  grid-row: 1/3;
+  color: white;
+  background: #211813;
+}
+.robot img {
+  position: absolute;
+  inset: 0;
+  transition: filter 0.45s;
+}
+.robot > b,
+.chart strong {
+  position: absolute;
+  top: 13px;
+  inset-inline-start: 17px;
+  font-size: 1.65em;
+  letter-spacing: -0.05em;
+}
+.swatches {
+  position: absolute;
+  bottom: 6%;
+  inset-inline: 9%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.swatches button {
+  width: 40px;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 11px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+}
+.swatches button[aria-pressed="true"] {
+  outline: 2px solid #ffffffa8;
+  outline-offset: 3px;
+}
+.swatches i {
+  display: block;
+  width: 47%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--dot);
+}
+.chart {
+  background: #151515;
+  color: #ff9a2e;
+}
+.chart strong {
+  color: #fff;
+  font-size: 2.1em;
+}
+.chartline {
+  position: absolute;
+  inset: auto 0 8%;
+  width: 100%;
+  height: 60%;
+}
+.bento small {
+  position: absolute;
+  bottom: 10px;
+  inset-inline-start: 15px;
+  color: white;
+}
+.sun {
+  background: radial-gradient(
+    circle at 50% 35%,
+    white 0 6%,
+    #ffe8ca 7% 12%,
+    #fac590 21%,
+    #e9af72 62%,
+    #db9d62
+  );
+}
+.ringcard {
+  grid-column: 2/4;
+  border: 0;
+  background: repeating-radial-gradient(
+    ellipse at 58% 127%,
+    #f7bb85 0 25px,
+    #fbc79b 26px 57px
+  );
+  font-weight: 750;
+}
+.ringcard span {
+  border-radius: 40px;
+  padding: 0.55em 1.3em;
+  background: #fff9;
+}
+.orbabout {
+  min-height: 518px;
+}
+.orbgraphic,
+.orbitposter {
+  background: repeating-radial-gradient(
+    circle at 48% 53%,
+    #fcbd86 0 8%,
+    #ffd4aa 8.5% 16%
+  );
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
+}
+.orbgraphic span,
+.orbgraphic strong {
+  background: #fff;
+  padding: 9px 18px;
+  border-radius: 22px;
+}
+.orbgraphic strong {
+  color: #ff9c36;
+}
+.workflow {
+  min-height: 541px;
+  background: #f5f4f1;
+}
+.flowpanel {
+  background: #fff;
+  padding: clamp(20px, 3vw, 45px);
+}
+.flowpanel ol {
+  padding-inline-start: 2em;
+}
+.flowpanel li {
+  color: #777;
+  padding: 0.35em;
+}
+.flowpanel li.active {
+  color: #ad5100;
+  font-weight: 750;
+}
+.flowpanel li.done {
+  color: #267650;
+}
+.flowrun {
+  justify-self: start;
+}
+.orbit .usecases {
+  min-height: 345px;
+}
+.orbit .usecases article {
+  border-radius: 20px;
+}
+.orbitposter {
+  height: 44.8vw;
+  margin: 0 var(--g);
+  background: repeating-radial-gradient(
+    ellipse at 65% 65%,
+    #fcbd86 0 6%,
+    #fdd6ad 6.5% 12%,
+    #edaa79 12.5% 18%
+  );
+}
+.orbit .contact {
+  background: #ffba7e;
+  border-radius: 25px;
+}
+.orbit .contact input,
+.orbit .contact select,
+.orbit .contact textarea {
+  border: 0;
+}
+.rundlauf {
+  --bg: #151521;
+  --ink: #f7f7ff;
+  --panel: #26273a;
+  --line: #39394e;
+  --accent: #ffcf3e;
+  --g: clamp(20px, 4vw, 64px);
+  background: var(--bg);
+}
+.rundlauf .brand i {
+  border-radius: 50%;
+}
+.rundlauf .topbar {
+  inset: 15px 15px auto;
+}
+.rundlauf .topbar.stuck {
+  inset: 0 0 auto;
+}
+.filmhero {
+  margin: 17px 1.15vw 4.4vw;
+  background: #222437;
+  border-radius: 30px;
+  min-height: calc(100svh - 34px);
+  padding: 95px var(--g) 30px;
+  display: grid;
+  grid-template-columns: 0.78fr 1.35fr;
+  align-items: center;
+  gap: 3vw;
+  overflow: hidden;
+}
+.cinemaIntro {
+  z-index: 1;
+}
+.cinemaIntro h1 {
+  font-size: clamp(45px, 5.35vw, 90px);
+  margin: 0.23em 0;
+}
+.cinemaIntro em {
+  color: #ffd23f;
+}
+.cinemaIntro p {
+  margin: 0 0 1.1em;
+}
+.yellow,
+.screencontrols button {
+  background: #ffd23f;
+  color: #171521;
+}
+.pink {
+  background: #e7496a;
+  color: white;
+}
+.cinemaIntro .button {
+  border-radius: 99px;
+}
+.screen {
+  position: relative;
+  z-index: 1;
+}
+.screen > img {
+  height: clamp(300px, 33vw, 570px);
+  border-radius: 15px;
+}
+.screencontrols {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  background: #141421;
+  border-radius: 15px;
+  padding: 13px 16px;
+}
+.screencontrols > span {
+  display: grid;
+  margin-inline-end: auto;
+}
+.screencontrols small {
+  font-size: 0.65em;
+}
+.screencontrols button {
+  border: none;
+  border-radius: 99px;
+  width: 36px;
+  height: 36px;
+}
+.popcorn {
+  position: absolute;
+  bottom: -8%;
+  right: 4%;
+  font-size: clamp(50px, 8vw, 180px);
+  transform: rotate(8deg);
+  opacity: 0.85;
+}
+.rundlauf .block h2 {
+  color: #fcd343;
+}
+.rundlauf .three article {
+  border-radius: 16px;
+  background: var(--panel);
+}
+.rundlauf .picture,
+.rundlauf .contact {
+  border-radius: 20px;
+}
+.rundlauf .scheduleblock {
+  min-height: 442px;
+}
+.days {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.days button {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 99px;
+  padding: 0.45em 1.15em;
+}
+.days button[aria-pressed="true"] {
+  color: #191822;
+  background: #ffd23f;
+}
+.schedule article {
+  display: flex;
+  align-items: center;
+  gap: 1.4em;
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+}
+.schedule h3 {
+  font-size: 1.2em;
+}
+.schedule article button {
+  margin-inline-start: auto;
+}
+.rundlauf .events {
+  min-height: 363px;
+}
+.rundlauf .tickets {
+  min-height: 396px;
+}
+.rundlauf .pricing .button {
+  background: #fbd049;
+  color: #151522;
+}
+.cinemabout {
+  min-height: 519px;
+}
+.rundlauf .contact {
+  margin-top: 0;
+}
+.rundlauf .contact .solid {
+  color: #191822;
+  background: #ffd23f;
+}
+@media (max-width: 760px) {
+  body {
+    --g: 20px;
+    font-size: 14px;
+  }
+  .topbar {
+    height: 60px;
+    padding-inline: 20px;
+  }
+  .topbar nav,
+  .headcta {
+    display: none;
+  }
+  .menutoggle {
+    display: flex;
+  }
+  .topbar .brand {
+    font-size: 15px;
+  }
+  .menupanel {
+    max-height: calc(100svh - 68px);
+    overflow: auto;
+  }
+  .button {
+    min-height: 39px;
+  }
+  .three,
+  .split,
+  .contact,
+  .archabout,
+  .orbabout,
+  .workflow,
+  .cinemabout {
+    grid-template-columns: 1fr;
+  }
+  .three {
+    gap: 12px;
+  }
+  .block {
+    padding: 35px var(--g);
+    gap: 20px;
+  }
+  .three article {
+    padding: 18px;
+    gap: 7px;
+  }
+  .picture,
+  .picture.wideart,
+  .sichtbar .wideart {
+    height: 65vw;
+    margin-inline: 8px;
+  }
+  .picture:not(.wideart) {
+    height: 125vw;
+  }
+  .contact {
+    min-height: 575px;
+    margin: 38px 8px 10px;
+    padding: 24px;
+    gap: 14px;
+  }
+  .contact h2 {
+    font-size: 34px;
+  }
+  .brief {
+    gap: 0.6em;
+  }
+  .brief label {
+    font-size: 14px;
+  }
+  footer {
+    min-height: 400px;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-items: start;
+  }
+  .footnav {
+    flex-wrap: wrap;
+    gap: 10px 17px;
+  }
+  .mapblock {
+    height: 374px;
+    margin: 25px 8px 7px;
+  }
+  .mapmark {
+    top: 28%;
+    left: 20%;
+  }
+  .mapblock > div:last-child {
+    inset-inline: 14px;
+  }
+  .storyhero {
+    height: max(720px, 100svh);
+    padding: 80px 0 0;
+  }
+  .storyhero .intro h1 {
+    font-size: clamp(36px, 9vw, 51px);
+    line-height: 1.21;
+  }
+  .storyhero .intro p {
+    font-size: 14px;
+    max-width: 34ch;
+    margin: 0.8em auto 1em;
+  }
+  .storywall {
+    inset: 42% 0 4%;
+  }
+  .story {
+    width: min(57vw, 270px);
+    height: 94%;
+    max-height: 440px;
+    border-radius: 16px;
+  }
+  .reelstrip {
+    height: 24%;
+    top: 39%;
+    gap: 10px;
+    width: 160%;
+    inset-inline-start: -30%;
+  }
+  .reelstrip img {
+    width: calc(16.66% - 8px);
+    border-radius: 10px;
+  }
+  .sichtbar .cards {
+    min-height: 984px;
+  }
+  .sichtbar .workshop img {
+    height: 135px;
+    object-position: 50% 40%;
+  }
+  .sichtbar .steps {
+    min-height: 803px;
+  }
+  .sichtbar .steps article {
+    min-height: 157px;
+    justify-content: center;
+  }
+  .sichtbar .prices {
+    min-height: 1027px;
+  }
+  .sichtbar .pricing article {
+    min-height: 236px;
+  }
+  .sichtbar .split {
+    min-height: 367px;
+    align-content: center;
+  }
+  .sichtbar .wideart {
+    height: 69.5vw;
+  }
+  .sichtbar main > .block:nth-child(2),
+  .achse main > .block:nth-child(2),
+  .orbit main > .block:nth-child(2) {
+    margin-top: 12px;
+  }
+  .achse {
+    --g: 15px;
+  }
+  .archhero {
+    margin-inline: 6px;
+    height: max(750px, 100svh);
+  }
+  .archmain {
+    inset: 62px 0 auto;
+    width: 100%;
+    height: 44%;
+    border: 0;
+  }
+  .archmain span {
+    bottom: 2px;
+  }
+  .archdetail {
+    inset: calc(44% + 73px) 0 auto;
+    width: 70%;
+    height: 17px;
+  }
+  .archhero h1 {
+    top: calc(44% + 85px);
+    font-size: clamp(40px, 11.4vw, 70px);
+    line-height: 1.25;
+    max-width: 8.5em;
+    padding-inline: 10px;
+  }
+  .archstat {
+    width: auto;
+    inset: auto 12px 21px;
+  }
+  .archstat p {
+    margin: 0.35em 0 0.75em;
+  }
+  .achse .services {
+    min-height: 503px;
+  }
+  .achse .three article {
+    border-inline: 0;
+    border-block-end: 1px solid var(--line);
+    padding: 15px 4px;
+  }
+  .archabout {
+    min-height: 569px;
+    gap: 20px;
+  }
+  .archabout .artbutton {
+    height: 230px;
+  }
+  .achse .projects {
+    min-height: 675px;
+  }
+  .projectgrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .projectgrid figure:first-child {
+    grid-column: auto;
+  }
+  .projectgrid figure .artbutton,
+  .projectgrid figure:not(:first-child) .artbutton {
+    aspect-ratio: auto;
+    height: 142px;
+  }
+  .projectgrid figcaption {
+    padding: 5px 0;
+  }
+  .achse .research {
+    min-height: 532px;
+  }
+  .achse footer {
+    min-height: 447px;
+  }
+  .orbhero {
+    height: max(1010px, 124svh);
+    padding-top: 92px;
+  }
+  .orbhero .intro {
+    padding-inline: 15px;
+  }
+  .orbhero .intro h1 {
+    font-size: clamp(36px, 9vw, 52px);
+    line-height: 1.25;
+  }
+  .orbhero .intro p {
+    max-width: 34ch;
+    font-size: 14px;
+  }
+  .bento {
+    inset: 30.5% 8px 5px;
+    grid-template: 1.85fr 1fr 0.76fr / 1fr 1fr;
+    gap: 10px;
+  }
+  .bento > * {
+    border-radius: 17px;
+  }
+  .robot {
+    grid-column: 1/3;
+    grid-row: auto;
+  }
+  .robot > b,
+  .chart strong {
+    top: 10px;
+    inset-inline-start: 13px;
+  }
+  .ringcard {
+    grid-column: 1/3;
+  }
+  .swatches button {
+    width: 38px;
+  }
+  .orbabout {
+    min-height: 557px;
+  }
+  .orbgraphic {
+    min-height: 220px;
+  }
+  .workflow {
+    min-height: 553px;
+  }
+  .flowpanel {
+    padding: 16px;
+  }
+  .orbit .usecases {
+    min-height: 577px;
+  }
+  .orbitposter {
+    height: 125vw;
+    margin-inline: 8px;
+  }
+  .orbit .contact {
+    min-height: 580px;
+  }
+  .rundlauf .topbar {
+    inset: 10px 4px auto;
+  }
+  .filmhero {
+    margin: 12px 8px 24px;
+    min-height: 929px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 25px;
+    padding: 91px 18px 80px;
+    border-radius: 20px;
+  }
+  .cinemaIntro h1 {
+    font-size: clamp(36px, 9vw, 53px);
+    line-height: 1.28;
+  }
+  .cinemaIntro p {
+    margin: 0.6em 0 1em;
+  }
+  .screen > img {
+    height: auto;
+    aspect-ratio: 1.15;
+  }
+  .popcorn {
+    right: 20%;
+    bottom: 0;
+    font-size: 95px;
+  }
+  .rundlauf .scheduleblock {
+    min-height: 452px;
+  }
+  .rundlauf .events {
+    min-height: 604px;
+  }
+  .rundlauf .tickets {
+    min-height: 751px;
+  }
+  .rundlauf .pricing article {
+    min-height: 165px;
+  }
+  .cinemabout {
+    min-height: 588px;
+  }
+  .cinemabout .artbutton {
+    height: 210px;
+  }
+  .schedule article {
+    gap: 0.7em;
+  }
+  .schedule article .button {
+    font-size: 0.76em;
+    padding: 0.5em 0.7em;
+  }
+  .screencontrols {
+    padding: 10px;
+  }
+}
+@media (max-width: 365px) {
+  .filmhero {
+    padding-inline: 14px;
+  }
+  .storyhero .intro h1,
+  .orbhero .intro h1 {
+    font-size: 34px;
+  }
+  .storywall {
+    top: 44%;
+  }
+  .archhero h1 {
+    font-size: 39px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.sichtbar .intro h1,
+.orbit .intro h1 {
+  font-weight: 650;
+}
+.choose {
+  position: fixed;
+  z-index: 5;
+  bottom: 12px;
+  left: 12px;
+  border: 1px solid #8885;
+  background: #262538;
+  color: #fff;
+  padding: 0.6em 1em;
+  font-size: 12px;
+  box-shadow: 0 5px 20px #10102832;
+}
+.choose span {
+  color: #decdff;
+}
+.rundlauf .screencontrols {
+  background: #181827;
+}
+.rundlauf .screencontrols button {
+  flex: none;
+}
+.rundlauf .filmhero .cinemaIntro {
+  align-self: center;
+}
+@media (min-width: 761px) {
+  .sichtbar .cards,
+  .sichtbar .steps,
+  .achse .archabout,
+  .achse .projects,
+  .achse .research,
+  .orbit .usecases,
+  .rundlauf .scheduleblock,
+  .rundlauf .events,
+  .rundlauf .tickets {
+    padding-block: 28px;
+  }
+  .achse .services {
+    padding-block: 15px;
+  }
+  .achse .projects .artbutton {
+    aspect-ratio: 2.5;
+  }
+  .rundlauf .filmhero {
+    grid-template-columns: 0.68fr 1.65fr;
+    gap: 2vw;
+    padding: 84px 2.3vw 20px;
+  }
+  .rundlauf .screen > img {
+    height: clamp(340px, 67vh, 740px);
+    object-fit: cover;
+  }
+  .rundlauf .screencontrols {
+    position: absolute;
+    bottom: 10px;
+    inset-inline-end: 10px;
+    gap: 8px;
+  }
+  .rundlauf .screencontrols > span {
+    margin-inline-end: 12px;
+  }
+  .rundlauf .cinemaIntro {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+  .rundlauf .cinemaIntro p {
+    margin: 5vh 0 8vh;
+  }
+  .rundlauf .cinemaIntro .button + .button {
+    margin: 0.5em 0 0;
+  }
+  .rundlauf .popcorn {
+    z-index: 2;
+    bottom: -1.5%;
+    right: 23%;
+    font-size: clamp(50px, 5vw, 99px);
+  }
+  .sichtbar .reelstrip {
+    height: 24%;
+    top: 41%;
+  }
+}
+@media (max-width: 760px) {
+  .rundlauf .filmhero .cinemaIntro {
+    align-self: stretch;
+  }
+  .choose {
+    font-size: 10px;
+    padding: 0.55em 0.85em;
+    left: 8px;
+    bottom: 8px;
+  }
+  .rundlauf .filmhero {
+    padding-top: 87px;
+  }
+  .rundlauf .cinemaIntro h1 {
+    line-height: 1.21;
+  }
+  .rundlauf .screen > img {
+    aspect-ratio: 1.24;
+  }
+}
+.orbgraphic img,.orbitposter img{position:absolute;inset:0}
+.orbgraphic{height:clamp(220px,23vw,350px)}
+.sichtbar .pricing article:nth-child(2){background:#f34b3b;color:#fff}
+.rundlauf .pricing article{background:#f7f5ef;color:#191821}
+.rundlauf .pricing article:nth-child(2){background:#ffcf3d}

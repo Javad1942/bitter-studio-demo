@@ -1,0 +1,85 @@
+#pricing .tiles article h3 {
+  margin-block: .25rem .55rem;
+}
+
+#pricing article .offer-amount {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .28em;
+  margin-block: 0 .85rem;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.offer-amount strong {
+  font-size: clamp(2.5rem, 4vw, 4.7rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  font-weight: 650;
+}
+
+#pricing article .plan-link {
+  align-self: flex-start;
+  padding: .7rem 1.15rem;
+  border-radius: 2rem;
+  background: var(--ink);
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background .18s ease;
+}
+
+#pricing article .plan-link:hover {
+  background: #413b53;
+}
+
+#pricing article:nth-child(n+2)::before {
+  content: none;
+}
+
+.offer-terms {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: clamp(1.5rem, 4vw, 4rem) auto 0;
+  padding: 1.15rem 1.5rem;
+  max-width: 68rem;
+  background: #ffdec7;
+  border-radius: 1.3rem;
+  line-height: 1.85;
+}
+
+.offer-terms p {
+  max-width: 52rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.offer-terms a {
+  flex: none;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: .3em;
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  .offer-terms {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .65rem;
+    max-width: 35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pricing article .plan-link {
+    transition: none;
+  }
+}

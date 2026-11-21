@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="light" name="color-scheme"/>
+  <title>
+   مقایسهٔ ده قالب | Bitter Studio
+  </title>
+  <link rel="icon" type="image/svg+xml" href="../../bitter-mark.svg"/>
+  <link href="report.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main>
+   <header>
+    <h1>
+     مقایسهٔ قالب‌های بیتر و مودو
+    </h1>
+    <label>
+     قالب
+     <select id="slug">
+      <option value="wirbel">
+       ویربل · استودیوی خلاق
+      </option>
+      <option value="fink">
+       فینک · کافه و قهوه‌خانه
+      </option>
+      <option value="schnitt">
+       اشنیت · معماری و مهندسی ساختمان
+      </option>
+      <option value="flussbett">
+       فلوس‌بِت · گلخانه و طراحی باغ
+      </option>
+      <option value="trubel">
+       تروبِل · جشنوارهٔ موسیقی و رویداد
+      </option>
+      <option value="kalma">
+       کالما · نوشیدنی گیاهی و مکمل غذایی
+      </option>
+      <option value="stimmen">
+       اشتیمِن · پادکست و روایت صوتی
+      </option>
+      <option value="quelle">
+       کوئله · آب معدنی و نوشیدنی
+      </option>
+      <option value="karst">
+       کارست · اقامتگاه کپسولی در طبیعت
+      </option>
+      <option value="villa">
+       ویلا · املاک و مشاور مسکن
+      </option>
+     </select>
+    </label>
+   </header>
+   <section aria-label="تنظیمات مقایسه" class="controls">
+    <fieldset aria-label="اندازهٔ صفحه">
+     <button aria-pressed="true" data-device="desktop">
+      دسکتاپ
+     </button>
+     <button aria-pressed="false" data-device="mobile">
+      موبایل
+     </button>
+    </fieldset>
+    <fieldset aria-label="بخش صفحه">
+     <button aria-pressed="true" data-frame="video">
+      فیلم اسکرول
+     </button>
+     <button aria-pressed="false" data-frame="top">
+      بالای صفحه
+     </button>
+     <button aria-pressed="false" data-frame="scroll">
+      بعد از اسکرول
+     </button>
+     <button aria-pressed="false" data-frame="middle">
+      میانه
+     </button>
+     <button aria-pressed="false" data-frame="bottom">
+      پایین صفحه
+     </button>
+    </fieldset>
+   </section>
+   <figure id="motion">
+    <video controls="" id="film" playsinline="" preload="metadata">
+    </video>
+   </figure>
+   <figure hidden="" id="still">
+    <img alt="" id="frame"/>
+   </figure>
+   <footer>
+    <small>
+     مودو در سمت چپ، بیتر در سمت راست
+    </small>
+    <div>
+     <a id="bitter" rel="noopener" target="_blank">
+      باز کردن قالب بیتر
+     </a>
+     <a id="original" rel="noopener" target="_blank">
+      باز کردن نسخهٔ مودو
+     </a>
+    </div>
+   </footer>
+  </main>
+  <script defer="" src="report.js">
+  </script>
+ </body>
+</html>

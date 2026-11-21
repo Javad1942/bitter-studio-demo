@@ -1,0 +1,816 @@
+﻿/* Multidisciplinary studio */
+.mosaik {
+  --paper: #f1faf2;
+  --strong: #202e25;
+  --soft: #cef1da;
+  --radius: 22px;
+}
+.mosaik .brand .mark {
+  color: #189d69;
+}
+.mosaik .hero {
+  direction: ltr;
+}
+.m-banner,
+.m-stat {
+  direction: rtl;
+  text-align: left;
+}
+.m-banner {
+  background: #b9efcf;
+  padding: clamp(27px, 4.8vw, 82px);
+  border-radius: var(--radius);
+  min-height: 36vh;
+}
+.m-banner h1 {
+  max-width: 860px;
+  font-weight: 690;
+  margin-left: 0;
+  margin-right: auto;
+}
+.m-banner .actions {
+  direction: ltr;
+  margin-top: 23px;
+}
+.m-banner .actions > a {
+  direction: rtl;
+}
+.m-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 13px;
+  margin-top: 13px;
+}
+.m-grid > div {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.m-screen {
+  aspect-ratio: 2.05;
+}
+.m-stat {
+  background: #168a5b;
+  color: #fff;
+  padding: clamp(18px, 3vw, 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+}
+.m-stat strong {
+  font:
+    700 clamp(60px, 9vw, 148px) / 1.15 Estedad,
+    sans-serif;
+}
+.m-stat p {
+  color: #e1f7e5;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.mosaik .btn {
+  border-radius: 10px;
+}
+/* Utilities and mobility */
+.sonnseite {
+  --paper: #fbfcf6;
+  --ink: #132e1d;
+  --sub: #4b604e;
+  --strong: #246843;
+  --soft: #e1eed5;
+  --radius: 4px;
+}
+.sonnseite .brand .mark {
+  color: #e3b831;
+}
+.sonnseite .hero,
+.bogen .hero,
+.groschen .hero {
+  display: grid;
+  direction: ltr;
+  grid-template-columns: 1fr 1.16fr;
+  align-items: stretch;
+  min-height: min(710px, 78svh);
+  gap: clamp(20px, 4vw, 80px);
+}
+.sonnseite .hero {
+  width: 100%;
+  padding-left: 3.5vw;
+}
+.sonnseite .intro,
+.bogen .intro,
+.groschen .intro {
+  direction: rtl;
+  align-self: center;
+  text-align: left;
+  padding-block: 40px;
+}
+.intro .actions {
+  justify-content: flex-end;
+}
+.meter {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  direction: ltr;
+  margin-top: clamp(25px, 5vw, 92px);
+  font-size: 12px;
+}
+.meter i,
+.online i {
+  width: 10px;
+  height: 10px;
+  background: #46b56e;
+  display: inline-block;
+  border-radius: 50%;
+}
+.sonnseite .hero-window {
+  min-height: 100%;
+}
+.sonnseite .hero-window figcaption {
+  border-radius: 3px;
+}
+.sonnseite .btn {
+  border-radius: 6px;
+}
+.bleibe {
+  --paper: #f6f3e8;
+  --ink: #312d22;
+  --sub: #605f4c;
+  --strong: #4c613c;
+  --soft: #e8e6d4;
+  --radius: 19px;
+}
+.bleibe .mast,
+.doppel .mast,
+.blende .mast {
+  color: white;
+  position: absolute;
+  inset: 0 0 auto;
+}
+.bleibe .brand .mark,
+.doppel .brand .mark,
+.blende .brand .mark {
+  color: inherit;
+}
+.bleibe .mast nav .btn,
+.doppel .mast nav .btn,
+.blende .mast nav .btn {
+  background: #ffffff28;
+  color: inherit;
+  border: 1px solid #ffffff77;
+}
+.bleibe .hero,
+.doppel .hero,
+.blende .hero {
+  width: 100%;
+  height: min(880px, 100svh);
+  min-height: 570px;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+}
+.bleibe .hero-art,
+.doppel .hero-art,
+.blende .hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.bleibe .hero:before,
+.doppel .hero:before,
+.blende .hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    0deg,
+    #1722168c,
+    transparent 45%,
+    transparent 72%,
+    #14221c42
+  );
+}
+.scene-copy {
+  position: absolute;
+  left: 4.5vw;
+  bottom: 7%;
+  width: min(680px, 72%);
+  text-align: left;
+}
+.scene-copy h1 {
+  font-size: clamp(54px, 8vw, 128px);
+}
+.scene-copy .btn {
+  margin-top: 16px;
+}
+.pick-chip,
+.court-action {
+  position: absolute;
+  right: 4.5vw;
+  bottom: 8%;
+}
+.pick-chip {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 8px 15px;
+  background: #f5f0df;
+  color: #2f3928;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.radlwerk {
+  --paper: #f6f6f3;
+  --ink: #171b1a;
+  --sub: #505650;
+  --strong: #252925;
+  --soft: #e8e9e5;
+  --radius: 22px;
+}
+.radlwerk .brand {
+  font-style: italic;
+}
+.radlwerk .brand .mark {
+  color: #fc542d;
+}
+.bike-show {
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  border-radius: 24px;
+  overflow: hidden;
+  height: clamp(320px, 48vw, 62svh);
+  background: radial-gradient(at 50% 80%, #d1d2cd, #e4e5e0 55%);
+}
+.bike-show .hero-art {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  margin: auto;
+  width: 81%;
+  z-index: 1;
+  transition: filter 0.4s;
+}
+.bike-word {
+  position: absolute;
+  top: 8%;
+  z-index: 0;
+  letter-spacing: -0.09em;
+  font:
+    1000 clamp(44px, 13.3vw, 225px) / 1 Arial,
+    sans-serif;
+  color: #f8502d;
+  letter-spacing: -0.09em;
+}
+.hero-micro {
+  position: absolute;
+  inset: 20px 23px auto;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  font:
+    600 11px Estedad,
+    sans-serif;
+}
+.swatch {
+  position: absolute;
+  bottom: 18px;
+  left: 22px;
+  z-index: 3;
+  direction: ltr;
+}
+.swatch button {
+  background: var(--sw);
+  width: 22px;
+  height: 22px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+.swatch button[aria-pressed="true"] {
+  outline: 1px solid #323a34;
+  outline-offset: 3px;
+}
+.bike-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  direction: ltr;
+  padding: 20px 0;
+}
+.bike-title h1,
+.bike-title a {
+  direction: rtl;
+}
+.bike-title h1 {
+  font-size: clamp(38px, 5.7vw, 91px);
+}
+.radlwerk .work-grid .media {
+  background: #e4e5df;
+}
+.doppel {
+  --paper: #f7f6ef;
+  --ink: #21251c;
+  --sub: #565d52;
+  --strong: #ff6538;
+  --on: #1b1c14;
+  --soft: #e8ebdc;
+  --radius: 15px;
+}
+.doppel .brand {
+  font-style: italic;
+  font-weight: 900;
+}
+.doppel .scene-copy {
+  width: min(700px, 65%);
+}
+.doppel .hero:before {
+  background: linear-gradient(0deg, #121c4890, transparent 55%, #1019324d);
+}
+.doppel .steps article > span,
+.doppel .brand .mark {
+  color: #ff7449;
+}
+.doppel .slots button {
+  background: #fcfaf4;
+  text-align: right;
+}
+.doppel .schedule {
+  padding-top: 8px;
+}
+.bogen {
+  --paper: #e9edef;
+  --ink: #252a2d;
+  --sub: #525b61;
+  --strong: #23292a;
+  --soft: #d8e1e5;
+  --radius: 12px;
+}
+.bogen .hero {
+  grid-template-columns: 0.64fr 1.36fr;
+  gap: clamp(24px, 5vw, 95px);
+  min-height: min(585px, 72vh);
+}
+.bogen .hero-window {
+  border-radius: var(--radius);
+}
+.bogen .intro {
+  align-self: end;
+}
+.bogen .hero h1 {
+  font-size: clamp(54px, 6.4vw, 105px);
+  line-height: 1.26;
+}
+.bogen .btn {
+  border-radius: 6px;
+}
+.bogen .brand .mark {
+  color: #fa672e;
+}
+.groschen {
+  --paper: #f3f8f1;
+  --ink: #192b21;
+  --sub: #465a4c;
+  --strong: #244e36;
+  --soft: #dceee0;
+  --radius: 24px;
+}
+.groschen .hero {
+  min-height: min(660px, 77vh);
+  grid-template-columns: 0.94fr 1.06fr;
+}
+.groschen .hero-window {
+  border-radius: var(--radius);
+}
+.groschen .hero-window .hero-art {
+  object-position: 52% center;
+}
+.groschen .brand .mark {
+  color: #3a9c62;
+}
+.groschen .calc {
+  padding-block-start: 0;
+}
+.zack {
+  --paper: #f3f4ef;
+  --ink: #1c211c;
+  --sub: #414a40;
+  --strong: #b3f353;
+  --on: #1a2419;
+  --soft: #dfeecb;
+  --radius: 5px;
+}
+.zack .brand {
+  font-style: italic;
+  font-size: clamp(25px, 2.8vw, 45px);
+  font-weight: 1000;
+}
+.zack .brand .mark {
+  color: #7ca82a;
+}
+.z-head {
+  display: grid;
+  grid-template-columns: 1.55fr 0.8fr;
+  gap: clamp(24px, 6vw, 110px);
+  direction: ltr;
+  align-items: stretch;
+  margin-block: 30px;
+}
+.z-head > * {
+  direction: rtl;
+}
+.z-head h1 {
+  text-align: left;
+  align-self: center;
+  font-weight: 950;
+  font-size: clamp(56px, 8.2vw, 139px);
+  line-height: 1.22;
+}
+.z-head aside {
+  background: var(--strong);
+  padding: clamp(18px, 2.6vw, 38px);
+  border-radius: var(--radius);
+}
+.online {
+  font-size: 12px;
+}
+.online i {
+  background: #34582b;
+  margin-left: 5px;
+}
+.z-head aside > strong {
+  display: block;
+  font-size: clamp(22px, 2.4vw, 38px);
+  margin-block: 12px 2px;
+}
+.z-head aside .btn {
+  margin-top: 15px;
+  background: #1e271f;
+  color: white;
+}
+.trades {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+.trades a {
+  background: white;
+  border-radius: var(--radius);
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 750;
+}
+.trades b {
+  color: #455d17;
+  font: bold 23px/1 Arial;
+}
+.cityline {
+  height: clamp(160px, 18vw, 290px);
+  overflow: hidden;
+  position: relative;
+}
+.cityline .hero-art {
+  object-position: center 75%;
+}
+.zack .steps article > span {
+  color: #507224;
+}
+.lot {
+  --paper: #eae7df;
+  --ink: #292a24;
+  --sub: #535448;
+  --strong: #34382b;
+  --soft: #dcd8ca;
+  --radius: 0;
+}
+.lot .mast {
+  border-block-end: 1px solid var(--line);
+}
+.lot .hero {
+  display: grid;
+  direction: ltr;
+  grid-template-columns: 1fr 0.94fr 0.72fr;
+  gap: 3vw;
+  min-height: min(700px, 80svh);
+  align-items: end;
+  padding-block: 26px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 calc(25% - 1px),
+    #201e1710 calc(25% - 1px) 25%
+  );
+}
+.lot .hero > * {
+  direction: rtl;
+  text-align: left;
+}
+.lot-title,
+.lot-note {
+  padding-bottom: 26px;
+}
+.lot .hero h1 {
+  font-size: clamp(44px, 6.3vw, 110px);
+  font-weight: 440;
+  line-height: 1.5;
+}
+.lot figure {
+  height: min(640px, 73svh);
+  position: relative;
+  align-self: center;
+}
+.lot figure figcaption {
+  border-radius: 0;
+  background: #e5e1d2;
+  left: 0;
+  right: auto;
+  bottom: 0;
+}
+.lot .btn {
+  border-radius: 0;
+}
+.lot-note .btn {
+  margin-top: 20px;
+}
+.lot .brand {
+  font-weight: 500;
+}
+.lot .brand .mark {
+  font-weight: 800;
+}
+.blende {
+  --paper: #181717;
+  --ink: #f8f5ee;
+  --sub: #cac2b8;
+  --tile: #252222;
+  --strong: #f3eee1;
+  --on: #1b1817;
+  --soft: #242222;
+  --line: #eee6d333;
+  --radius: 0;
+}
+.blende .mast {
+  background: #161515c4;
+}
+.blende .hero:before {
+  background: linear-gradient(0deg, #15151577, transparent 40%, #1515154a);
+}
+.blende .hero {
+  display: grid;
+  direction: ltr;
+  grid-template-columns: 1fr 1fr;
+}
+.film-half {
+  min-width: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  direction: rtl;
+  padding: clamp(66px, 8vw, 130px) 4vw 5vh;
+}
+.film-half.first {
+  align-items: end;
+  text-align: left;
+}
+.film-half.second {
+  align-items: start;
+  text-align: right;
+}
+.film-half h1,
+.film-half h2 {
+  font-size: clamp(40px, 5.5vw, 89px);
+  line-height: 1.3;
+  font-weight: 840;
+  max-width: 9em;
+}
+.film-half .btn {
+  backdrop-filter: blur(8px);
+  background: #1112;
+  color: white;
+}
+.blende .brand .mark {
+  color: #eee7d6;
+}
+.blende .contact input,
+.blende .contact textarea {
+  color: white;
+}
+@media (max-width: 760px) {
+  .m-banner {
+    min-height: 0;
+    padding: 25px 20px;
+  }
+  .m-banner h1 {
+    font-size: clamp(38px, 9vw, 60px);
+  }
+  .m-grid {
+    grid-template-columns: 1.63fr 0.82fr;
+    gap: 7px;
+    margin-top: 7px;
+  }
+  .m-grid > div {
+    border-radius: 13px;
+  }
+  .m-screen {
+    aspect-ratio: 1.15;
+  }
+  .m-stat {
+    padding: 12px;
+  }
+  .m-stat .eyebrow {
+    font-size: 9px;
+  }
+  .m-stat strong {
+    font-size: 43px;
+  }
+  .m-stat p {
+    font-size: 11px;
+  }
+  .sonnseite .hero,
+  .bogen .hero,
+  .groschen .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 0;
+  }
+  .sonnseite .hero {
+    width: 100%;
+    padding: 0;
+  }
+  .sonnseite .intro,
+  .bogen .intro,
+  .groschen .intro {
+    padding: 26px 0 0;
+    align-self: start;
+    text-align: right;
+    width: 100%;
+  }
+  .sonnseite .intro {
+    padding-inline: 16px;
+  }
+  .intro .actions {
+    justify-content: start;
+  }
+  .meter {
+    margin-top: 18px;
+    justify-content: end;
+  }
+  .sonnseite .hero-window,
+  .bogen .hero-window,
+  .groschen .hero-window {
+    width: 100%;
+    height: clamp(225px, 72vw, 430px);
+  }
+  .groschen .hero-window {
+    height: clamp(285px, 83vw, 480px);
+  }
+  .bleibe .hero,
+  .doppel .hero,
+  .blende .hero {
+    height: 100svh;
+    min-height: 550px;
+    max-height: 900px;
+  }
+  .scene-copy,
+  .doppel .scene-copy {
+    width: calc(100% - 32px);
+    left: 16px;
+    bottom: 12%;
+    text-align: left;
+  }
+  .pick-chip,
+  .court-action {
+    right: 16px;
+    bottom: 27px;
+  }
+  .bleibe .hero-art {
+    object-position: 65% center;
+  }
+  .doppel .hero-art {
+    object-position: 51% center;
+  }
+  .bleibe .mast nav .btn,
+  .doppel .mast nav .btn,
+  .blende .mast nav .btn {
+    background: var(--strong);
+    color: var(--on);
+  }
+  .radlwerk .bike-show {
+    height: clamp(255px, 75vw, 420px);
+    border-radius: 17px;
+  }
+  .bike-word {
+    top: 20%;
+    font-size: 14vw;
+  }
+  .bike-show .hero-art {
+    width: 100%;
+  }
+  .hero-micro {
+    inset: 13px 13px auto;
+    font-size: 9px;
+  }
+  .bike-title {
+    display: block;
+    text-align: right;
+  }
+  .bike-title h1 {
+    font-size: clamp(34px, 9vw, 58px);
+  }
+  .bike-title .btn {
+    margin-top: 12px;
+  }
+  .z-head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-block: 20px;
+  }
+  .z-head h1 {
+    text-align: right;
+  }
+  .z-head aside {
+    padding: 18px;
+  }
+  .z-head aside > strong {
+    margin-block: 5px 0;
+  }
+  .trades {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .trades a {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .cityline {
+    height: 106px;
+  }
+  .lot .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+  }
+  .lot-title,
+  .lot-note {
+    padding: 0;
+  }
+  .lot .hero h1 {
+    font-size: 46px;
+  }
+  .lot figure {
+    height: 360px;
+    width: 100%;
+  }
+  .lot .hero > * {
+    text-align: right;
+  }
+  .lot figure .hero-art {
+    object-fit: cover;
+  }
+  .blende .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .blende .hero-art {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 20% center;
+  }
+  .blende .hero {
+    --film-second: url("../blende/hero.svg");
+  }
+  .blende .hero:after {
+    content: "";
+    position: absolute;
+    inset: 50% 0 0;
+    z-index: -2;
+    background: var(--film-second) 80% center / 190% 100% no-repeat;
+  }
+  .film-half {
+    padding: 20px 18px 17px;
+  }
+  .film-half.first {
+    padding-top: clamp(76px, 10vh, 110px);
+  }
+  .film-half h1,
+  .film-half h2 {
+    font-size: clamp(35px, 8.7vw, 60px);
+  }
+  .film-half .eyebrow {
+    margin: 0;
+  }
+  .film-half .btn {
+    min-height: 35px;
+    padding: 4px 13px;
+    font-size: 12px;
+  }
+}

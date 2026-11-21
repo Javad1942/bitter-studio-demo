@@ -1,0 +1,214 @@
+<!doctype html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>اوربیت | طرح بیتر استودیو</title>
+    <link rel="icon" href="../../bitter-mark.svg" />
+    <link rel="stylesheet" href="../series-h-c/site.css" />
+    <script src="../series-h-c/site.js" defer></script>
+  </head>
+  <body class="orbit">
+    <a class="skip" href="#content">رفتن به محتوا</a>
+    <header class="topbar">
+      <a class="brand" href="#home"
+        ><i aria-hidden="true"></i><b data-template-brand>اوربیت</b></a
+      >
+      <nav aria-label="بخش‌های صفحه">
+        <a href="#about">درباره</a><a href="#demo">دمو</a
+        ><a href="#usecases">کاربردها</a><a href="#contact">درخواست دمو</a>
+      </nav>
+      <a class="headcta" href="#contact">درخواست دمو ←</a
+      ><button
+        class="menutoggle"
+        type="button"
+        aria-label="باز کردن فهرست"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <i></i><i></i>
+      </button>
+    </header>
+    <nav class="menupanel" id="mobile-menu" aria-label="فهرست موبایل" hidden>
+      <a href="#about">درباره</a><a href="#demo">دمو</a
+      ><a href="#usecases">کاربردها</a><a href="#contact">درخواست دمو</a>
+    </nav>
+    <main id="content">
+      <section id="home" class="orbhero hero">
+        <div class="intro">
+          <h1 data-template-title>کارهایی که خودشان<br />پیش می‌روند.</h1>
+          <p>
+            دستیار هوشمند برای پیشنهادها، فاکتورها و ایمیل‌های روزمرهٔ
+            کسب‌وکارهای کوچک.
+          </p>
+          <a class="button solid" href="#demo">تجربهٔ دمو <span>←</span></a>
+        </div>
+        <div class="bento">
+          <div class="robot">
+            <img
+              src="assistant.svg"
+              alt="دستیار مجازی با نور کهربایی"
+              data-template-cover
+              fetchpriority="high"
+            /><b>دستیار هوشمند</b>
+            <div class="swatches" role="group" aria-label="رنگ نور دستیار">
+              <button
+                style="--dot: #ff9e28"
+                data-hue="0"
+                aria-label="کهربایی"
+                aria-pressed="true"
+              >
+                <i></i></button
+              ><button
+                style="--dot: #568cf0"
+                data-hue="183"
+                aria-label="آبی"
+                aria-pressed="false"
+              >
+                <i></i></button
+              ><button
+                style="--dot: #2bb99b"
+                data-hue="105"
+                aria-label="سبز"
+                aria-pressed="false"
+              >
+                <i></i></button
+              ><button
+                style="--dot: #f162ab"
+                data-hue="265"
+                aria-label="صورتی"
+                aria-pressed="false"
+              >
+                <i></i>
+              </button>
+            </div>
+          </div>
+          <div class="chart">
+            <strong>۱۴۰۰</strong
+            ><svg class="chartline" viewBox="0 0 400 125" aria-hidden="true">
+              <path
+                d="M-7 110 C 98 112, 148 109, 212 86 S 323 40, 412 -9"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="5"
+              /></svg
+            ><small>آغاز کار اوربیت</small>
+          </div>
+          <div class="sun"><i></i><small>همیشه روشن</small></div>
+          <button class="ringcard" data-demo>
+            <span>مشاهدهٔ گردش کار ←</span>
+          </button>
+        </div>
+      </section>
+      <section id="about" class="block orbabout">
+        <div>
+          <span class="eyebrow">اوربیت برای تیم‌ها</span>
+          <h2>وقتت رو به کار مهم‌تر بده.</h2>
+          <p>
+            یک درخواست تازه وارد می‌شود، پیش‌نویس ساخته می‌شود و همکارت آن را
+            بازبینی می‌کند. هر حرکت را می‌توان دنبال کرد.
+          </p>
+          <a class="button solid" href="#demo">امتحانش کن <span>←</span></a>
+        </div>
+        <div class="orbgraphic">
+          <img src="assistant.svg" alt="مدل نورپردازی دستیار اوربیت" loading="lazy">
+        </div>
+      </section>
+      <section id="demo" class="block workflow">
+        <div>
+          <span class="eyebrow">دموی تعاملی</span>
+          <h2>یک گردش کار بساز.</h2>
+          <p>نوع درخواست رو انتخاب کن و ببین چطور از ورودی به خروجی می‌رسه.</p>
+        </div>
+        <div class="flowpanel">
+          <label
+            >ورودی<select class="flowchoice">
+              <option>پیشنهاد همکاری</option>
+              <option>فاکتور فروش</option>
+              <option>پاسخ ایمیل</option>
+            </select></label
+          >
+          <ol>
+            <li>دریافت درخواست</li>
+            <li>ساخت پیش‌نویس</li>
+            <li>آماده برای بازبینی</li>
+          </ol>
+          <button class="button solid flowrun">اجرای گردش کار ←</button
+          ><output class="flowstatus" aria-live="polite"></output>
+        </div>
+      </section>
+      <section id="usecases" class="block usecases">
+        <h2>برای کارهای واقعی</h2>
+        <div class="three">
+          <article>
+            <h3>پیشنهاد همکاری</h3>
+            <p>شرح خدمات و زمان تحویل را در یک پیش‌نویس منظم جمع کن.</p>
+          </article>
+          <article>
+            <h3>فاکتور فروش</h3>
+            <p>ردیف‌های سفارش را به یک فاکتور قابل بازبینی تبدیل کن.</p>
+          </article>
+          <article>
+            <h3>پاسخ ایمیل</h3>
+            <p>درخواست‌های مشابه را گروه‌بندی کن و لحن پاسخ را خودت بساز.</p>
+          </article>
+        </div>
+      </section>
+      <section class="orbitposter" aria-label="تیم و دستیار اوربیت">
+        <img src="teamboard.svg" alt="تصویر اعضای تیم اوربیت و دستیار هوشمند" loading="lazy">
+      </section>
+      <section class="contact block" id="contact">
+        <div>
+          <span class="eyebrow">تماس با اوربیت</span>
+          <h2>از کدوم کار شروع کنیم؟</h2>
+          <p>
+            یکی از کارهای تکراری تیمت رو بنویس تا جریانش رو با هم ترسیم کنیم.
+          </p>
+        </div>
+        <form class="brief">
+          <label
+            >نام شما<input
+              name="name"
+              autocomplete="given-name"
+              required
+              maxlength="80" /></label
+          ><label
+            >موضوع<select name="topic">
+              <option>دموی تیمی</option>
+              <option>پیشنهاد همکاری</option>
+              <option>فاکتور فروش</option>
+              <option>پاسخ ایمیل</option>
+            </select></label
+          ><label
+            >یادداشت<textarea
+              name="message"
+              rows="2"
+              maxlength="1200"
+            ></textarea></label
+          ><button class="button solid" type="submit">
+            دریافت خلاصهٔ درخواست <span>↓</span></button
+          ><output aria-live="polite"></output>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#home"
+        ><i aria-hidden="true"></i><b data-template-brand>اوربیت</b></a
+      >
+      <div class="footnav">
+        <a href="#about">درباره</a><a href="#demo">دمو</a
+        ><a href="#usecases">کاربردها</a><a href="#contact">درخواست دمو</a>
+      </div>
+      <a class="choose" href="../../design.html?name=orbit#brief" target="_top"
+        >انتخاب این طرح در بیتر <span>↗</span></a
+      ><a href="#home" class="backtop">بازگشت به بالا ↑</a>
+    </footer>
+    <dialog class="lightbox">
+      <form method="dialog"><button aria-label="بستن پنجره">×</button></form>
+      <img alt="" />
+      <h2></h2>
+      <p></p>
+    </dialog>
+  </body>
+</html>

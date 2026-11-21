@@ -1,0 +1,159 @@
+﻿.studio-profile:has(.cacao-stage) {
+  grid-template-areas: 'lead sculpture' 'moods sculpture' 'rail rail';
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  row-gap: 24px;
+}
+.studio-profile .profile-lead {
+  grid-area: lead;
+  align-self: end;
+}
+.studio-profile .profile-designs {
+  grid-area: moods;
+  align-self: start;
+}
+.studio-profile .mood-rail {
+  grid-area: rail;
+}
+.cacao-stage {
+  grid-area: sculpture;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(270px, 25vw, 395px);
+  margin: 0;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 15% 8%, #fff8ef 0, transparent 55%),
+    radial-gradient(ellipse at 92% 88%, #e4d3e5 0, transparent 66%),
+    linear-gradient(145deg, #f6e9de, #f1edf6 58%, #eddbce);
+  box-shadow: inset 0 0 0 1px #3d244715;
+  scroll-margin-top: 100px;
+}
+.cacao-viewport {
+  position: absolute;
+  inset: 0 0 34px;
+  outline-offset: -5px;
+  border-radius: inherit;
+  touch-action: pan-y;
+}
+.cacao-stage[data-renderer='webgl'] .cacao-viewport {
+  cursor: grab;
+}
+.cacao-stage[data-dragging] .cacao-viewport {
+  cursor: grabbing;
+}
+.cacao-stage canvas,
+.cacao-poster {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cacao-stage canvas {
+  opacity: 0;
+  pointer-events: none;
+}
+.cacao-stage[data-renderer='webgl'] canvas {
+  opacity: 1;
+}
+.cacao-stage[data-renderer='webgl'] .cacao-poster {
+  visibility: hidden;
+}
+.cacao-controls {
+  position: absolute;
+  bottom: 10px;
+  inset-inline: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.cacao-controls[hidden] {
+  display: none;
+}
+.cacao-controls small {
+  color: #453641;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.cacao-finishes {
+  display: inline-flex;
+  gap: 0;
+  align-items: center;
+  direction: rtl;
+  border: 1px solid #ffffffa8;
+  border-radius: 999px;
+  padding: 1px;
+  background: #fffa;
+  backdrop-filter: blur(10px);
+}
+.cacao-finishes button {
+  padding: 0;
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 33px;
+  border: 0;
+  background: transparent;
+  border-radius: 50%;
+}
+.cacao-finishes i {
+  display: block;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px #241f2622;
+}
+.cacao-finishes [data-finish='cacao'] i {
+  background: linear-gradient(140deg, #f6c49e, #753922 47%, #2b1722);
+}
+.cacao-finishes [data-finish='opal'] i {
+  background: linear-gradient(140deg, #bee5fb, #bd9fd6 50%, #7e94ba);
+}
+.cacao-finishes [data-finish='silver'] i {
+  background: linear-gradient(
+    155deg,
+    #fefefe,
+    #87909d 42%,
+    #3e4349 50%,
+    #dbdfe4 80%
+  );
+}
+.cacao-finishes [aria-pressed='true'] i {
+  outline: 1.5px solid #493943;
+  outline-offset: 2px;
+}
+.cacao-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 780px) {
+  .studio-profile:has(.cacao-stage) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'lead' 'sculpture' 'moods' 'rail';
+  }
+  .cacao-stage {
+    min-height: 0;
+    aspect-ratio: 1.4;
+  }
+  .cacao-viewport {
+    inset-block-end: 36px;
+  }
+}
+@media (max-width: 370px) {
+  .cacao-controls small {
+    font-size: 11px;
+  }
+  .cacao-controls {
+    inset-inline: 8px;
+  }
+  .cacao-finishes button {
+    width: 30px;
+  }
+}

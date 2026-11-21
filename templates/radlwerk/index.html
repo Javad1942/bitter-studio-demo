@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../../bitter-mark.svg" />
+    <meta name="theme-color" content="#eee" />
+    <title>رادل‌ورک | کارگاه دوچرخه</title>
+    <meta
+      name="description"
+      content="دوچرخه‌های سبک شهری، مونتاژشده در کارگاه؛ از اولین پیچ صبح تا آخرین کوچه‌ی شب."
+    />
+    <link rel="stylesheet" href="../series-b/base.css" />
+    <link rel="stylesheet" href="../series-b/scenes.css" />
+    <link rel="stylesheet" href="../series-b/refinements.css" />
+    <link rel="stylesheet" href="../series-b/notes.css" />
+    <link rel="stylesheet" href="../choose.css" />
+    <script defer src="../series-b/interact.js"></script>
+    <script defer src="../series-b/notes.js"></script>
+  </head>
+  <body class="radlwerk" id="top">
+    <a class="skip" href="#main">رفتن به محتوا</a>
+    <header class="mast">
+      <div class="shell mast-inner">
+        <a href="#top" class="brand"
+          ><span class="mark" aria-hidden="true">◉</span
+          ><span data-template-brand>Radlwerk</span></a
+        ><button class="menu" aria-expanded="false" aria-controls="nav">
+          منو <b aria-hidden="true">☰</b>
+        </button>
+        <nav id="nav">
+          <a href="#work">دوچرخه‌های کارگاه</a><a href="#about">در دل کارگاه</a
+          ><a href="#faq">پرسش‌ها</a
+          ><a class="btn small" href="#contact"
+            >تماس<span aria-hidden="true">↙</span></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero shell">
+        <div class="bike-show">
+          <b class="bike-word" aria-hidden="true">RADLWERK</b
+          ><img
+            class="hero-art"
+            data-template-cover
+            src="hero.svg"
+            width="1000"
+            height="580"
+            alt="دوچرخه شهری؛ تصویرسازی رادل‌ورک"
+            fetchpriority="high"
+          />
+          <div class="hero-micro">
+            <span>برد شهری<br /><b>۱۲۰ کیلومتر</b></span
+            ><span>وزن فریم<br /><b>۹٫۸ کیلوگرم</b></span>
+          </div>
+          <div class="swatch" aria-label="رنگ فریم">
+            <button
+              style="--sw: #f6512b"
+              data-bike="0"
+              aria-label="نارنجی"
+              aria-pressed="true"
+            ></button
+            ><button
+              style="--sw: #399977"
+              data-bike="1"
+              aria-label="سبز"
+              aria-pressed="false"
+            ></button
+            ><button
+              style="--sw: #6682d4"
+              data-bike="2"
+              aria-label="آبی"
+              aria-pressed="false"
+            ></button>
+          </div>
+        </div>
+        <div class="bike-title">
+          <h1 data-template-title>برای راهی که پیش رو داری.</h1>
+          <a class="btn" href="#work"
+            >انتخاب مدل<span aria-hidden="true">↙</span></a
+          >
+        </div>
+      </section>
+      <section class="section shell" id="work">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">کارگاه دوچرخه</div>
+            <h2>دوچرخه‌های کارگاه</h2>
+          </div>
+          <p>هندسه‌ی دقیق، قطعات ساده و سه شخصیت متفاوت برای خیابان.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card" data-category="شهری">
+            <div class="media">
+              <img
+                src="work-1.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="سیتی ۰۱"
+              />
+            </div>
+            <div class="caption">
+              <small>شهری</small>
+              <h3>سیتی ۰۱</h3>
+              <p>فرمان صاف، نشیمن راحت و فریم سبک برای مسیر روزانه.</p>
+              <button class="text-action" data-pick="سیتی ۰۱">
+                انتخاب مدل ↙
+              </button>
+            </div>
+          </article>
+          <article class="work-card" data-category="جاده">
+            <div class="media">
+              <img
+                src="work-2.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="رُد ۰۲"
+              />
+            </div>
+            <div class="caption">
+              <small>جاده</small>
+              <h3>رُد ۰۲</h3>
+              <p>فرمانی پایین‌تر و دنده‌بندی سریع برای مسافت طولانی.</p>
+              <button class="text-action" data-pick="رُد ۰۲">
+                انتخاب مدل ↙
+              </button>
+            </div>
+          </article>
+          <article class="work-card" data-category="همه‌راه">
+            <div class="media">
+              <img
+                src="work-3.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="تِریل ۰۳"
+              />
+            </div>
+            <div class="caption">
+              <small>همه‌راه</small>
+              <h3>تِریل ۰۳</h3>
+              <p>تایر پهن‌تر و کنترل بیشتر روی خاک و سنگ‌ریزه.</p>
+              <button class="text-action" data-pick="تِریل ۰۳">
+                انتخاب مدل ↙
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="band" id="about">
+        <div class="section shell">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">رادل‌ورک</div>
+              <h2>در دل کارگاه</h2>
+            </div>
+          </div>
+          <div class="steps">
+            <article>
+              <span>۰۱</span>
+              <h3>اندازه‌ی بدن</h3>
+              <p>ارتفاع زین، طول فریم و فاصله‌ی فرمان شخصی می‌شود.</p>
+            </article>
+            <article>
+              <span>۰۲</span>
+              <h3>مونتاژ دستی</h3>
+              <p>هر چرخ و کابل پیش از تحویل در کارگاه تنظیم می‌شود.</p>
+            </article>
+            <article>
+              <span>۰۳</span>
+              <h3>سواری آزمایشی</h3>
+              <p>مدل و رنگ را انتخاب کن و مسیر کوتاه کارگاه را بران.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="field-note" aria-labelledby="field-title">
+        <div class="shell note-layout">
+          <figure>
+            <img
+              src="work-1.svg"
+              width="1000"
+              height="580"
+              loading="lazy"
+              alt="یادداشت کارگاه پیش از هر رکاب."
+            />
+          </figure>
+          <div class="note-copy">
+            <div class="eyebrow">یادداشت کارگاه</div>
+            <h2 id="field-title">پیش از هر رکاب.</h2>
+            <p>چند بررسی کوتاه، دوچرخه را برای رفت‌وآمد روزانه آماده می‌کند.</p>
+            <div class="note-options" aria-label="پیش از هر رکاب.">
+              <button type="button" data-note="0" aria-pressed="true">
+                باد تایر</button
+              ><button type="button" data-note="1" aria-pressed="false">
+                ترمزها</button
+              ><button type="button" data-note="2" aria-pressed="false">
+                زنجیر
+              </button>
+            </div>
+            <p class="note-answer" data-answer="0">
+              محدوده‌ی فشار روی دیواره‌ی تایر را بخوان و هر دو چرخ را پیش از
+              سواری بررسی کن.
+            </p>
+            <p class="note-answer" data-answer="1" hidden>
+              در حرکت آهسته، هر ترمز را جداگانه امتحان کن.
+            </p>
+            <p class="note-answer" data-answer="2" hidden>
+              پس از باران زنجیر را خشک کن و روغن اضافی را با دستمال پاک کن.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section shell faq" id="faq">
+        <div>
+          <div class="eyebrow">پیش از شروع</div>
+          <h2>پرسش‌های رایج</h2>
+        </div>
+        <div>
+          <details>
+            <summary>چطور اندازه‌ی فریم را انتخاب کنم؟</summary>
+            <p>
+              قد، طول پا و مدل سواری‌ات را وارد کن تا در جلسه‌ی تنظیم بررسی شود.
+            </p>
+          </details>
+          <details>
+            <summary>چطور جزئیات دلخواهم را آماده کنم؟</summary>
+            <p>
+              فرم پایین صفحه را تکمیل کن. یک فایل متنی از انتخاب و توضیحاتت
+              دریافت می‌کنی.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="section shell contact-grid">
+          <div>
+            <div class="eyebrow">کارگاه دوچرخه</div>
+            <h2>یک دور امتحانش کن.</h2>
+            <p>
+              این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
+              فایل متنی دریافت می‌کنی.
+            </p>
+          </div>
+          <form>
+            <label
+              >نام<input name="visitor" autocomplete="name" required /></label
+            ><label>مدل دوچرخه<input name="topic" required /></label
+            ><label class="full"
+              >توضیحات<textarea name="note" rows="3"></textarea></label
+            ><button class="btn" type="submit">
+              دریافت خلاصه‌ی درخواست <span>↓</span>
+            </button>
+            <p role="status" class="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="shell foot">
+      <span dir="ltr">Radlwerk</span><a href="#top">بازگشت به بالا ↑</a>
+    </footer>
+    <a
+      class="bitter-template-choose"
+      href="../../design.html?name=radlwerk#brief"
+      target="_top"
+      ><img src="../../bitter-mark.svg" alt="" />انتخاب این قالب</a
+    >
+  </body>
+</html>

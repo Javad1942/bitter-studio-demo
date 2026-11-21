@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../../bitter-mark.svg" />
+    <meta name="theme-color" content="#eee" />
+    <title>بلِنده | استودیوی تصویر</title>
+    <meta
+      name="description"
+      content="عکاسی و فیلم‌سازی برای آدم‌ها، برندها و لحظه‌هایی که ارزش دوباره دیدن دارند."
+    />
+    <link rel="stylesheet" href="../series-b/base.css" />
+    <link rel="stylesheet" href="../series-b/scenes.css" />
+    <link rel="stylesheet" href="../series-b/refinements.css" />
+    <link rel="stylesheet" href="../series-b/notes.css" />
+    <link rel="stylesheet" href="../choose.css" />
+    <script defer src="../series-b/interact.js"></script>
+    <script defer src="../series-b/notes.js"></script>
+  </head>
+  <body class="blende" id="top">
+    <a class="skip" href="#main">رفتن به محتوا</a>
+    <header class="mast">
+      <div class="shell mast-inner">
+        <a href="#top" class="brand"
+          ><span class="mark" aria-hidden="true">◐</span
+          ><span data-template-brand>Blende</span></a
+        ><button class="menu" aria-expanded="false" aria-controls="nav">
+          منو <b aria-hidden="true">☰</b>
+        </button>
+        <nav id="nav">
+          <a href="#work">در قاب استودیو</a><a href="#about">از ایده تا خروجی</a
+          ><a href="#faq">پرسش‌ها</a
+          ><a class="btn small" href="#contact"
+            >تماس<span aria-hidden="true">↙</span></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero shell">
+        <img
+          class="hero-art"
+          data-template-cover
+          src="hero.svg"
+          width="1000"
+          height="580"
+          alt="فیلم و عکس؛ تصویرسازی بلِنده"
+          fetchpriority="high"
+        />
+        <div class="film-half first">
+          <div>
+            <div class="eyebrow">عکاسی</div>
+            <h1 data-template-title>تصویرهایی که می‌مانند.</h1>
+          </div>
+          <a class="btn glass" href="#work" data-film-filter="عکاسی"
+            >قاب‌های ثابت<span aria-hidden="true">↙</span></a
+          >
+        </div>
+        <div class="film-half second">
+          <div>
+            <div class="eyebrow">فیلم‌سازی</div>
+            <h2>فیلم‌هایی که حرکت می‌دهند.</h2>
+          </div>
+          <a class="btn glass" href="#work" data-film-filter="فیلم"
+            >تصویر متحرک<span aria-hidden="true">↙</span></a
+          >
+        </div>
+      </section>
+      <section class="section shell" id="work">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">استودیوی تصویر</div>
+            <h2>در قاب استودیو</h2>
+          </div>
+          <p>منتخبی از روایت‌های کوتاه، پرتره و تصویر متحرک.</p>
+        </div>
+        <div class="filters" data-filters aria-label="فیلتر آثار">
+          <button data-filter="همه" aria-pressed="true">همه</button
+          ><button data-filter="عکاسی" aria-pressed="false">عکاسی</button
+          ><button data-filter="فیلم" aria-pressed="false">فیلم</button>
+        </div>
+        <div class="work-grid">
+          <article class="work-card" data-category="عکاسی">
+            <div class="media">
+              <img
+                src="work-1.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="میان دو نور"
+              />
+            </div>
+            <div class="caption">
+              <small>عکاسی</small>
+              <h3>میان دو نور</h3>
+              <p>مطالعه‌ی پرتره با نور مایل و زمینه‌ی خاموش.</p>
+              <button class="text-action" data-pick="میان دو نور">
+                درخواست اثر مشابه ↙
+              </button>
+            </div>
+          </article>
+          <article class="work-card" data-category="فیلم">
+            <div class="media">
+              <img
+                src="work-2.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="آخرین قطار"
+              />
+            </div>
+            <div class="caption">
+              <small>فیلم</small>
+              <h3>آخرین قطار</h3>
+              <p>روایتی کوتاه درباره‌ی انتظار، حرکت و لحظه‌ی رسیدن.</p>
+              <button class="text-action" data-pick="آخرین قطار">
+                درخواست اثر مشابه ↙
+              </button>
+            </div>
+          </article>
+          <article class="work-card" data-category="عکاسی">
+            <div class="media">
+              <img
+                src="work-3.svg"
+                loading="lazy"
+                width="1000"
+                height="580"
+                alt="سکوت اشیا"
+              />
+            </div>
+            <div class="caption">
+              <small>عکاسی</small>
+              <h3>سکوت اشیا</h3>
+              <p>چیدمان اشیای روزمره با سایه‌های تند و قاب نزدیک.</p>
+              <button class="text-action" data-pick="سکوت اشیا">
+                درخواست اثر مشابه ↙
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="band" id="about">
+        <div class="section shell">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">بلِنده</div>
+              <h2>از ایده تا خروجی</h2>
+            </div>
+          </div>
+          <div class="steps">
+            <article>
+              <span>۰۱</span>
+              <h3>پیش‌تولید</h3>
+              <p>ایده، تخته‌ی تصاویر و زبان بصری کار را مشخص می‌کنیم.</p>
+            </article>
+            <article>
+              <span>۰۲</span>
+              <h3>روز ضبط</h3>
+              <p>نور، صدا و حرکت در خدمت روایت قرار می‌گیرند.</p>
+            </article>
+            <article>
+              <span>۰۳</span>
+              <h3>تدوین و رنگ</h3>
+              <p>تصویر نهایی برای انتشار و چاپ آماده می‌شود.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="field-note" aria-labelledby="field-title">
+        <div class="shell note-layout">
+          <figure>
+            <img
+              src="work-1.svg"
+              width="1000"
+              height="580"
+              loading="lazy"
+              alt="اتاق تدوین نور را از کجا شروع کنیم؟"
+            />
+          </figure>
+          <div class="note-copy">
+            <div class="eyebrow">اتاق تدوین</div>
+            <h2 id="field-title">نور را از کجا شروع کنیم؟</h2>
+            <p>
+              پیش از روز ضبط، استودیو چند مسیر نوری را برای چهره و صحنه امتحان
+              می‌کند.
+            </p>
+            <div class="note-options" aria-label="نور را از کجا شروع کنیم؟">
+              <button type="button" data-note="0" aria-pressed="true">
+                نور جانبی</button
+              ><button type="button" data-note="1" aria-pressed="false">
+                نور حاشیه</button
+              ><button type="button" data-note="2" aria-pressed="false">
+                نور نرم
+              </button>
+            </div>
+            <p class="note-answer" data-answer="0">
+              یک منبع از کنار صورت، خط بینی و انحنای گونه را مشخص می‌کند.
+            </p>
+            <p class="note-answer" data-answer="1" hidden>
+              منبع پشت سوژه یک حاشیه‌ی باریک روشن می‌سازد و چهره از زمینه جدا
+              می‌شود.
+            </p>
+            <p class="note-answer" data-answer="2" hidden>
+              سطح بزرگ نور نزدیک سوژه، سایه‌های ملایم و بافتی طبیعی‌تر می‌دهد.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section shell faq" id="faq">
+        <div>
+          <div class="eyebrow">پیش از شروع</div>
+          <h2>پرسش‌های رایج</h2>
+        </div>
+        <div>
+          <details>
+            <summary>برای برآورد یک تولید چه بنویسم؟</summary>
+            <p>
+              کاربرد تصویر، تعداد قاب‌ها یا زمان فیلم، محل ضبط و تاریخ تحویل.
+            </p>
+          </details>
+          <details>
+            <summary>چطور جزئیات دلخواهم را آماده کنم؟</summary>
+            <p>
+              فرم پایین صفحه را تکمیل کن. یک فایل متنی از انتخاب و توضیحاتت
+              دریافت می‌کنی.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="section shell contact-grid">
+          <div>
+            <div class="eyebrow">استودیوی تصویر</div>
+            <h2>یک داستان برایمان بگو.</h2>
+            <p>
+              این قالب نمایشی است. با تکمیل فرم، خلاصه‌ی درخواستت را به صورت
+              فایل متنی دریافت می‌کنی.
+            </p>
+          </div>
+          <form>
+            <label
+              >نام<input name="visitor" autocomplete="name" required /></label
+            ><label>رسانه‌ی دلخواه<input name="topic" required /></label
+            ><label class="full"
+              >توضیحات<textarea name="note" rows="3"></textarea></label
+            ><button class="btn" type="submit">
+              دریافت خلاصه‌ی درخواست <span>↓</span>
+            </button>
+            <p role="status" class="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="shell foot">
+      <span dir="ltr">Blende</span><a href="#top">بازگشت به بالا ↑</a>
+    </footer>
+    <a
+      class="bitter-template-choose"
+      href="../../design.html?name=blende#brief"
+      target="_top"
+      ><img src="../../bitter-mark.svg" alt="" />انتخاب این قالب</a
+    >
+  </body>
+</html>

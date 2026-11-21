@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">Bitter</title>
+  <style>
+    path { fill: #261d27 }
+    @media (prefers-color-scheme: dark) { path { stroke: #fff4e8; stroke-width: 2; paint-order: stroke fill } }
+  </style>
+  <path fill-rule="evenodd" d="M40.7 3.5C30.1 2.4 18.3 6.2 10.7 14.6 3.4 22.6 2.1 33.6 6.6 43.5 16.8 45.7 29.5 42 37.1 33.2 43.8 25.6 45.5 12.7 40.7 3.5ZM15.1 13.3 34.1 23.2 26.2 25.3 31.1 33.5 26.9 36.1 22 27.8 16.7 33.9Z"/>
+</svg>

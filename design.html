@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="پیش‌نمایش وب‌سایت مفهومی بیتر در اندازهٔ موبایل و دسکتاپ.">
+  <meta name="theme-color" content="#f1f2f6"><title>پیش‌نمایش طرح | Bitter Studio</title>
+  <link rel="icon" type="image/svg+xml" href="bitter-mark.svg">
+  <link rel="preload" href="Estedad-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="studio.css"><link rel="stylesheet" href="identity.css">
+  <link rel="stylesheet" href="catalog.css"><link rel="stylesheet" href="type.css">
+  <link rel="stylesheet" href="design-view.css">
+  <script src="bitter-select.js" defer></script>
+  <script src="catalog.js" defer></script><script src="navigation.js" defer></script><script src="design-view.js" defer></script>
+  <link rel="stylesheet" href="secondary.css">
+  <link rel="stylesheet" href="panels-fidelity.css">
+  <link rel="stylesheet" href="hero-fidelity.css">
+  <script src="preferences.js" defer></script>
+  <link rel="stylesheet" href="bitter-select.css">
+  <link rel="stylesheet" href="brief.css">
+</head><body class="case-page"><a class="skip" href="#main">رفتن به محتوا</a>
+<header class="mast">
+  <div class="bar">
+    <a href="index.html#main" class="wordmark" aria-label="Bitter، صفحهٔ اصلی"><img src="bitter-logo.svg" width="184" height="48" alt="Bitter"></a>
+    <button id="menub" class="menu-button" aria-controls="nav" aria-expanded="false"><span aria-hidden="true"><i class="menu-lines"></i></span> منو</button>
+    <nav id="nav" aria-label="منوی اصلی">
+      <a href="designs.html">طرح‌ها</a><a href="index.html#process">مراحل</a><a href="index.html#pricing">هزینه‌ها</a><a href="index.html#faq">پرسش‌ها</a><a href="index.html#game">بازی</a><a href="journal.html">مجله</a>
+    </nav>
+    <a class="pill primary nav-action" href="designs.html"><i></i>انتخاب طرح</a>
+  </div>
+</header>
+<main id="main" class="shell case-main">
+  <a href="designs.html" class="catalog-back" id="case-back">همهٔ طرح‌ها</a>
+  <header class="case-heading">
+    <h1><small id="case-industry"></small><span id="case-title"></span></h1>
+    <div><div class="case-facts" id="case-facts"></div><p id="case-copy"></p></div>
+  </header>
+  <div class="case-layout">
+    <section class="case-window" aria-label="پیش‌نمایش طرح">
+      <div class="view-bar">
+        <a class="view-domain" id="view-address" dir="ltr" target="_blank" rel="noopener" aria-label="دیدن صفحهٔ کامل طرح در زبانهٔ جدید">bitterstudio.ir</a>
+        <div class="view-actions">
+          <a id="view-full" target="_blank" rel="noopener">دیدن صفحهٔ کامل</a>
+          <button id="preview-mode" type="button" aria-pressed="false" aria-controls="stage">تعامل با طرح</button>
+        </div>
+        <div class="switch-view" role="group" aria-label="اندازهٔ پیش‌نمایش">
+          <button type="button" data-view="desktop" aria-pressed="true" aria-controls="stage">دسکتاپ</button>
+          <button type="button" data-view="mobile" aria-pressed="false" aria-controls="stage">موبایل</button>
+        </div>
+      </div>
+      <div class="view-stage" id="stage" tabindex="0" role="region" aria-label="پیش‌نمایش تصویری طرح">
+        <div class="device-screen">
+          <img id="case-poster" decoding="async" draggable="false" alt="">
+          <iframe id="live-preview" hidden title="پیش‌نمایش تعاملی طرح"></iframe>
+        </div>
+      </div>
+    </section>
+    <aside class="case-offer">
+      <div class="offer-intro">
+        <h2>سایت تو</h2><p id="offer-copy"></p>
+        <p>اسم برند و تیترت رو روی این طرح امتحان کن. اگه دوستش داشتی، با همین انتخاب سفارش بده.</p>
+        <div class="case-order-actions">
+          <button type="button" class="pill primary" id="case-start"></button>
+          <a id="case-direct-order" href="order.html">ثبت سفارش با همین طرح <span aria-hidden="true">←</span></a>
+        </div>
+        <small>ثبت درخواست رایگانه و کد پیگیری داره.</small>
+      </div>
+      <div class="offer-extra">
+        <h3>در این مسیر</h3>
+        <ul><li>انتخاب طرح و محتوای برند شما</li><li>طراحی صفحه‌ها برای گوشی و دسکتاپ</li><li>بازبینی نسخهٔ آمادهٔ سایت</li><li>آماده‌سازی سایت برای انتشار</li></ul>
+        <div class="offer-estimate"><strong>برآورد هزینه</strong><p>قیمت پایه به نوع سایت بستگی داره. توی فرم سفارش می‌تونی بسته‌ها و هزینه‌هاشون رو ببینی.</p></div>
+      </div>
+    </aside>
+  </div>
+  <section class="case-specs" aria-label="مشخصات طرح">
+    <div><h2>سبک طراحی</h2><p id="look"></p></div>
+    <div><h2>مناسب برای</h2><ul id="audience"></ul></div>
+    <div><h2>در صفحهٔ اصلی</h2><ul id="entries"></ul></div>
+    <div><h2>تیتر نمونه</h2><p id="example-title"></p></div>
+    <div><h2>طرح‌های این زمینه</h2><a id="sector"></a></div>
+    <div id="case-source" hidden><h2>مرجع این طرح</h2><a target="_blank" rel="noopener noreferrer">دیدن نسخهٔ مودو</a></div>
+  </section>
+  <section class="case-related"><h2>طرح‌های نزدیک</h2><div id="related"></div></section>
+</main><footer class="shell site-foot">
+  <div><a class="wordmark" href="index.html#main"><img src="bitter-logo.svg" width="184" height="48" alt="Bitter"></a><p>استودیو طراحی سایت اختصاصی</p></div>
+  <div><h3>خدمات</h3><a href="designs.html">همهٔ طرح‌ها</a><a href="services.html">خدمات طراحی</a><a href="hosting.html">میزبانی و نگهداری</a><a href="delivery.html">زمان تحویل</a></div>
+  <div><h3>بیتر</h3><a href="about.html">دربارهٔ استودیو</a><a href="guide.html">راهنمای شروع</a><a href="journal.html">مجلهٔ بیتر</a></div>
+  <div><h3>شروع پروژه</h3><a class="text-action" href="order.html">ثبت سفارش طراحی سایت</a><a href="order.html#track">پیگیری سفارش</a><a href="index.html#faq">پرسش‌های رایج</a><a href="index.html#game">بازی رنگ‌ها</a></div>
+  <div><h3>حریم خصوصی</h3><a href="privacy.html">حریم خصوصی سایت</a><button class="text-action" type="button" data-preferences>تنظیمات ذخیره‌سازی</button></div>
+  <div class="foot-base"><span dir="ltr">bitterstudio.ir</span><a href="#main">بازگشت به ابتدای صفحه</a></div>
+</footer><a class="float" href="order.html" aria-label="ثبت سفارش طراحی سایت"><i class="brief-icon" aria-hidden="true"></i></a><dialog id="brief" aria-labelledby="brief-heading"></dialog></body></html>
