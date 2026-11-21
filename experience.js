@@ -353,7 +353,7 @@ window.addEventListener('pageshow',openLinkedBrief);
 // item the visitor was reading at the same point in the resized viewport.
 (() => {
   const main=document.querySelector('main');
-  const targets='a.gallery-card,.why article,#steps article,#pricing article,.faq-list details,.studio-profile,.hero,.sectors,.section,footer';
+  const targets='.gallery-card,.why article,#steps article,#pricing article,.faq-list details,.studio-profile,.hero,.sectors,.section,footer';
   const process=document.getElementById('process'), pin=process.querySelector('.process-pin');
   const steps=[...process.querySelectorAll('#steps article')];
   function pinnedTrack(){

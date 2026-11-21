@@ -131,7 +131,7 @@
   .case-related {padding-top:112px}
 }
 @media(pointer:coarse){
-  .view-stage:not([data-mode=live]) {overflow:hidden;overscroll-behavior:auto;touch-action:pan-y pinch-zoom}
+  .view-stage:not([data-mode=live]) {overflow-y:auto;overscroll-behavior:auto;touch-action:pan-y pinch-zoom}
   #view-full {display:inline-flex}
 }
 @container(max-width:720px) { .switch-view button {padding-inline:13px} }

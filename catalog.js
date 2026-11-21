@@ -169,11 +169,56 @@ function pageStrip(project) {
     '</b><div class="strip-grid">'+cards+'</div></div>';
 }
 
+const phoneCards = matchMedia('(max-width:700px), (pointer:coarse)');
+let currentStrip;
+function stopPhoneStrip() {
+  if (!currentStrip) return;
+  const {button, animation} = currentStrip;
+  currentStrip = null;
+  animation?.cancel();
+  delete button.dataset.playback;
+}
+phoneCards.addEventListener('change', stopPhoneStrip);
+const reduceStripMotion=matchMedia('(prefers-reduced-motion:reduce)');
+reduceStripMotion.addEventListener('change',stopPhoneStrip);
+let stripWidth = innerWidth;
+window.addEventListener('resize', () => {
+  if (innerWidth !== stripWidth) stopPhoneStrip();
+  stripWidth = innerWidth;
+});
+async function playPhoneStrip(button, viewport, image) {
+  if (currentStrip?.button === button && currentStrip.animation) {
+    const animation = currentStrip.animation;
+    if (animation.playState === 'running' || animation.playState === 'paused') {
+      if (animation.playState === 'paused') animation.play(); else animation.pause();
+      button.dataset.playback = animation.playState;
+      return;
+    }
+  }
+  stopPhoneStrip();
+  const state = currentStrip = {button, animation:null};
+  button.dataset.playback = 'loading';
+  image.loading = 'eager';
+  try { await image.decode(); } catch {
+    if (currentStrip === state) stopPhoneStrip();
+    return;
+  }
+  if (currentStrip !== state || !button.isConnected) return;
+  const distance = Math.max(0, image.offsetHeight - viewport.clientHeight);
+  const duration = reduceStripMotion.matches ? 0 : Math.min(18000, Math.max(3000, distance * 4));
+  const animation = state.animation = image.animate(
+    [{transform:'translateY(0)'},{transform:'translateY(-'+distance+'px)'}],
+    {duration, easing:'linear', fill:'forwards'}
+  );
+  button.dataset.playback = 'running';
+  animation.onfinish = () => { if (currentStrip === state) button.dataset.playback = 'finished'; };
+}
+
 function loadCardPreview(event) {
   const card=event.target.closest('.gallery-card');
-  if(!card || matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  if(!card || phoneCards.matches || matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   if(event.type==='pointerover' && (event.pointerType!=='mouse'||card.contains(event.relatedTarget)))return;
-  if(event.type==='focusin' && !card.matches(':focus-visible'))return;
+  if(event.type==='focusin' && !event.target.matches(':focus-visible'))return;
   const placeholder=card.querySelector('[data-preview]');
   if(!placeholder)return;
   const image=new Image();
@@ -188,18 +233,34 @@ document.addEventListener('pointerover',loadCardPreview,{passive:true});
 document.addEventListener('focusin',loadCardPreview);
 
 function designTile(project) {
-  const tile=document.createElement('a');
+  const tile=document.createElement('article');
+  const link=document.createElement('a');
   const url=new URL('design.html',location.href);
   url.searchParams.set('name',project.slug);
   const query=new URLSearchParams(location.search);
   for(const field of ['search','mood','field']) if(query.get(field)) url.searchParams.set(field,query.get(field));
-  tile.href=url.href;
+  link.href=url.href;
+  link.className='tile-link';
   tile.className='gallery-card';
-  tile.setAttribute('aria-label','مشاهدهٔ طرح '+project.name+'، '+project.field);
+  link.setAttribute('aria-label','مشاهدهٔ طرح '+project.name+'، '+project.field);
   const surface=project.template ? '<img class="template-shot" src="'+templateShot(project)+'" loading="lazy" decoding="async" alt="">' : preview(project)+pageStrip(project);
-  tile.innerHTML='<div class="gallery-shot"><div class="sample-page">'+surface+
+  link.innerHTML='<div class="gallery-shot"><div class="sample-page">'+surface+
     '</div><span class="card-scrollshot" data-preview="previews/'+project.slug+'-desktop.webp" aria-hidden="true"></span>'+
     '<span class="sample-cta" aria-hidden="true"><i style="background:'+project.dot+'"></i>دیدن طرح<span class="card-chevron"></span></span></div>'+foot(project,true);
+  const button=document.createElement('button');
+  button.type='button';
+  button.className='tile-play';
+  button.setAttribute('aria-label','پیش‌نمایش موبایل '+project.name+'، پخش یا مکث');
+  button.innerHTML='<picture><source media="(max-width:700px), (pointer:coarse)" srcset="previews/'+project.slug+'-mobile.webp"><img class="phone-strip" loading="lazy" decoding="async" alt=""></picture><span class="play-caption"><span>پیش‌نمایش</span></span>';
+  button.onclick=()=>playPhoneStrip(button,button,button.querySelector('img'));
+  link.querySelector('.card-name').insertAdjacentHTML('beforeend','<span class="tile-open-label">دیدن صفحهٔ طرح ←</span>');
+  link.addEventListener('click',event=>{
+    if(!phoneCards.matches || event.detail===0 || event.target.closest('.tile-open-label') ||
+       event.ctrlKey || event.metaKey || event.altKey || event.shiftKey)return;
+    event.preventDefault();
+    button.click();
+  });
+  tile.append(link,button);
   return tile;
 }
 
@@ -609,9 +670,10 @@ function mountDesignCatalogue({homepage=false,onDialogChange=()=>{}} = {}) {
     for(const [project,card] of cardElements){
       card.hidden=!visible.has(project);
       if(!card.hidden){
-        const url=new URL(card.href);
+        const link=card.querySelector('.tile-link');
+        const url=new URL(link.href);
         for(const key of filters){const value=byId(key).value;if(value)url.searchParams.set(key,value);else url.searchParams.delete(key)}
-        if(card.href!==url.href)card.href=url.href;
+        if(link.href!==url.href)link.href=url.href;
       }
     }
     const order=items.map(p=>p.slug).join('|');
@@ -680,7 +742,7 @@ function mountDesignCatalogue({homepage=false,onDialogChange=()=>{}} = {}) {
   if(!homepage){
     gallery.addEventListener('click',event=>{
       const card=event.target.closest('.gallery-card');
-      if(!card||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+      if(event.defaultPrevented||!event.target.closest('.tile-link')||!card||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
       const spot={id:card.id,top:card.getBoundingClientRect().top,query:location.search};
       history.replaceState({...history.state,bitterGallerySpot:spot},'');
     });

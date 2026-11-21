@@ -174,14 +174,23 @@
   const coarse=matchMedia('(pointer:coarse)');
   const failedPosters=new Set();
   let device=narrow.matches?'mobile':'desktop';
-  let pickedDevice=false,requestedLive=false;
+  let pickedDevice=false,requestedLive=narrow.matches;
+
+  let stageVisible=false;
+  function loadVisibleFrame(){
+    if(!frame.hidden && !frame.hasAttribute('src') && (stageVisible || !narrow.matches))frame.src=sampleURL;
+  }
+  new IntersectionObserver(([entry])=>{
+    stageVisible=entry.isIntersecting;
+    loadVisibleFrame();
+  }).observe(stage);
 
   function sizeFrame(){
     if(frame.hidden || !screen.clientWidth)return;
-    const logicalWidth=device==='desktop'?Math.max(screen.clientWidth,1440):390;
+    const logicalWidth=device==='desktop'?Math.max(screen.clientWidth,1440):Math.min(390,document.documentElement.clientWidth);
     const scale=screen.clientWidth/logicalWidth;
     frame.style.width=logicalWidth+'px';
-    frame.style.height=(device==='mobile'?844:Math.ceil(screen.clientHeight/scale))+'px';
+    frame.style.height=(device==='mobile'?Math.round(logicalWidth*844/390):Math.ceil(screen.clientHeight/scale))+'px';
     frame.style.transform='scale('+scale+')';
   }
 
@@ -200,7 +209,7 @@
     modeButton.textContent=live?'نمای تصویری':'تعامل با طرح';
     if(live){
       sizeFrame();
-      if(!frame.getAttribute('src'))frame.src=sampleURL;
+      if(!frame.hasAttribute('src'))loadVisibleFrame();
       else frame.contentDocument?.defaultView?.scrollTo({top:0,behavior:'instant'});
     }else{
       const poster=posters[device];

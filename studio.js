@@ -61,7 +61,10 @@ function wakeDeck(){
 function showDeck(index) {
   const current=order.indexOf(index);
   order.splice(current,1);order.unshift(index);
+  if (current > 0 && currentStrip && deck.contains(currentStrip.button)) stopPhoneStrip();
   active=index;
+  deckLink.href='design.html?name='+projects[index].slug;
+  deckLink.textContent='دیدن طرح '+projects[index].name+' ←';
   document.documentElement.style.setProperty('--accent',deckAccents[index]);
   document.documentElement.style.setProperty('--wash',projects[index].wash);
   hero.style.setProperty('--deck-glow',deckAccents[index]);
@@ -122,13 +125,38 @@ function setPause(value) {
   clock();
 }
 
+const deckTools=document.createElement('div');
+deckTools.className='deck-tools';
+deckTools.innerHTML='<button type="button">ورق بعدی</button><a></a>';
+hero.querySelector('.intro').prepend(deckTools);
+const deckLink=deckTools.querySelector('a');
+function turnDeck(direction) {
+  showDeck((active+direction+projects.length)%projects.length);
+}
+deckTools.querySelector('button').onclick=()=>turnDeck(1);
+
 projects.forEach((p,index)=>{
   const card=document.createElement('button');
   card.className='deck-card';
-  card.setAttribute('aria-label','طرح '+p.name+'، '+p.mood);
+  const labelCard=()=>card.setAttribute('aria-label',(phoneCards.matches?'پیش‌نمایش موبایل ':'طرح ')+p.name+'، '+p.mood);
+  labelCard();phoneCards.addEventListener('change',labelCard);
   card.innerHTML=preview(p)+foot({...p,dot:deckAccents[index]},false);
+  card.querySelector('.face').insertAdjacentHTML('beforeend','<span class="deck-play-hint" aria-hidden="true">پیش‌نمایش</span>');
   card.onclick=()=>{
     if(suppressClick===card){suppressClick=null;return;}
+    if(phoneCards.matches){
+      showDeck(index);
+      const face=card.querySelector('.face');
+      let strip=face.querySelector('.phone-strip');
+      if(!strip){
+        strip=new Image();
+        strip.className='phone-strip';strip.alt='';strip.draggable=false;
+        strip.src='previews/'+p.slug+'-mobile.webp';
+        face.append(strip);
+      }
+      playPhoneStrip(card,face,strip);
+      return;
+    }
     if(index===active)location.assign('design.html?name='+p.slug);
     else showDeck(index);
   };
@@ -163,6 +191,31 @@ window.addEventListener('pointermove',event=>{
   if(!heroVisible || reduce.matches || event.pointerType!=='mouse')return;
   pointer.x=event.clientX/innerWidth-.5;pointer.y=event.clientY/innerHeight-.5;
 },{passive:true});
+let touchStart;
+deck.addEventListener('pointerdown',event=>{
+  if(event.pointerType==='touch' && event.isPrimary){
+    touchStart={id:event.pointerId,x:event.clientX,y:event.clientY,card:event.target.closest('.deck-card')};
+  }
+});
+deck.addEventListener('touchmove',event=>{
+  if(!touchStart || event.touches.length!==1 || !event.cancelable)return;
+  const touch=event.touches[0];
+  const dx=Math.abs(touch.clientX-touchStart.x),dy=Math.abs(touch.clientY-touchStart.y);
+  if(dx>10 && dx>dy*1.3)event.preventDefault();
+},{passive:false});
+window.addEventListener('pointercancel',()=>{touchStart=null});
+window.addEventListener('pointerup',event=>{
+  if(!touchStart||touchStart.id!==event.pointerId)return;
+  const {x,y,card}=touchStart;
+  touchStart=null;
+  const dx=event.clientX-x,dy=event.clientY-y;
+  if(card && Math.abs(dx)>30 && Math.abs(dx)>Math.abs(dy)*1.3){
+    suppressClick=card;
+    setTimeout(()=>{if(suppressClick===card)suppressClick=null},350);
+    turnDeck(dx<0?1:-1);
+  }
+});
+
 deck.addEventListener('pointerdown',event=>{
   const card=event.target.closest('.deck-card');
   if(!card || event.pointerType==='touch' || event.button!==0 || !event.isPrimary || drag)return;
