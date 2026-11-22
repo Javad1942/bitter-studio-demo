@@ -217,6 +217,12 @@ function openLiveCard(state, project) {
     const doc=frame.contentDocument;
     if(!doc || !doc.body){delete panel.dataset.opening;status.textContent=project.name;return;}
     doc.documentElement.style.overscrollBehaviorY='contain';
+    // The standalone templates link back to Bitter at the top level. Inside
+    // a card, their detail and order links belong to this browsing context.
+    doc.addEventListener('click',event=>{
+      const link=event.target.closest?.('a[target]');
+      if(link && link.origin===location.origin)link.target='_self';
+    },true);
     if(initial){
       initial=false;
       await doc.fonts.ready;
