@@ -175,6 +175,9 @@ function stopPhoneStrip() {
   if (!currentStrip) return;
   const {button, animation} = currentStrip;
   currentStrip = null;
+  const card=button.closest('.gallery-card,.deck-card');
+  card?.classList.remove('is-live');
+  card?.querySelector('.live-card-window')?.remove();
   animation?.cancel();
   delete button.dataset.playback;
 }
@@ -186,7 +189,51 @@ window.addEventListener('resize', () => {
   if (innerWidth !== stripWidth) stopPhoneStrip();
   stripWidth = innerWidth;
 });
-async function playPhoneStrip(button, viewport, image) {
+function openLiveCard(state, project) {
+  if(currentStrip!==state || !state.button.isConnected)return;
+  const card=state.button.closest('.gallery-card,.deck-card');
+  const panel=document.createElement('div');
+  panel.className='live-card-window';
+  panel.dataset.opening='';
+  panel.style.backgroundImage='url(previews/'+project.slug+'-mobile.webp)';
+  const bar=document.createElement('div');
+  bar.className='live-card-bar';
+  const status=document.createElement('span');
+  status.textContent='در حال باز شدن قالب…';
+  status.setAttribute('role','status');
+  const close=document.createElement('button');
+  close.type='button';close.textContent='بستن پیش‌نمایش';
+  const frame=document.createElement('iframe');
+  frame.title='قالب تعاملی '+project.name;
+  frame.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-modals allow-downloads');
+  close.onclick=()=>{
+    stopPhoneStrip();
+    (card.querySelector('.deck-trigger') || state.button).focus({preventScroll:true});
+  };
+  bar.append(status,close);panel.append(bar,frame);
+  let initial=true;
+  frame.addEventListener('load',async()=>{
+    if(currentStrip!==state)return;
+    const doc=frame.contentDocument;
+    if(!doc || !doc.body){delete panel.dataset.opening;status.textContent=project.name;return;}
+    doc.documentElement.style.overscrollBehaviorY='contain';
+    if(initial){
+      initial=false;
+      await doc.fonts.ready;
+      if(currentStrip!==state || frame.contentDocument!==doc)return;
+      frame.contentWindow.scrollTo({top:doc.documentElement.scrollHeight,behavior:'instant'});
+    }
+    delete panel.dataset.opening;
+    panel.style.removeProperty('background-image');
+    status.textContent='پیش‌نمایش تعاملی '+project.name;
+  });
+  frame.src=project.template ? templatePath(project) : 'design-preview.html?name='+encodeURIComponent(project.slug);
+  card.prepend(panel);
+  card.classList.add('is-live');
+  state.button.dataset.playback='live';
+}
+
+async function playPhoneStrip(button, viewport, image, project) {
   if (currentStrip?.button === button && currentStrip.animation) {
     const animation = currentStrip.animation;
     if (animation.playState === 'running' || animation.playState === 'paused') {
@@ -211,7 +258,7 @@ async function playPhoneStrip(button, viewport, image) {
     {duration, easing:'linear', fill:'forwards'}
   );
   button.dataset.playback = 'running';
-  animation.onfinish = () => { if (currentStrip === state) button.dataset.playback = 'finished'; };
+  animation.onfinish = () => openLiveCard(state, project);
 }
 
 function loadCardPreview(event) {
@@ -252,13 +299,14 @@ function designTile(project) {
   button.className='tile-play';
   button.setAttribute('aria-label','پیش‌نمایش موبایل '+project.name+'، پخش یا مکث');
   button.innerHTML='<picture><source media="(max-width:700px), (pointer:coarse)" srcset="previews/'+project.slug+'-mobile.webp"><img class="phone-strip" loading="lazy" decoding="async" alt=""></picture><span class="play-caption"><span>پیش‌نمایش</span></span>';
-  button.onclick=()=>playPhoneStrip(button,button,button.querySelector('img'));
+  button.onclick=()=>playPhoneStrip(button,button,button.querySelector('img'),project);
   link.querySelector('.card-name').insertAdjacentHTML('beforeend','<span class="tile-open-label">دیدن صفحهٔ طرح ←</span>');
   link.addEventListener('click',event=>{
     if(!phoneCards.matches || event.detail===0 || event.target.closest('.tile-open-label') ||
        event.ctrlKey || event.metaKey || event.altKey || event.shiftKey)return;
     event.preventDefault();
-    button.click();
+    if(tile.classList.contains('is-live'))tile.querySelector('iframe').focus();
+    else button.click();
   });
   tile.append(link,button);
   return tile;
@@ -669,6 +717,7 @@ function mountDesignCatalogue({homepage=false,onDialogChange=()=>{}} = {}) {
     const visible=new Set(homepage&&!query&&!mood&&!field?shown.slice(0,12):shown);
     for(const [project,card] of cardElements){
       card.hidden=!visible.has(project);
+      if(card.hidden && currentStrip && card.contains(currentStrip.button))stopPhoneStrip();
       if(!card.hidden){
         const link=card.querySelector('.tile-link');
         const url=new URL(link.href);

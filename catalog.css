@@ -182,3 +182,11 @@
 @media(max-width:700px),(pointer:coarse) {
   .deck-card[data-depth="0"]:not([data-playback]) .deck-play-hint {display:block;position:absolute;bottom:8px;left:8px;background:#241d29e8;color:#fff;border-radius:20px;padding:2px 8px;font-size:11px}
 }
+
+.deck-trigger {display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;font:inherit;text-align:inherit;cursor:inherit}
+.live-card-window {overflow:hidden;border-radius:18px;background:white center bottom / 100% auto no-repeat;isolation:isolate}
+.live-card-window[data-opening] iframe {visibility:hidden}
+.live-card-bar {background:white;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:4px 10px;color:var(--ink);font-size:13px}
+.live-card-bar button {min-height:44px;border:0;padding:4px 10px;border-radius:12px;background:var(--paper,#f1eff4);color:inherit;font:inherit}
+.live-card-window iframe {display:block;width:100%;height:clamp(240px,55svh,480px);border:0;background:white}
+.gallery-card.is-live .gallery-shot,.gallery-card.is-live .tile-play,.deck-card.is-live > .deck-trigger {display:none}

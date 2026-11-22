@@ -247,3 +247,9 @@
  .mast .bar nav,.mast .bar nav a,.mast .bar nav .nav-thumb,.mast .bar::before,.mast .bar::after,
  .mast .bar .wordmark,.mast .bar .nav-action,.hero.shell::before{transition:none!important}
 }
+
+.hero #deck .deck-card.is-live {width:min(90vw,390px);transform:none!important;z-index:12!important;cursor:default;touch-action:auto}
+@media(max-width:820px) {
+  .hero.shell:has(.deck-card.is-live) {--live-height:clamp(240px,55svh,480px);padding-block-start:calc(188px + var(--live-height))}
+  .hero #deck:has(.deck-card.is-live) {top:calc(130px + var(--live-height)/2)}
+}

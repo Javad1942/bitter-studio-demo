@@ -70,7 +70,7 @@ function showDeck(index) {
   hero.style.setProperty('--deck-glow',deckAccents[index]);
   order.forEach((cardIndex,depth)=>{
     const card=deck.children[cardIndex];
-    card.dataset.depth=depth;card.tabIndex=depth===0?0:-1;
+    card.dataset.depth=depth;card.querySelector('.deck-trigger').tabIndex=depth===0?0:-1;
     card.style.zIndex=String(order.length-depth);
   });
   if(!reduce.matches && current>0){
@@ -136,13 +136,17 @@ function turnDeck(direction) {
 deckTools.querySelector('button').onclick=()=>turnDeck(1);
 
 projects.forEach((p,index)=>{
-  const card=document.createElement('button');
+  const card=document.createElement('article');
   card.className='deck-card';
-  const labelCard=()=>card.setAttribute('aria-label',(phoneCards.matches?'پیش‌نمایش موبایل ':'طرح ')+p.name+'، '+p.mood);
+  const trigger=document.createElement('button');
+  trigger.type='button';trigger.className='deck-trigger';
+  card.append(trigger);
+  const labelCard=()=>trigger.setAttribute('aria-label',(phoneCards.matches?'پیش‌نمایش موبایل ':'طرح ')+p.name+'، '+p.mood);
   labelCard();phoneCards.addEventListener('change',labelCard);
-  card.innerHTML=preview(p)+foot({...p,dot:deckAccents[index]},false);
+  trigger.innerHTML=preview(p)+foot({...p,dot:deckAccents[index]},false);
   card.querySelector('.face').insertAdjacentHTML('beforeend','<span class="deck-play-hint" aria-hidden="true">پیش‌نمایش</span>');
-  card.onclick=()=>{
+  card.onclick=event=>{
+    if(event.target.closest('.live-card-window'))return;
     if(suppressClick===card){suppressClick=null;return;}
     if(phoneCards.matches){
       showDeck(index);
@@ -154,7 +158,7 @@ projects.forEach((p,index)=>{
         strip.src='previews/'+p.slug+'-mobile.webp';
         face.append(strip);
       }
-      playPhoneStrip(card,face,strip);
+      playPhoneStrip(card,face,strip,p);
       return;
     }
     if(index===active)location.assign('design.html?name='+p.slug);
@@ -184,6 +188,7 @@ $('new-brief').onclick=()=>catalogue.openBrief(activeProjectIndex());
 document.querySelector('[data-brief]').onclick=()=>catalogue.openBrief(activeProjectIndex());
 // A mouse pulls a card from its original slot. Touch keeps the page's native pan.
 new ResizeObserver(entries=>{
+  if(entries[0].target.classList.contains('is-live'))return;
   cardWidth=entries[0].borderBoxSize?.[0]?.inlineSize || deck.children[0].offsetWidth;
   wakeDeck();
 }).observe(deck.children[0]);
@@ -193,7 +198,7 @@ window.addEventListener('pointermove',event=>{
 },{passive:true});
 let touchStart;
 deck.addEventListener('pointerdown',event=>{
-  if(event.pointerType==='touch' && event.isPrimary){
+  if(!event.target.closest('.live-card-window') && event.pointerType==='touch' && event.isPrimary){
     touchStart={id:event.pointerId,x:event.clientX,y:event.clientY,card:event.target.closest('.deck-card')};
   }
 });
@@ -218,7 +223,7 @@ window.addEventListener('pointerup',event=>{
 
 deck.addEventListener('pointerdown',event=>{
   const card=event.target.closest('.deck-card');
-  if(!card || event.pointerType==='touch' || event.button!==0 || !event.isPrimary || drag)return;
+  if(!card || card.classList.contains('is-live') || event.pointerType==='touch' || event.button!==0 || !event.isPrimary || drag)return;
   suppressClick=null;
   const index=Array.prototype.indexOf.call(deck.children,card);
   drag={id:event.pointerId,index,originX:event.clientX,originY:event.clientY,startX:motion[index].x,startY:motion[index].y,
@@ -260,7 +265,7 @@ deck.addEventListener('keydown',event=>{
   if(event.key!=='ArrowLeft' && event.key!=='ArrowRight')return;
   event.preventDefault();
   showDeck((active+(event.key==='ArrowLeft'?1:-1)+projects.length)%projects.length);
-  deck.children[active].focus({preventScroll:true});
+  deck.children[active].querySelector('.deck-trigger').focus({preventScroll:true});
 });
 story.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hoveringStory=true;clock()}});
 story.addEventListener('pointerleave',()=>{hoveringStory=false;clock()});
