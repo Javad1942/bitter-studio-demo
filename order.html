@@ -4,24 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f1f2f6">
-  <title>پیش‌نمایش سفارش | Bitter Studio</title>
+  <title>سفارش طراحی سایت | Bitter Studio</title>
   <link rel="icon" href="bitter-mark.svg" type="image/svg+xml">
   <link rel="preload" href="Estedad-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="type.css">
   <link rel="stylesheet" href="order.css">
 </head>
 <body>
-<a class="skip" href="#main">رفتن به پیش‌نمایش</a>
+<a class="skip" href="#main">رفتن به سفارش</a>
 <header class="topbar">
   <a href="index.html" class="wordmark"><img src="bitter-logo.svg" width="184" height="48" alt="Bitter، صفحهٔ اصلی"></a>
   <nav aria-label="دسترسی سریع"><a href="designs.html">گالری طرح‌ها</a><a href="index.html#pricing">تعرفه‌ها</a></nav>
 </header>
 <main id="main">
   <div class="intro"><div>
-    <h1>پیش‌نمایش سفارش بیتر</h1>
-    <p>در این نسخه می‌تونی طرح‌ها رو ببینی و با نام برندت امتحانشون کنی. ثبت و پیگیری سفارش در دمو غیرفعاله.</p>
-    <a href="designs.html">برگشت به گالری طرح‌ها</a>
+    <h1>بیا سایتت رو بسازیم.</h1>
+    <p>طرحت رو انتخاب کردی؟ فرم بیتر رو باز کن و از پروژه‌ات بگو. بعد از ثبت، یک کد برای پیگیری می‌گیری.</p>
+    <p><a id="continue-order" href="https://bitter-studio.liara.run/order.html" referrerpolicy="no-referrer">ادامه و ثبت سفارش</a></p>
+    <p><a id="track-order" href="https://bitter-studio.liara.run/order.html#track" referrerpolicy="no-referrer">پیگیری سفارش قبلی</a></p>
   </div></div>
 </main>
+<script>
+  const params = new URLSearchParams(location.search);
+  const link = document.getElementById('continue-order');
+  const target = new URL(link.href);
+  for (const key of ['design', 'plan']) {
+    const value = params.get(key);
+    if (value && /^[a-z0-9-]{1,64}$/.test(value)) target.searchParams.set(key, value);
+  }
+  link.href = target.href;
+  if (location.hash === '#track') document.getElementById('track-order').focus();
+</script>
 </body>
 </html>
